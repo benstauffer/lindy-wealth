@@ -1,31 +1,48 @@
-import { Header } from '@/components/landing/layout/Header'
-import { HeroSection } from '@/components/landing/sections/HeroSection'
-import { ServicesSection } from '@/components/landing/sections/ServicesSection'
-import { ProcessSection } from '@/components/landing/sections/ProcessSection'
-import { AboutSection } from '@/components/landing/sections/AboutSection'
-import { FooterSection } from '@/components/landing/sections/FooterSection'
-import { HelpSection } from '@/components/landing/sections/HelpSection'
-import { Text } from '@/components/landing/sections/Text'
-import { CTA } from '@/components/landing/sections/CTA'
+import { Header } from '@/components/Header'
+import { HeroSection } from '@/components/HeroSection'
+import { FooterSection } from '@/components/FooterSection'
+import { BioCard } from '@/components/BioCard'
+import { WorkSection } from '@/components/Work'
+import { BlogSection } from '@/components/Blog'
+
 export default function Home() {
   return (
     <div className="relative min-h-screen">
       <Header />
-      <main className="pt-24">
-        <HeroSection />
-        <Text />
-        <div id="about">
-          <AboutSection />
+      
+      {/* Desktop Layout */}
+      <main className="hidden lg:block pt-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-12 gap-10">
+            {/* Left column - Bio Card */}
+            <div className="col-span-5 max-w-sm">
+              <BioCard />
+            </div>
+            
+            {/* Right column - Content */}
+            <div className="col-span-5 col-start-6 max-w-xl">
+              <div className="space-y-16 md:space-y-24">
+                <HeroSection />
+                <WorkSection />
+                <BlogSection />
+                <FooterSection />
+              </div>
+            </div>
+          </div>
         </div>
-        <div id="process">
-          <ProcessSection />
+      </main>
+
+      {/* Mobile Layout */}
+      <main className="lg:hidden pt-32">
+        <div className="max-w-xl mx-auto px-6">
+          <div className="space-y-16">
+            <HeroSection />
+            <BioCard />
+            <WorkSection />
+            <BlogSection />
+            <FooterSection />
+          </div>
         </div>
-        <HelpSection />
-        <div id="services">
-          <ServicesSection />
-        </div>
-        <CTA />
-        <FooterSection />
       </main>
     </div>
   )

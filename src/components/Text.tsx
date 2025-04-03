@@ -81,8 +81,8 @@ export function Text() {
   let currentIndex = 0
   
   return (
-    <section className="min-h-[80vh] flex items-center justify-center bg-white px-6 sm:px-8 lg:px-12 py-16 sm:py-24 lg:py-32">
-      <div ref={containerRef} className="w-full max-w-4xl mx-auto text-center space-y-16 sm:space-y-20">
+    <section className="w-full bg-neutral-50 rounded-3xl p-8">
+      <div ref={containerRef} className="w-full text-left space-y-8">
         {texts.map((text, i) => {
           const startIndex = currentIndex
           currentIndex += text.split(" ").length
@@ -90,7 +90,7 @@ export function Text() {
             <AnimatedParagraph 
               key={i}
               text={text}
-              className="text-3xl sm:text-4xl lg:text-6xl font-medium leading-tight"
+              className="text-xl md:text-2xl font-medium leading-tight"
               progress={scrollYProgress}
               startIndex={startIndex}
               totalWords={totalWords}

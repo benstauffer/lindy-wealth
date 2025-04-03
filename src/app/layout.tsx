@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { HeaderProvider } from '@/components/landing/layout/HeaderContext'
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,16 +23,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body 
-        className={`${inter.className} min-h-screen bg-white text-black`}
+        className={`${inter.className} min-h-screen bg-#FFFCF4 text-black`}
         style={{ 
           overscrollBehavior: 'none', 
           position: 'relative',
           overflowX: 'hidden',
         }}
       >
-        <HeaderProvider>
-          {children}
-        </HeaderProvider>
+        {children}
       </body>
     </html>
   );
