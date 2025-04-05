@@ -1,6 +1,6 @@
 'use client'
 
-import { BlogCard } from '@/components/BlogCard'
+import { BlogCard } from '@/components/SubscribeCard'
 
 export function BlogSection() {
   return (

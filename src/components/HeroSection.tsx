@@ -11,25 +11,39 @@ export function HeroSection() {
         <div className="w-full space-y-8">
           <div className="space-y-6">
             <h1 className="text-3xl sm:text-5xl font-semibold text-left">
-              Actionable financial advice & planning to reach your goals with confidence.
+              Financial advice & planning to reach your goals with confidence. 
+              <br />
+              <span className="text-[#FB651F]">Less guesswork, more peace of mind.</span>
             </h1>
 
             <p className="text-base text-neutral-600 leading-relaxed">
-              Lindy Wealth helps forward-looking individuals and families with their financial lives so they can keep more of their wealth and focus on what matters most.
-              <br />
-              <br />
-              Less guesswork, more peace of mind.
+              Lindy Wealth helps forward-looking individuals and families with their financial lives so they can keep more of their wealth and focus more on what matters most.
             </p>
-          </div>
 
-          <div>
-            <a 
-              className="group inline-flex items-center px-4 py-2 text-sm font-medium shadow-inner text-black bg-neutral-100 border border-neutral-300 hover:bg-neutral-300 hover:border-neutral-400 rounded-lg transition-colors duration-200"
-              href="#help"
-            >
-              See if you're a fit
-              <FaArrowRight className="ml-2 transform transition-transform duration-200 group-hover:translate-x-1" />
-            </a>
+            {/* Newsletter Section */}
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <p className="text-sm text-neutral-500">
+                  Join my email list. It's packed with financial planning strategies and practical tips for optimizing your financial life.
+                </p>
+              </div>
+              
+              <div className="w-full max-w-xl">
+                <iframe 
+                  src="https://embeds.beehiiv.com/886d101b-12e1-438b-9c0e-0b06f7c1f176?slim=true" 
+                  data-test-id="beehiiv-embed" 
+                  height="52" 
+                  frameBorder="0" 
+                  scrolling="no" 
+                  style={{ 
+                    margin: 0, 
+                    borderRadius: '0px !important', 
+                    backgroundColor: 'transparent',
+                    width: '100%'
+                  }}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

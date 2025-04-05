@@ -2,12 +2,13 @@ import { Header } from '@/components/Header'
 import { HeroSection } from '@/components/HeroSection'
 import { FooterSection } from '@/components/FooterSection'
 import { BioCard } from '@/components/BioCard'
-import { WorkSection } from '@/components/Work'
-import { BlogSection } from '@/components/Blog'
+import { WorkSection } from '@/components/WorkSection'
+import { GuidesSection } from '@/components/GuidesSection'
+import { FAQSection } from '@/components/FAQSection'
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen bg-white">
       <Header />
       
       {/* Desktop Layout */}
@@ -20,11 +21,12 @@ export default function Home() {
             </div>
             
             {/* Right column - Content */}
-            <div className="col-span-5 col-start-6 max-w-xl">
+            <div className="col-span-6 col-start-6 max-w-xl">
               <div className="space-y-16 md:space-y-24">
                 <HeroSection />
+                <GuidesSection />
                 <WorkSection />
-                <BlogSection />
+                <FAQSection />
                 <FooterSection />
               </div>
             </div>
@@ -38,8 +40,9 @@ export default function Home() {
           <div className="space-y-16">
             <HeroSection />
             <BioCard />
+            <GuidesSection />
             <WorkSection />
-            <BlogSection />
+            <FAQSection />
             <FooterSection />
           </div>
         </div>

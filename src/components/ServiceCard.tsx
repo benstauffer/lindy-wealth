@@ -57,7 +57,7 @@ const servicesData: ServiceData[] = [
 
 export function ServicesSection() {
   return (
-    <div className="flex flex-col space-y-2 bg-neutral-50 rounded-3xl p-2 shadow-[0_0_30px_rgba(0,0,0,0.08)]">
+    <div className="flex flex-col space-y-2 bg-neutral-50 rounded-2xl p-2 shadow-[0_0_30px_rgba(0,0,0,0.08)] border border-neutral-200">
       <div className="px-6 pt-2 pb-2 text-sm font-medium text-neutral-500">
         Services
       </div>
@@ -66,7 +66,7 @@ export function ServicesSection() {
         {servicesData.map((service: ServiceData, index: number) => (
           <div 
             key={index}
-            className="group relative bg-white rounded-3xl p-6 transition-all duration-300"
+            className="group relative bg-white rounded-2xl p-6 transition-all duration-300 border border-neutral-100"
           >
             <div className="flex flex-col h-full space-y-4">
               <div className="flex items-center space-x-4">
@@ -89,26 +89,7 @@ export function ServicesSection() {
               </ul>
 
               {/* Pricing Section */}
-              <div className="mt-4 pt-4 border-t border-neutral-100">
-                <h4 className="text-sm font-medium text-neutral-500 mb-4">Pricing</h4>
-                {service.pricing?.type === 'table' ? (
-                  <div className="overflow-hidden">
-                    <div className="grid grid-cols-2 text-sm">
-                      <div className="font-medium text-neutral-500 pb-2 pr-4 border-r border-b border-neutral-200">Account Value</div>
-                      <div className="font-medium text-neutral-500 pb-2 pl-4 border-b border-neutral-200">Annual Advisory Fee</div>
-                      {service.pricing.content.map((tier: PricingTier, i: number) => (
-                        <div key={i} className="contents">
-                          <div className="py-2 pr-4 text-neutral-600 border-b border-r border-neutral-200">{tier.range}</div>
-                          <div className="py-2 pl-4 text-neutral-600 border-b border-neutral-200">{tier.fee}</div>
-                        </div>
-                      ))}
-                    </div>
-                    <p className="text-xs text-neutral-500 mt-2">Blended tier AUM</p>
-                  </div>
-                ) : (
-                  <p className="text-sm text-neutral-600">{service.pricing?.content}</p>
-                )}
-              </div>
+              
             </div>
           </div>
         ))}

@@ -1,16 +1,25 @@
-import { Header } from '@/components/Header'
-import Link from 'next/link'
-import { FaArrowLeft } from "react-icons/fa6"
+import { Header } from "@/components/Header";
+import Link from "next/link";
+import { FaArrowLeft } from "react-icons/fa6";
+import Image from "next/image";
+import { TableOfContents } from "@/components/About/TableOfContents";
+import { Introduction } from "@/components/About/Introduction";
+import { Approach } from "@/components/About/Approach";
+import { Pricing } from "@/components/About/Pricing";
+import { Closing } from "@/components/About/Closing";
 
 export default function About() {
   return (
     <div className="relative min-h-screen">
       <Header />
-      <main className="pt-32">
+      <main className="py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-xl mx-auto mt-8"> {/* 5/12 of container width */}
-            <div className="space-y-8">
-              <Link 
+          <div className="relative">
+            <div className="hidden lg:block lg:fixed lg:left-[calc(50vw-35rem)] lg:z-10 lg:top-32">
+              <TableOfContents />
+            </div>
+            <div className="max-w-2xl mx-auto mt-8">
+              <Link
                 href="/"
                 className="group inline-flex items-center text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors duration-200"
               >
@@ -18,31 +27,29 @@ export default function About() {
                 Back to home
               </Link>
 
-              <h1 className="text-3xl sm:text-5xl font-semibold text-left">
-                About Lindy Wealth
-              </h1>
+              <article className="mt-12 bg-white shadow-[0_0_30px_rgba(0,0,0,0.08)] rounded-lg sm:p-16">
+                <div className="mx-auto space-y-8 text-base leading-relaxed">
+                  <Introduction />
+                </div>
+              </article>
+              
+              <div className="mx-auto text-base leading-relaxed space-y-16 mt-16">
+                <article className="bg-white shadow-[0_0_30px_rgba(0,0,0,0.08)] rounded-lg sm:p-16">
+                  <Approach />
+                </article>
+                
+                <article className="bg-white shadow-[0_0_30px_rgba(0,0,0,0.08)] rounded-lg sm:p-16">
+                  <Pricing />
+                </article>
 
-              <div className="space-y-6">
-                <p className="text-base text-neutral-600 leading-relaxed">
-                  At Lindy Wealth, we believe in taking a comprehensive, long-term approach to financial planning. Our mission is to help you build and preserve wealth while navigating life's complexities with confidence.
-                </p>
-
-                <p className="text-base text-neutral-600 leading-relaxed">
-                  We understand that every individual and family has unique financial goals, challenges, and aspirations. That's why we take the time to truly understand your situation, values, and what matters most to you.
-                </p>
-
-                <p className="text-base text-neutral-600 leading-relaxed">
-                  Our approach combines sophisticated financial planning strategies with practical, actionable advice. We focus on helping you make informed decisions about your money while keeping more of your wealth working for you.
-                </p>
-
-                <p className="text-base text-neutral-600 leading-relaxed">
-                  Whether you're planning for retirement, managing investments, or looking to build lasting wealth, we're here to provide the guidance and expertise you need to succeed.
-                </p>
+                <article className="bg-white shadow-[0_0_30px_rgba(0,0,0,0.08)] rounded-lg sm:p-16">
+                  <Closing />
+                </article>
               </div>
             </div>
           </div>
         </div>
       </main>
     </div>
-  )
+  );
 }

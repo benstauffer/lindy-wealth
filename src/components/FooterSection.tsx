@@ -22,6 +22,12 @@ export function FooterSection() {
             <Link href="/privacy" className="text-base text-neutral-500 hover:text-neutral-600 underline">
               Privacy
             </Link>
+            <Link href="/about" className="text-base text-neutral-500 hover:text-neutral-600 underline">
+              About
+            </Link>
+            <Link href="/faq" className="text-base text-neutral-500 hover:text-neutral-600 underline">
+              FAQ
+            </Link>
           </div>
 
           <div className="text-base text-neutral-500 space-y-1">
