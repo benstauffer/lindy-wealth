@@ -12,7 +12,7 @@ export default function Home() {
       <Header />
       
       {/* Desktop Layout */}
-      <main className="hidden lg:block pt-32">
+      <main className="hidden lg:block pt-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-12 gap-10">
             {/* Left column - Bio Card */}
@@ -24,7 +24,6 @@ export default function Home() {
             <div className="col-span-6 col-start-6 max-w-xl">
               <div className="space-y-16 md:space-y-24">
                 <HeroSection />
-                <GuidesSection />
                 <WorkSection />
                 <FAQSection />
                 <FooterSection />
@@ -35,12 +34,11 @@ export default function Home() {
       </main>
 
       {/* Mobile Layout */}
-      <main className="lg:hidden pt-32">
+      <main className="lg:hidden pt-24">
         <div className="max-w-xl mx-auto px-6">
           <div className="space-y-16">
             <HeroSection />
             <BioCard />
-            <GuidesSection />
             <WorkSection />
             <FAQSection />
             <FooterSection />

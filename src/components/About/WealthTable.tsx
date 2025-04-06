@@ -26,10 +26,6 @@ export function WealthTable() {
       financial: "Risk-managed portfolios"
     },
     {
-      true: "Time for gravel bicycling",
-      financial: "Automated savings systems"
-    },
-    {
       true: "Time with loved ones",
       financial: "Optimized retirement accounts"
     }

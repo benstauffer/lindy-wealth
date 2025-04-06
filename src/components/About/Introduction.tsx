@@ -4,7 +4,22 @@ export function Introduction() {
 
   return (
     <div className="space-y-8">
-      <h2 id="intro" className="text-2xl font-bold text-[#FB651F]">Introduction</h2>
+      <h2 id="intro" className="text-lg font-bold text-neutral-900">Lindy</h2>
+
+      <div className="border border-neutral-200 rounded-sm p-8 space-y-4 shadow-inner bg-neutral-50">
+        <div className="space-y-1">
+          <h3 className="text-xl font-serif">Lindy</h3>
+          <p className="text-lg text-neutral-600 font-serif">Pronunciation: /LIN-dee/</p>
+        </div>
+
+        <div className="space-y-2">
+          <p className="font-serif text-lg">Noun</p>
+          <div className="space-y-1">
+            <p className="font-serif text-lg"><span className="font-medium">Definition:</span> A heuristic stating that the longer something—an idea, book, or technology—has existed, the longer it is likely to continue existing. In this sense, longevity becomes a signal of robustness, wisdom, and enduring value.</p>
+          </div>
+        </div>
+      </div>
+
       <p>Today, the world is loud and fast.</p>
 
       <p>

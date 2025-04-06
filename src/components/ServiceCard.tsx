@@ -26,9 +26,9 @@ const investmentPricingTiers: PricingTier[] = [
 
 const servicesData: ServiceData[] = [
   {
-    name: "Financial Planning",
+    name: "Plan First",
     color: "#f9fafb",
-    description: "Comprehensive financial planning that addresses all aspects of your financial life",
+    description: "We discuss your goals, values, and vision, and create a financial plan to bring it all to life with clarity and peace of mind.",
     items: [
       "Financial, tax, estate, & insurance planning",
       "Retirement planning & analysis",
@@ -40,9 +40,23 @@ const servicesData: ServiceData[] = [
     }
   },
   {
-    name: "Investment Management",
+    name: "Invest Next",
     color: "#f9fafb",
-    description: "Smart and efficient portfolios tailored to your risk tolerance and financial goals focusing on what we can control: taxes, fees, and diversification.",
+    description: "We work together to build an investment strategy that aligns with your financial plan and focuses on what we can control: tax efficiency, fees, and diversification.",
+    items: [
+      "Tax & cost efficient",
+      "Global diversification",
+      "Tax-loss harvesting"
+    ],
+    pricing: {
+      type: 'table',
+      content: investmentPricingTiers
+    }
+  },
+  {
+    name: "Ongoing Management",
+    color: "#f9fafb",
+    description: "We execute the strategy & continuously adapt as your life evolves. Day to day, you can have peace of mind knowing your finances are aligned with your goals and financial plan.",
     items: [
       "Tax & cost efficient",
       "Global diversification",
@@ -57,39 +71,33 @@ const servicesData: ServiceData[] = [
 
 export function ServicesSection() {
   return (
-    <div className="flex flex-col space-y-2 bg-neutral-50 rounded-2xl p-2 shadow-[0_0_30px_rgba(0,0,0,0.08)] border border-neutral-200">
-      <div className="px-6 pt-2 pb-2 text-sm font-medium text-neutral-500">
-        Services
-      </div>
+    <div className="flex flex-col">
       
-      <div className="flex flex-col space-y-2">
+     
+      <div className="flex flex-col space-y-4">
         {servicesData.map((service: ServiceData, index: number) => (
           <div 
             key={index}
-            className="group relative bg-white rounded-2xl p-6 transition-all duration-300 border border-neutral-100"
+            className="group relative rounded-2xl p-6 transition-all duration-300 border border-neutral-100 shadow-[0_0_30px_rgba(0,0,0,0.08)]"
           >
-            <div className="flex flex-col h-full space-y-4">
-              <div className="flex items-center space-x-4">
-                <h3 className="text-lg font-medium text-neutral-600">
-                  {service.name}
-                </h3>
+            <div className="flex h-full items-center space-x-4">
+              <div className="flex-shrink-0">
+                <span className="flex items-center justify-center w-10 h-10 text-base font-medium rounded-lg shadow-inner text-neutral-600 bg-neutral-100 border border-neutral-300">
+                  {index + 1}
+                </span>
               </div>
               
-              <p className="text-base text-neutral-600">
-                {service.description}
-              </p>
+              <div className="flex flex-col space-y-2">
+                <h3 className="text-lg font-medium text-black">
+                  {service.name}
+                </h3>
+                
+                <p className="text-base text-neutral-600">
+                  {service.description}
+                </p>
 
-              <ul className="space-y-2">
-                {service.items.map((item, i) => (
-                  <li key={i} className="flex items-center space-x-2 text-sm text-neutral-600">
-                    <span className="w-1 h-1 bg-neutral-400 rounded-full"></span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Pricing Section */}
-              
+                {/* Pricing Section */}
+              </div>
             </div>
           </div>
         ))}

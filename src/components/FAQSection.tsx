@@ -20,7 +20,7 @@ export function FAQSection() {
       <div className="flex flex-col space-y-4 w-full">
         <Link href="/faq">
           <FAQCard
-            title="Frequently Asked Questions"
+            title="Review FAQs "
             description="Common questions about financial planning, investment management, and working together."
           />
         </Link>

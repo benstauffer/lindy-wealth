@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { FaArrowRight } from "react-icons/fa6"
+import { FiArrowRight } from "react-icons/fi"
 
 export function Header() {
   return (
@@ -23,10 +23,10 @@ export function Header() {
           </Link>
           <Link 
             href="/contact"
-            className="group inline-flex items-center px-4 py-2 text-sm font-medium shadow-inner text-black bg-neutral-100 border border-neutral-300 hover:bg-neutral-300 hover:border-neutral-400 rounded-lg transition-colors duration-200"
+            className="group inline-flex items-center px-4 py-2 text-sm font-medium shadow-inner text-neutral-600 hover:text-neutral-900 bg-neutral-100 border border-neutral-300 hover:bg-neutral-300 hover:border-neutral-400 rounded-lg transition-colors duration-200"
           >
             Book a call
-            <FaArrowRight className="ml-2 transform transition-transform duration-200 group-hover:translate-x-1" />
+            <FiArrowRight className="ml-2 transform transition-transform duration-200 group-hover:translate-x-1" />
           </Link>
         </nav>
       </div>

@@ -1,48 +1,69 @@
 'use client'
 
 import Image from 'next/image'
-import { FaArrowRight } from "react-icons/fa6"
+import { FiArrowRight } from "react-icons/fi"
+import { FiArrowUpRight } from "react-icons/fi";
 
 export function HeroSection() {
   return (
     <section className="relative flex flex-col items-start justify-start mt-8">
-      <div className="w-full space-y-12"> 
+      <div className="w-full space-y-12 relative"> 
+        {/* Decorative Image */}
+        <div className="absolute -right-32 top-[450px] hidden xl:block">
+          <Image
+            src="/images/happy.png"
+            alt="Happy people with a plan"
+            width={100}
+            height={100}
+            className="opacity-90"
+          />
+        </div>
+
         {/* Hero Text */}
         <div className="w-full space-y-8">
           <div className="space-y-6">
-            <h1 className="text-3xl sm:text-5xl font-semibold text-left">
-              Financial advice & planning to reach your goals with confidence. 
-              <br />
-              <span className="text-[#FB651F]">Less guesswork, more peace of mind.</span>
+            <h1 className="block text-3xl sm:text-5xl font-semibold text-left">
+              <div className="leading-[1.1]">
+                Financial advice & planning to reach your goals with confidence.
+              </div>
+              <div className="text-[#FB651F] leading-[1.1]">
+                Less guesswork, more peace of mind.
+              </div>
             </h1>
 
-            <p className="text-base text-neutral-600 leading-relaxed">
+            <p className="text-base text-neutral-600 leading-[1.8]">
               Lindy Wealth helps forward-looking individuals and families with their financial lives so they can keep more of their wealth and focus more on what matters most.
             </p>
 
-            {/* Newsletter Section */}
-            <div className="space-y-4">
-              <div className="space-y-2">
-                <p className="text-sm text-neutral-500">
-                  Join my email list. It's packed with financial planning strategies and practical tips for optimizing your financial life.
-                </p>
-              </div>
+            <div className="w-full h-[250px] border border-neutral-200">
+              <Image 
+                src="/images/drinks.png" 
+                alt="Lindy Wealth" 
+                width={1200}
+                height={475}
+                className="w-full h-full object-cover object-center rounded-xl"
+                priority
+              />
+            </div>
+
+            <div className="flex items-center space-x-4">
+              <a 
+                className="group inline-flex items-center px-4 py-2 text-sm font-medium shadow-inner text-white border bg-[#FB651F] border-[#e85d1c] hover:bg-[#e85d1c] hover:border-[#d25419] rounded-lg transition-colors duration-200"
+                href="#help"
+              >
+                Get started
+                <FiArrowRight className="ml-2 transform transition-transform duration-200 group-hover:translate-x-1" />
+              </a>
               
-              <div className="w-full max-w-xl">
-                <iframe 
-                  src="https://embeds.beehiiv.com/886d101b-12e1-438b-9c0e-0b06f7c1f176?slim=true" 
-                  data-test-id="beehiiv-embed" 
-                  height="52" 
-                  frameBorder="0" 
-                  scrolling="no" 
-                  style={{ 
-                    margin: 0, 
-                    borderRadius: '0px !important', 
-                    backgroundColor: 'transparent',
-                    width: '100%'
-                  }}
-                />
-              </div>
+              <a 
+                className="group inline-flex items-center text-sm font-medium bg-neutral-100 border border-neutral-300 hover:bg-neutral-300 hover:border-neutral-400 text-neutral-600 hover:text-neutral-900 px-4 py-2 rounded-lg transition-colors duration-200 shadow-inner"
+                href="https://benstauffer.substack.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Read blog
+                <FiArrowUpRight className="ml-1 w-4 h-4 transform transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </a>
             </div>
           </div>
         </div>
