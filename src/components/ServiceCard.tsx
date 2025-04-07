@@ -88,7 +88,7 @@ export function ServicesSection() {
               </div>
               
               <div className="flex flex-col space-y-2">
-                <h3 className="text-lg font-medium text-black">
+                <h3 className="text-lg font-medium text-neutral-600">
                   {service.name}
                 </h3>
                 

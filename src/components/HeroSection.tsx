@@ -6,7 +6,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 export function HeroSection() {
   return (
-    <section className="relative flex flex-col items-start justify-start mt-8">
+    <section className="relative flex flex-col items-start justify-start">
       <div className="w-full space-y-12 relative"> 
         {/* Decorative Image */}
         <div className="absolute -right-32 top-[450px] hidden xl:block">
@@ -55,15 +55,7 @@ export function HeroSection() {
                 <FiArrowRight className="ml-2 transform transition-transform duration-200 group-hover:translate-x-1" />
               </a>
               
-              <a 
-                className="group inline-flex items-center text-sm font-medium bg-neutral-100 border border-neutral-300 hover:bg-neutral-300 hover:border-neutral-400 text-neutral-600 hover:text-neutral-900 px-4 py-2 rounded-lg transition-colors duration-200 shadow-inner"
-                href="https://benstauffer.substack.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Read blog
-                <FiArrowUpRight className="ml-1 w-4 h-4 transform transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
+             
             </div>
           </div>
         </div>

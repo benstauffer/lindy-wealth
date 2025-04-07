@@ -54,6 +54,18 @@ export function BioCard() {
             </div>
           </div>
 
+          {/* Thinking Image */}
+          <div className="hidden md:flex justify-end">
+            <div className="w-48 h-48 relative">
+              <Image
+                src="/images/thinking.png"
+                alt="thinking"
+                fill
+                className=""
+                priority
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

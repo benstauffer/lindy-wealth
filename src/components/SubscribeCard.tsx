@@ -3,6 +3,22 @@
 export function BlogCard() {
   return (
 <div className="w-full">
+  <div 
+      className="group relative rounded-2xl p-6 transition-all bg-white border border-neutral-100 shadow-[0_0_30px_rgba(0,0,0,0.08)] cursor-pointer"
+    >
+      <div className="flex flex-col h-full space-y-2">
+        <div className="flex items-center space-x-2">
+          <h3 className="flex items-center space-x-3 text-lg font-medium text-neutral-600">
+            <span>Subscribe to my newsletter</span>
+          </h3>
+        </div>
+        
+        <p className="text-base text-neutral-600">
+        Irregular essays and frameworks on wealth and financial planning. Short-term commentary and predictions excluded.
+        </p>
+        </div>
+        
+        <div className="mt-4">
         <iframe 
           src="https://embeds.beehiiv.com/886d101b-12e1-438b-9c0e-0b06f7c1f176?slim=true" 
           data-test-id="beehiiv-embed" 
@@ -16,6 +32,8 @@ export function BlogCard() {
             width: '100%'
           }}
         />
-      </div>
+        </div>
+      </div>    
+    </div>
   )
 }

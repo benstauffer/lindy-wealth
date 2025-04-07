@@ -3,8 +3,8 @@ import { HeroSection } from '@/components/HeroSection'
 import { FooterSection } from '@/components/FooterSection'
 import { BioCard } from '@/components/BioCard'
 import { WorkSection } from '@/components/WorkSection'
-import { GuidesSection } from '@/components/GuidesSection'
 import { FAQSection } from '@/components/FAQSection'
+import { BlogSection } from '@/components/Blog'
 
 export default function Home() {
   return (
@@ -24,6 +24,7 @@ export default function Home() {
             <div className="col-span-6 col-start-6 max-w-xl">
               <div className="space-y-16 md:space-y-24">
                 <HeroSection />
+                <BlogSection />
                 <WorkSection />
                 <FAQSection />
                 <FooterSection />
@@ -39,6 +40,7 @@ export default function Home() {
           <div className="space-y-16">
             <HeroSection />
             <BioCard />
+            <BlogSection />
             <WorkSection />
             <FAQSection />
             <FooterSection />
