@@ -47,7 +47,7 @@ export function FooterSection() {
           </div>
 
           <Link href="/">
-            <div className="w-10 h-10 mt-4 text-neutral-400 hover:text-neutral-900">
+            <div className="w-10 h-10 my-16 text-neutral-400 hover:text-neutral-900">
               <LogoSvg />
             </div>
           </Link>
