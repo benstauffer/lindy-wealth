@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { FiArrowRight } from "react-icons/fi"
+import Image from 'next/image';
 
 export function Header() {
   return (
@@ -10,7 +11,14 @@ export function Header() {
         {/* Left Logo */}
         <div>
           <Link href="/">
-            <span className="font-['Georgia'] text-2xl md:text-3xl">
+            <Image 
+              src="/assets/dropcaps/Logo.png" 
+              alt="Lindy Wealth Logo" 
+              width={40}
+              height={40}
+              className="md:hidden"
+            />
+            <span className="hidden md:inline font-['Georgia'] text-2xl md:text-3xl">
               Lindy Wealth
             </span>
           </Link>

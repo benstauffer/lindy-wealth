@@ -22,11 +22,11 @@ export function HeroSection() {
         {/* Hero Text */}
         <div className="w-full space-y-8">
           <div className="space-y-6">
-            <h1 className="block text-3xl sm:text-5xl font-semibold text-left">
+            <h1 className="block text-3xl sm:text-5xl font-semibold text-left ">
               <div className="leading-[1.1]">
                 Financial advice & planning to reach your goals with confidence.
               </div>
-              <div className="text-[#FB651F] leading-[1.1]">
+              <div className="text-red-500 leading-[1.1]">
                 Less guesswork, more peace of mind.
               </div>
             </h1>
@@ -48,7 +48,7 @@ export function HeroSection() {
 
             <div className="flex items-center space-x-4">
               <a 
-                className="group inline-flex items-center px-4 py-2 text-sm font-medium shadow-inner text-white border bg-[#FB651F] border-[#e85d1c] hover:bg-[#e85d1c] hover:border-[#d25419] rounded-lg transition-colors duration-200"
+                className="group inline-flex items-center px-4 py-2 text-sm font-medium shadow-inner text-neutral-600 border bg-neutral-100 border-neutral-300 hover:bg-neutral-300 hover:border-neutral-400 rounded-lg transition-colors duration-200"
                 href="#help"
               >
                 Get started

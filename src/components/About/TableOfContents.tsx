@@ -10,8 +10,7 @@ interface TOCItem {
 export function TableOfContents() {
   const tocItems: TOCItem[] = [
     { id: 'intro', text: 'Introduction' },
-    { id: 'approach', text: 'Services & Approach' },
-    { id: 'pricing', text: 'Pricing' },
+    { id: 'approach', text: 'Services & Pricing' },
     { id: 'closing', text: 'Working Together' }
   ];
 
@@ -92,24 +91,32 @@ export function TableOfContents() {
   }, []);
 
   return (
-    <nav className="w-40">
-      <div className="bg-white/50 backdrop-blur-sm rounded-lg p-3 sticky top-32">
-        <ul className="space-y-1">
-          {tocItems.map((item) => (
-            <li key={item.id}>
-              <button
-                onClick={() => scrollToSection(item.id)}
-                className={`text-xs w-full text-left px-2 py-1 rounded transition-colors duration-200 ${
-                  activeId === item.id
-                    ? 'text-neutral-900 bg-neutral-100'
-                    : 'text-neutral-500 hover:text-neutral-900 hover:bg-neutral-50'
-                }`}
-              >
-                {item.text}
-              </button>
-            </li>
-          ))}
-        </ul>
+    <nav>
+      <div className="border rounded-sm p-8 space-y-2 shadow-inner bg-neutral-50 border-neutral-200">
+        <div className="gap-2">
+          <div className="w-full">
+            <h3 className="text-2xl font-bold text-neutral-900 uppercase font-[georgia] mb-4">Contents</h3>
+            <table className="w-full border-separate border-spacing-y-2">
+              <tbody>
+                {tocItems.map((item, index) => (
+                  <tr key={item.id}>
+                    <td className="w-8 pr-3 text-right font-medium text-base text-neutral-400 align-top">
+                      {index + 1}.
+                    </td>
+                    <td className="text-left align-top">
+                      <button
+                        onClick={() => scrollToSection(item.id)}
+                        className="text-base hover:underline text-neutral-900 transition-colors duration-200 text-left"
+                      >
+                        {item.text}
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </div>
     </nav>
   );

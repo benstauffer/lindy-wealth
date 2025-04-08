@@ -10,7 +10,7 @@ export function BioCard() {
       <div className="flex gap-6">
         {/* Left - Profile Image */}
         <div className="flex-shrink-0">
-          <div className="w-24 h-24 rounded-3xl bg-[#FB651F] relative">
+          <div className="w-24 h-24 rounded-3xl bg-neutral-50 relative shadow-inner">
             {/* <Image
               src=""
               alt="Ben Stauffer"
