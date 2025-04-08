@@ -22,14 +22,6 @@ export default function About() {
             </Link>
 
             <div className="space-y-8 mt-12">
-
-              <div>
-                <h2 id="intro" className="text-2xl md:text-3xl font-bold text-neutral-900 uppercase font-[georgia]">About Lindy Wealth</h2>
-              </div>
-              
-              <div>
-                <TableOfContents />
-              </div>
               
               <article id="intro">
                 <Introduction />

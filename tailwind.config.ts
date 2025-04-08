@@ -45,6 +45,7 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'lindy-green': '#327E0B',
       },
       // You can customize breakpoints here if needed
       screens: {

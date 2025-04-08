@@ -82,17 +82,17 @@ export function ServicesSection() {
           >
             <div className="flex h-full items-center space-x-4">
               <div className="flex-shrink-0">
-                <span className="flex items-center justify-center w-10 h-10 text-base font-medium rounded-lg shadow-inner text-neutral-600 bg-neutral-100 border border-neutral-300">
+                <span className="deutsche-font text-6xl text-neutral-600 px-2 font-normal leading-none flex-shrink-0">
                   {index + 1}
                 </span>
               </div>
               
               <div className="flex flex-col space-y-2">
-                <h3 className="text-lg font-medium text-neutral-600">
+                <h3 className="text-lg font-medium text-neutral-700 font-['Georgia']">
                   {service.name}
                 </h3>
                 
-                <p className="text-base text-neutral-600">
+                <p className="text-base text-neutral-700 font-['Georgia']">
                   {service.description}
                 </p>
 

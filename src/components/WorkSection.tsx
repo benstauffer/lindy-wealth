@@ -9,7 +9,7 @@ export function WorkSection() {
   return (
     <section id="process" className="w-full relative">
       {/* Decorative Image */}
-      <div className="absolute -right-32 top-48 hidden xl:block">
+      <div className="absolute -right-32 top-40 hidden xl:block">
         <Image
           src="/images/simple.png"
           alt="Simple one step at a time"
@@ -21,10 +21,10 @@ export function WorkSection() {
 
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-base font-semibold text-neutral-500">
+          <h2 className="text-base text-neutral-700 font-['Georgia']">
             Work with me
           </h2>
-          <p className="text-base text-neutral-400 mt-1">
+          <p className="text-base text-neutral-500 font-['Georgia']">
             See my approach & services
           </p>
         </div>

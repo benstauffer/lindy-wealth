@@ -8,12 +8,12 @@ export function BlogCard() {
     >
       <div className="flex flex-col h-full space-y-2">
         <div className="flex items-center space-x-2">
-          <h3 className="flex items-center space-x-3 text-lg font-medium text-neutral-600">
+          <h3 className="flex items-center space-x-3 text-lg font-medium text-neutral-700 font-['Georgia']">
             <span>Subscribe to my newsletter</span>
           </h3>
         </div>
         
-        <p className="text-base text-neutral-600">
+        <p className="text-base text-neutral-700 font-['Georgia']">
         Irregular essays and frameworks on wealth and financial planning. Short-term commentary and predictions excluded.
         </p>
         </div>

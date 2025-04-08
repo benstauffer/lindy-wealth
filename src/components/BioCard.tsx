@@ -26,7 +26,7 @@ export function BioCard() {
           {/* Bio Information */}
           <div className="space-y-2">
             <h2 className="text-lg font-medium">I'm Ben Stauffer <span className="text-base text-neutral-500 font-normal">CFP®</span></h2> 
-            <p className="text-base text-neutral-600">
+            <p className="text-base text-neutral-700 leading-[1.5] font-['Georgia']">
               I'm a Certified Financial Planner™ helping individuals & families organize their financial lives. I simplify complexity, optimize wealth, and help you achieve your goals.
               <br />
               <br />

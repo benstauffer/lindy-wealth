@@ -11,13 +11,11 @@ export function Header() {
         {/* Left Logo */}
         <div>
           <Link href="/">
-            <Image 
-              src="/assets/dropcaps/Logo.png" 
-              alt="Lindy Wealth Logo" 
-              width={40}
-              height={40}
-              className="md:hidden"
-            />
+            {/* Mobile Logo: Use styled 'L' */}
+            <span className="md:hidden deutsche-font text-5xl leading-none text-neutral-900">
+              L
+            </span>
+            {/* Desktop Logo: Keep as text */}
             <span className="hidden md:inline font-['Georgia'] text-2xl md:text-3xl">
               Lindy Wealth
             </span>

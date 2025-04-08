@@ -9,7 +9,7 @@ export function HeroSection() {
     <section className="relative flex flex-col items-start justify-start">
       <div className="w-full space-y-12 relative"> 
         {/* Decorative Image */}
-        <div className="absolute -right-32 top-[450px] hidden xl:block">
+        <div className="absolute -right-32 top-[375px] hidden xl:block">
           <Image
             src="/images/happy.png"
             alt="Happy people with a plan"
@@ -22,17 +22,15 @@ export function HeroSection() {
         {/* Hero Text */}
         <div className="w-full space-y-8">
           <div className="space-y-6">
-            <h1 className="block text-3xl sm:text-5xl font-semibold text-left ">
+            <h1 className="block text-3xl sm:text-5xl text-left font-['Georgia']">
               <div className="leading-[1.1]">
-                Financial advice & planning to reach your goals with confidence.
+                Financial advice & planning to reach your goals with <span className="text-red-500 font-medium">confidence.</span>
               </div>
-              <div className="text-red-500 leading-[1.1]">
-                Less guesswork, more peace of mind.
-              </div>
+              
             </h1>
 
-            <p className="text-base text-neutral-600 leading-[1.8]">
-              Lindy Wealth helps forward-looking individuals and families with their financial lives so they can keep more of their wealth and focus more on what matters most.
+            <p className="text-base text-neutral-700 leading-[1.5] font-['Georgia']">
+              Lindy Wealth helps forward-looking individuals and families with their financial lives so they can keep more of their wealth and focus on what matters most. <span className="">Less guesswork, more peace of mind.</span>
             </p>
 
             <div className="w-full h-[250px] border border-neutral-200">

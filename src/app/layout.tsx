@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -66,7 +66,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body 
-        className={`${inter.className} min-h-screen text-black`}
+        className={`${inter.variable} min-h-screen text-black font-sans`}
         style={{ 
           overscrollBehavior: 'none', 
           position: 'relative',
