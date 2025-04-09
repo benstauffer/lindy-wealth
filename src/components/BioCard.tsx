@@ -10,14 +10,14 @@ export function BioCard() {
       <div className="flex gap-6">
         {/* Left - Profile Image */}
         <div className="flex-shrink-0">
-          <div className="w-24 h-24 rounded-3xl bg-neutral-50 relative shadow-inner">
-            {/* <Image
-              src=""
+          <div className="w-24 h-24 rounded-3xl bg-neutral-50 relative shadow-[0_0_20px_rgba(0,0,0,0.06)] ">
+            <Image
+              src="/images/Ben.png"
               alt="Ben Stauffer"
               fill
-              className="object-cover bg-[#FB651F]"
+              className="object-cover bg-white"
               priority
-            /> */}
+            /> 
           </div>
         </div>
 
@@ -25,18 +25,18 @@ export function BioCard() {
         <div className="flex-grow space-y-4">
           {/* Bio Information */}
           <div className="space-y-2">
-            <h2 className="text-lg font-medium">I'm Ben Stauffer <span className="text-base text-neutral-500 font-normal">CFP®</span></h2> 
-            <p className="text-base text-neutral-700 leading-[1.5] font-['Georgia']">
-              I'm a Certified Financial Planner™ helping individuals & families organize their financial lives. I simplify complexity, optimize wealth, and help you achieve your goals.
-              <br />
-              <br />
-              My mission is to help empower you with thoughtful financial planning that helps you live your richest life.
-            </p>
+            <h2 className="text-base text-neutral-700" >I'm Ben Stauffer <span className="text-base text-neutral-700 font-normal">CFP®</span></h2> 
+            <p className="text-base text-neutral-700 leading-[1.5]">
+              I'm a Certified Financial Planner™ helping individuals & families organize their financial lives.
+             </p>
+             <p className="text-base text-neutral-700 leading-[1.5]">
+             My mission is to empower you with thoughtful financial planning that helps you achieve your goals.
+             </p>
           </div>
 
           {/* Find Me */}
           <div className="space-y-2">
-            <h3 className="text-xs font-medium">Socials</h3>
+            <h3 className="text-sm">Socials</h3>
             <div className="flex items-center space-x-3 text-sm">
               <Link href="https://twitter.com" target="_blank" className="hover:text-neutral-700 text-neutral-500 underline">
                Twitter

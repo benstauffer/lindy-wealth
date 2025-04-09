@@ -33,7 +33,7 @@ export function Approach() {
   return (
     <div className="mt-8 md:mt-0">
       <h2 id="approach" className="text-2xl md:text-2xl text-neutral-700 font-['Georgia'] mb-6 border-b border-neutral-200 pb-2 mt-20">Services & Pricing</h2>
-      <p className="text-lg leading-relaxed mb-8 font-['Georgia'] text-neutral-800">
+      <p className="text-base leading-relaxed mb-8 text-neutral-700">
         I offer two core services: investment management and financial planning. 
         Each designed to give you clarity and confidence in your financial future.
       </p>
@@ -43,7 +43,7 @@ export function Approach() {
 
         {/* Investment Management Column */}
         <div>
-          <h3 className="text-xl font-['Georgia'] text-neutral-700 mb-4">Investment Management</h3>
+          <h3 className="text-lg text-neutral-700 mb-4">Investment Management</h3>
           <ul className="space-y-2 list-disc pl-5 text-sm text-neutral-500">
             {investmentPoints.map((point, i) => (
               <li key={`invest-${i}`}>{point}</li>
@@ -56,7 +56,7 @@ export function Approach() {
 
         {/* Financial Planning Column */}
         <div>
-          <h3 className="text-xl font-['Georgia'] text-neutral-700 mb-4">Financial Planning</h3>
+          <h3 className="text-lg text-neutral-700 mb-4">Financial Planning</h3>
           <ul className="space-y-2 list-disc pl-5 text-sm text-neutral-500">
             {planningPoints.map((point, i) => (
               <li key={`plan-${i}`}>{point}</li>

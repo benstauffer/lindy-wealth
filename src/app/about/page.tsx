@@ -11,7 +11,7 @@ export default function About() {
     <div className="relative min-h-screen">
       <Header />
       <main className="py-32">
-        <div className="max-w-3xl mx-auto px-6 lg:px-8">
+        <div className="max-w-2xl mx-auto px-6 lg:px-8">
           <div className="max-w-2xl mx-auto mt-8">
             <Link
               href="/"
@@ -25,14 +25,6 @@ export default function About() {
               
               <article id="intro">
                 <Introduction />
-              </article>
-              
-              <article id="approach">
-                <Approach />
-              </article>
-              
-              <article id="closing">
-                <Closing />
               </article>
             </div>
           </div>

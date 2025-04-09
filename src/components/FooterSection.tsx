@@ -3,7 +3,7 @@ import Link from 'next/link'
 export function FooterSection() {
   return (
     <section id="contact" className="w-full mt-24 pb-16">
-      <h2 className="text-base text-neutral-700 font-['Georgia']">
+      <h2 className="text-lg text-neutral-700 font-['Georgia']">
         Contact & more links
       </h2>
       
@@ -30,7 +30,7 @@ export function FooterSection() {
             </Link>
           </div>
 
-          <div className="text-base text-neutral-500 space-y-1 font-['Georgia']">
+          <div className="text-lg text-neutral-500 space-y-1 font-['Georgia']">
             <div>Lindy Wealth, LLC</div>
             <div>Los Angeles, CA</div>
           </div>

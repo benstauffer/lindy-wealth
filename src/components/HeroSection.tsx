@@ -29,7 +29,7 @@ export function HeroSection() {
               
             </h1>
 
-            <p className="text-base text-neutral-700 leading-[1.5] font-['Georgia']">
+            <p className="text-[17px] text-neutral-700 leading-[1.5]">
               Lindy Wealth helps forward-looking individuals and families with their financial lives so they can keep more of their wealth and focus on what matters most. <span className="">Less guesswork, more peace of mind.</span>
             </p>
 
@@ -46,7 +46,7 @@ export function HeroSection() {
 
             <div className="flex items-center space-x-4">
               <a 
-                className="group inline-flex items-center px-4 py-2 text-sm font-medium shadow-inner text-white border bg-red-500 border-red-700 hover:bg-red-600 hover:border-red-800 rounded-lg transition-colors duration-200"
+                className="group inline-flex items-center px-4 py-2 text-base font-medium shadow-inner text-white border bg-red-500 border-red-700 hover:bg-red-600 hover:border-red-800 rounded-lg transition-colors duration-200"
                 href="#help"
               >
                 Get started

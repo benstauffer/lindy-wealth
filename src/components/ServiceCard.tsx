@@ -78,21 +78,21 @@ export function ServicesSection() {
         {servicesData.map((service: ServiceData, index: number) => (
           <div 
             key={index}
-            className="group relative rounded-2xl p-6 transition-all duration-300 border border-neutral-100 shadow-[0_0_30px_rgba(0,0,0,0.08)]"
+            className="group relative rounded-2xl p-6 transition-all duration-300 border border-neutral-100 shadow-[0_0_20px_rgba(0,0,0,0.06)]"
           >
             <div className="flex h-full items-center space-x-4">
               <div className="flex-shrink-0">
-                <span className="deutsche-font text-6xl text-neutral-600 px-2 font-normal leading-none flex-shrink-0">
+                <span className="deutsche-font text-6xl text-red-500 px-2 font-normal leading-none flex-shrink-0">
                   {index + 1}
                 </span>
               </div>
               
-              <div className="flex flex-col space-y-2">
-                <h3 className="text-lg font-medium text-neutral-700 font-['Georgia']">
+              <div className="flex flex-col space-y-1">
+                <h3 className="text-base font-medium text-neutral-700 ">
                   {service.name}
                 </h3>
                 
-                <p className="text-base text-neutral-700 font-['Georgia']">
+                <p className="text-base text-neutral-700">
                   {service.description}
                 </p>
 

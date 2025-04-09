@@ -9,19 +9,19 @@ export function Closing() {
       <h2 className="text-2xl md:text-2xl text-neutral-700 font-['Georgia'] mb-6 border-b border-neutral-200 pb-2 mt-20">Working Together</h2>
       
       <div>
-        <p className="text-lg leading-relaxed mb-6 font-['Georgia'] text-neutral-800">
+        <p className="text-base leading-relaxed mb-6 text-neutral-700">
           I work with a select group of clients who are committed to building long-term wealth through disciplined investing and comprehensive financial planning.
         </p>
         
-        <p className="text-lg leading-relaxed mb-6 font-['Georgia'] text-neutral-800">
+        <p className="text-base leading-relaxed mb-6 text-neutral-700">
           My approach is collaborative and transparent. We'll work together to understand your goals, develop a tailored strategy, and implement it with precision and care.
         </p>
 
-        <p className="text-lg leading-relaxed mb-6 font-['Georgia'] text-neutral-800">
+        <p className="text-base leading-relaxed mb-6 text-neutral-700">
           If you're ready to take the next step in your financial journey, let's connect and explore how we can work together.
         </p>
 
-        <p className="text-lg leading-relaxed mb-6 font-['Georgia'] text-neutral-800">
+        <p className="text-base leading-relaxed mb-6 text-neutral-700">
             - Ben Stauffer
             <br />
             Founder, Lindy Wealth

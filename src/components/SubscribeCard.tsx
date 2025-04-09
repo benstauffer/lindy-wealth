@@ -4,16 +4,16 @@ export function BlogCard() {
   return (
 <div className="w-full">
   <div 
-      className="group relative rounded-2xl p-6 transition-all bg-white border border-neutral-100 shadow-[0_0_30px_rgba(0,0,0,0.08)]"
+      className="group relative rounded-2xl p-6 transition-all bg-white border border-neutral-100 shadow-[0_0_20px_rgba(0,0,0,0.06)]"
     >
-      <div className="flex flex-col h-full space-y-2">
+      <div className="flex flex-col h-full space-y-1">
         <div className="flex items-center space-x-2">
-          <h3 className="flex items-center space-x-3 text-lg font-medium text-neutral-700 font-['Georgia']">
+          <h3 className="flex items-center space-x-3 text-base font-medium text-neutral-700">
             <span>Subscribe to my newsletter</span>
           </h3>
         </div>
         
-        <p className="text-base text-neutral-700 font-['Georgia']">
+        <p className="text-base text-neutral-700">
         Irregular essays and frameworks on wealth and financial planning. Short-term commentary and predictions excluded.
         </p>
         </div>

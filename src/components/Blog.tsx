@@ -8,10 +8,10 @@ export function BlogSection() {
     <section id="blog" className="w-full">
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-base text-neutral-700 font-['Georgia']">
+          <h2 className="text-lg text-neutral-700 font-['Georgia']">
             Read my blog
           </h2>
-          <p className="text-base text-neutral-500 font-['Georgia']">
+          <p className="text-base text-neutral-700">
             Thoughts on wealth & life.
           </p>
         </div>

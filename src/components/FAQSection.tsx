@@ -8,10 +8,10 @@ export function FAQSection() {
     <section id="faqs" className="w-full">
       <div className="flex items-center justify-between mb-4 bg-white">
         <div>
-          <h2 className="text-base text-neutral-700 font-['Georgia']">
+          <h2 className="text-lg text-neutral-700 font-['Georgia']">
             Have questions?
           </h2>
-          <p className="text-base text-neutral-500 font-['Georgia']">
+          <p className="text-base text-neutral-700">
             Review the FAQs or send me an <Link href="mailto:ben@lindywealth.com" className="text-neutral-500 hover:text-neutral-900 hover:underline">email</Link>
           </p>
         </div>
