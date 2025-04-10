@@ -80,7 +80,7 @@ export function HeroSection() {
               <Link href="/services" className="inline-flex items-center px-4 py-3 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200">
                 Services
               </Link>
-              <Link href="/blog" className="inline-flex items-center px-4 py-3 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200">
+              <Link href="https://blog.lindywealth.com" className="inline-flex items-center px-4 py-3 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200">
                 Blog
               </Link>
               <Link href="/faq" className="inline-flex items-center px-4 py-3 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200">
