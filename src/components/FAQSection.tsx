@@ -12,7 +12,7 @@ export function FAQSection() {
             Have questions?
           </h2>
           <p className="text-base text-neutral-700">
-            Review the FAQs or send me an <Link href="mailto:ben@lindywealth.com" className="text-neutral-500 hover:text-neutral-900 hover:underline">email</Link>
+            Review frequently asked questions
           </p>
         </div>
       </div>

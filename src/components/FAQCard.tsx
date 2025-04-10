@@ -10,7 +10,7 @@ type FAQCardProps = {
 export function FAQCard({ title, description }: FAQCardProps) {
   return (
     <div 
-      className="group relative rounded-2xl p-6 transition-all bg-white border border-neutral-100 shadow-[0_0_20px_rgba(0,0,0,0.06)] cursor-pointer"
+      className="group relative rounded-2xl p-6 transition-all bg-neutral-50 border border-neutral-200 cursor-pointer"
     >
       <div className="flex flex-col h-full space-y-1">
         <div className="flex items-center space-x-2">

@@ -29,8 +29,8 @@ export function Header() {
           </Link>
           <Link 
             href="/contact"
-            className="group inline-flex items-center px-4 py-2 text-sm font-medium shadow-inner text-neutral-600 hover:text-neutral-900 bg-neutral-100 border border-neutral-300 hover:bg-neutral-300 hover:border-neutral-400 rounded-lg transition-colors duration-200"
-          >
+            className="group inline-flex items-center px-4 py-2 text-sm font-medium shadow-md text-white border bg-red-500 border-red-700 hover:bg-red-600 hover:border-red-800 rounded-lg transition-colors duration-200"
+            >
             Book a call
             <FiArrowRight className="ml-2 transform transition-transform duration-200 group-hover:translate-x-1" />
           </Link>

@@ -10,14 +10,14 @@ export function BioCard() {
       <div className="flex gap-6">
         {/* Left - Profile Image */}
         <div className="flex-shrink-0">
-          <div className="w-24 h-24 rounded-3xl bg-neutral-50 relative shadow-[0_0_20px_rgba(0,0,0,0.06)] ">
-            <Image
-              src="/images/Ben.png"
+          <div className="w-24 h-24 rounded-3xl bg-neutral-100 border border-neutral-300 relative shadow-[0_0_20px_rgba(0,0,0,0.06)] ">
+            {/* <Image
+              src=""
               alt="Ben Stauffer"
               fill
               className="object-cover bg-white"
               priority
-            /> 
+            /> */}
           </div>
         </div>
 
@@ -55,7 +55,7 @@ export function BioCard() {
           </div>
 
           {/* Thinking Image */}
-          <div className="hidden md:flex justify-end">
+          {/* <div className="hidden md:flex justify-end">
             <div className="w-48 h-48 relative">
               <Image
                 src="/images/thinking.png"
@@ -65,7 +65,7 @@ export function BioCard() {
                 priority
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

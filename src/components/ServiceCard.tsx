@@ -74,15 +74,15 @@ export function ServicesSection() {
     <div className="flex flex-col">
       
      
-      <div className="flex flex-col space-y-4">
+      <div className="flex flex-col space-y-2">
         {servicesData.map((service: ServiceData, index: number) => (
           <div 
             key={index}
-            className="group relative rounded-2xl p-6 transition-all duration-300 border border-neutral-100 shadow-[0_0_20px_rgba(0,0,0,0.06)]"
+            className="group relative rounded-2xl p-6 transition-all duration-300 border border-neutral-200 bg-neutral-50"
           >
             <div className="flex h-full items-center space-x-4">
               <div className="flex-shrink-0">
-                <span className="deutsche-font text-6xl text-red-500 px-2 font-normal leading-none flex-shrink-0">
+                <span className="deutsche-font text-4xl text-neutral-500 px-2 font-normal leading-none flex-shrink-0">
                   {index + 1}
                 </span>
               </div>

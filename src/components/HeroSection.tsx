@@ -9,7 +9,7 @@ export function HeroSection() {
     <section className="relative flex flex-col items-start justify-start">
       <div className="w-full space-y-12 relative"> 
         {/* Decorative Image */}
-        <div className="absolute -right-32 top-[375px] hidden xl:block">
+        {/*<div className="absolute -right-32 top-[375px] hidden xl:block">
           <Image
             src="/images/happy.png"
             alt="Happy people with a plan"
@@ -17,7 +17,7 @@ export function HeroSection() {
             height={100}
             className="opacity-90"
           />
-        </div>
+        </div>*/}
 
         {/* Hero Text */}
         <div className="w-full space-y-8">
@@ -33,7 +33,7 @@ export function HeroSection() {
               Lindy Wealth helps forward-looking individuals and families with their financial lives so they can keep more of their wealth and focus on what matters most. <span className="">Less guesswork, more peace of mind.</span>
             </p>
 
-            <div className="w-full h-[250px] border border-neutral-200">
+            {/* <div className="w-full h-[250px] border border-neutral-200">
               <Image 
                 src="/images/drinks.png" 
                 alt="Lindy Wealth" 
@@ -42,11 +42,12 @@ export function HeroSection() {
                 className="w-full h-full object-cover object-center rounded-xl"
                 priority
               />
-            </div>
+            </div> */}
 
             <div className="flex items-center space-x-4">
+              
               <a 
-                className="group inline-flex items-center px-4 py-2 text-base font-medium shadow-inner text-white border bg-red-500 border-red-700 hover:bg-red-600 hover:border-red-800 rounded-lg transition-colors duration-200"
+                className="group inline-flex items-center px-4 py-2 text-sm font-medium shadow-md text-white border bg-red-500 border-red-700 hover:bg-red-600 hover:border-red-800 rounded-lg transition-colors duration-200"
                 href="#help"
               >
                 Get started

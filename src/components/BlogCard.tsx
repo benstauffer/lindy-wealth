@@ -4,7 +4,7 @@ export function BlogCard() {
   return (
 <div className="w-full">
   <div 
-      className="group relative rounded-2xl p-6 transition-all bg-white border border-neutral-100 shadow-[0_0_20px_rgba(0,0,0,0.06)]"
+      className="group relative rounded-2xl p-6 transition-all bg-neutral-50 border border-neutral-200 "
     >
       <div className="flex flex-col h-full space-y-1">
         <div className="flex items-center space-x-2">

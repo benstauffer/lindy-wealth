@@ -4,7 +4,7 @@ import { FooterSection } from '@/components/FooterSection'
 import { BioCard } from '@/components/BioCard'
 import { WorkSection } from '@/components/WorkSection'
 import { FAQSection } from '@/components/FAQSection'
-import { BlogSection } from '@/components/Blog'
+import { BlogSection } from '@/components/BlogSection'
 
 export default function Home() {
   return (
@@ -12,7 +12,7 @@ export default function Home() {
       <Header />
       
       {/* Desktop Layout */}
-      <main className="hidden lg:block pt-24">
+      <main className="hidden lg:block pt-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-12 gap-10">
             {/* Left column - Bio Card */}
