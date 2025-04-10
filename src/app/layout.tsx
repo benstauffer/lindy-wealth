@@ -66,7 +66,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
       <body 
-        className={`${inter.variable} min-h-screen text-black font-sans`}
+        className={`${inter.variable} min-h-screen text-black font-sans flex flex-col`}
         style={{ 
           overscrollBehavior: 'none', 
           position: 'relative',

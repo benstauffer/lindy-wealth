@@ -9,7 +9,7 @@ export function Blog() {
       href="https://blog.lindywealth.com" 
       target="_blank" 
       rel="noopener noreferrer" 
-      className="block group hover:bg-neutral-100 transition-colors duration-200 bg-neutral-50 rounded-xl p-6"
+      className="block group hover:bg-neutral-100 transition-colors duration-200 bg-neutral-50 rounded-xl py-4 px-6"
     >
       <div className="flex items-center justify-between">
         {/* Left side text content */}

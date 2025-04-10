@@ -18,7 +18,7 @@ const processSteps = [
   {
     id: 4,
     name: (
-      <Link href="/pricing" className="group transition-colors">
+      <Link href="/services" className="group transition-colors">
         <span className="text-[#327E0B] group-hover:text-[#9CBE8E] transition-colors">
           Read more about services & pricing
         </span>

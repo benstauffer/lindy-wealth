@@ -11,7 +11,7 @@ export default function FAQ() {
       answer: (
         <>
           Investment management and financial planning. 
-          <Link href="/pricing" className="group ml-1 transition-colors">
+          <Link href="/services" className="group ml-1 transition-colors">
             <span className="text-[#327E0B] group-hover:text-[#9CBE8E] transition-colors">
               Read more here →
             </span>
@@ -25,7 +25,7 @@ export default function FAQ() {
       answer: (
         <>
           For investment management, fees are charges based on a percentage of assets under management. For financial planning, fees are based on complexity and typically range from $5,000 to $20,000.
-          <Link href="/pricing" className="group ml-1 transition-colors">
+          <Link href="/services" className="group ml-1 transition-colors">
             <span className="text-[#327E0B] group-hover:text-[#9CBE8E] transition-colors">
               Read more here →
             </span>
@@ -42,7 +42,7 @@ export default function FAQ() {
     {
       id: "4",
       question: "How often do you meet with clients?",
-      answer: "Typically quarterly, but I'm always availble to talk. At a minimum, we should meet twice a year with an annual review of your financial plan."
+      answer: "Quarterly, but I'm always availble to talk if you need me."
     },
   ];
 
@@ -50,7 +50,7 @@ export default function FAQ() {
     <div className="relative min-h-screen flex flex-col">
       <Header />
       <main className="mb-16 flex-grow">
-        <div className="max-w-2xl mx-auto px-6 lg:px-8 h-full pt-24 lg:pt-32">
+        <div className="max-w-2xl mx-auto px-6 lg:px-8 pt-32 lg:pt-24">
           <div className="max-w-2xl mx-auto h-full flex flex-col">
             <Link
               href="/"

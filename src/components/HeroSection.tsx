@@ -2,11 +2,12 @@
 
 import Image from 'next/image'
 import { FiArrowRight } from "react-icons/fi"
+import Link from 'next/link'
 
 export function HeroSection() {
   return (
     <section className="relative flex flex-col items-start justify-start">
-      <div className="w-full space-y-12 relative"> 
+      <div className="w-full space-y-6 relative">
         {/* Decorative Image */}
         {/*<div className="absolute -right-32 top-[375px] hidden xl:block">
           <Image
@@ -19,7 +20,7 @@ export function HeroSection() {
         </div>*/}
 
         {/* Hero Text */}
-        <div className="w-full space-y-8">
+        <div className="w-full space-y-2">
           <div className="space-y-6">
             <h1 className="block text-4xl sm:text-5xl text-left">
               <div className="leading-[1] text-neutral-700">
@@ -29,18 +30,18 @@ export function HeroSection() {
               </div>
             </h1>
 
-            <div className="w-full h-[250px] border border-neutral-200">
+            <div className="w-full h-[290px]">
               <Image 
-                src="/images/drinks.png" 
+                src="/images/map.png" 
                 alt="Lindy Wealth" 
                 width={1200}
-                height={475}
-                className="w-full h-full object-cover object-center rounded-xl"
+                height={600}
+                className="left-0 h-full object-contain object-left"
                 priority
               />
             </div>
 
-            <p className="text-[17.5px] text-neutral-900 leading-[1.5]">
+            <p className="text-[17.5px] text-neutral-700 leading-[1.5]">
               Lindy Wealth helps forward-looking individuals and families with their financial lives so they can keep more of their wealth and focus on what matters most.
             </p>
 
@@ -63,16 +64,30 @@ export function HeroSection() {
             </div>
 
             <a 
-              className="group inline-flex items-center px-4 py-2 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-xl transition-colors duration-200"
+              className="group inline-flex items-center px-4 py-3 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200"
               href="#help"
             >
-              {/* Image Placeholder */}
-              <div className="w-10 h-10 rounded-full bg-neutral-300 mr-4">
-                {/* Replace with <Image> when path is known */}
-              </div>
+            
               Book a call with Ben
               <FiArrowRight className="ml-2 transform transition-transform duration-200 group-hover:translate-x-1" />
             </a>
+
+            {/* Added Links Section */}
+            <div className="flex flex-wrap gap-3">
+              <Link href="/about" className="inline-flex items-center px-4 py-3 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200">
+                About
+              </Link>
+              <Link href="/services" className="inline-flex items-center px-4 py-3 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200">
+                Services
+              </Link>
+              <Link href="/blog" className="inline-flex items-center px-4 py-3 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200">
+                Blog
+              </Link>
+              <Link href="/faq" className="inline-flex items-center px-4 py-3 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200">
+                FAQ
+              </Link>
+            </div>
+
           </div>
         </div>
       </div>
