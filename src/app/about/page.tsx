@@ -1,28 +1,26 @@
 import { Header } from "@/components/Header";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa6";
-import { Introduction } from "@/components/About/Introduction";
+import { Introduction } from "@/components/Introduction";
 
 export default function About() {
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen flex flex-col">
       <Header />
-      <main className="mt-32 mb-32">
-        <div className="max-w-2xl mx-auto px-6 lg:px-8">
-          <div className="max-w-2xl mx-auto">
+      <main className="mb-16 flex-grow">
+        <div className="max-w-2xl mx-auto px-6 lg:px-8 h-full pt-24 lg:pt-32">
+          <div className="mx-auto h-full flex flex-col">
             <Link
               href="/"
-              className="group inline-flex items-center text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors duration-200"
+              className="group self-start inline-flex items-center text-sm font-medium text-neutral-600 hover:text-neutral-900 transition-colors duration-200 bg-neutral-100 hover:bg-neutral-200 rounded-full px-4 py-2"
               >
               <FaArrowLeft className="mr-2 transform transition-transform duration-200 group-hover:-translate-x-1" />
               Back to home
             </Link>
 
-            <div >
-              <article id="intro">
-                <Introduction />
-              </article>
-            </div>
+            <article id="intro" className="flex-grow">
+              <Introduction />
+            </article>
           </div>
         </div>
       </main>

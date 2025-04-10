@@ -16,7 +16,7 @@ export function Header() {
               L
             </span>
             {/* Desktop Logo: Keep as text */}
-            <span className="hidden md:inline font-['Georgia'] text-2xl md:text-3xl">
+            <span className="hidden md:inline font-['Georgia'] text-xl md:text-2xl">
               Lindy Wealth
             </span>
           </Link>
@@ -29,7 +29,7 @@ export function Header() {
           </Link>
           <Link 
             href="/contact"
-            className="group inline-flex items-center px-4 py-2 text-sm font-medium shadow-md text-white border bg-red-500 border-red-700 hover:bg-red-600 hover:border-red-800 rounded-lg transition-colors duration-200"
+            className="group inline-flex items-center px-4 py-2 text-sm font-medium  text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200"
             >
             Book a call
             <FiArrowRight className="ml-2 transform transition-transform duration-200 group-hover:translate-x-1" />
