@@ -6,7 +6,7 @@ export function Blog() {
   return (
     // Use target="_blank" for external link
     <Link 
-      href="https://blog.lindywealth.com" 
+      href="https://substack.com/@benstauffer" 
       target="_blank" 
       rel="noopener noreferrer" 
       className="block group hover:bg-neutral-100 transition-colors duration-200 bg-neutral-50 rounded-xl py-4 px-6"

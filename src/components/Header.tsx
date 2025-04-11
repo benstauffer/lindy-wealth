@@ -25,8 +25,8 @@ export function Header() {
         {/* Right Navigation */}
         <nav className="flex items-center space-x-8">
           <Link 
-            href="/contact"
-            className="group inline-flex items-center px-4 py-3 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200"
+              href="https://form.typeform.com/to/xtuCtft7"
+              className="group inline-flex items-center px-4 py-3 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200"
             >
             Book a call
             <FiArrowRight className="ml-2 transform transition-transform duration-200 group-hover:translate-x-1" />

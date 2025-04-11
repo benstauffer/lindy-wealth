@@ -65,7 +65,7 @@ export function HeroSection() {
 
             <a 
               className="group inline-flex items-center px-4 py-3 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200"
-              href="#help"
+              href="https://form.typeform.com/to/xtuCtft7"
             >
             
               Book a call with Ben
@@ -83,7 +83,7 @@ export function HeroSection() {
               <Link href="/faq" className="inline-flex items-center px-4 py-3 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200">
                 FAQ
               </Link>
-              <Link href="https://blog.lindywealth.com" className="inline-flex items-center px-4 py-3 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200">
+              <Link href="https://substack.com/@benstauffer" className="inline-flex items-center px-4 py-3 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200">
                 Blog
                 <FiArrowUpRight className="ml-2 transform transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
