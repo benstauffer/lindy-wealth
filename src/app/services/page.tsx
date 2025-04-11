@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa6";
 import { PricingTable } from "@/components/PricingTable"; // Assuming path is correct, consider moving PricingTable later
 import React from 'react'; // Needed for JSX fragment in description
+import Image from 'next/image'; // Import Image
 
 // Data mirroring Services.tsx for consistency
 const pricingData = [
@@ -42,6 +43,17 @@ export default function PricingPage() {
               <FaArrowLeft className="mr-2 transform transition-transform duration-200 group-hover:-translate-x-1" />
               Back to home
             </Link>
+
+            {/* Added Scale Image */}
+            <div className="flex mt-8 h-[200px]"> 
+              <Image
+                src="/images/telescope.png"
+                alt="Services decorative scale icon"
+                width={200} // Matching FAQ example
+                height={200} // Matching FAQ example
+                className="object-contain" // Matching FAQ example
+              />
+            </div>
 
             <div className="flex-grow mt-8">
               {/* Remove h2 title if not needed */}

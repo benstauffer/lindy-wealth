@@ -2,6 +2,7 @@ import { Header } from "@/components/Header";
 import Link from "next/link";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 import React from 'react';
+import Image from 'next/image';
 
 export default function FAQ() {
   const faqs = [
@@ -60,9 +61,19 @@ export default function FAQ() {
               Back to home
             </Link>
 
+            <div className="flex mt-8 h-[175px]"> 
+              <Image
+                src="/images/paper.png"
+                alt="FAQ decorative scroll icon"
+                width={200}
+                height={200}
+                className="object-contain"
+              />
+            </div>
+
             <div className="flex-grow mt-8">
               <div>
-                <h1 className="text-2xl font-semibold text-neutral-900">Frequently Asked Questions</h1>
+                <h1 className="text-lg text-neutral-900">Frequently Asked Questions</h1>
               </div>
 
               <ul className="space-y-8 mt-8">

@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // Process steps data (extracted from Services.tsx)
 const processSteps = [
@@ -30,6 +31,16 @@ const processSteps = [
 export function Process() {
   return (
     <div className="space-y-4">
+      <div className="flex justify-center  mb-4">
+        <Image
+          src="/images/scale.png"
+          alt="Balance scale"
+          width={80}
+          height={80}
+          className="h-[200px] w-auto object-contain"
+        />
+      </div>
+        
       <h2 className="text-lg text-neutral-900">Process</h2>
       <ul className="space-y-4">
         {processSteps.map((step) => (

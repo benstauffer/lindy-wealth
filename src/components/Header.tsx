@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 export function Header() {
   return (
-    <header className="w-full py-8 fixed top-0 z-50 bg-white/80 backdrop-blur-md lg:bg-transparent lg:backdrop-blur-none">
+    <header className="w-full pt-8 pb-2 fixed top-0 z-50 bg-white/80 backdrop-blur-md lg:bg-transparent lg:backdrop-blur-none">
       <div className="w-full h-full px-6 lg:px-12 flex items-center justify-between">
         {/* Left Logo */}
         <div>

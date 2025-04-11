@@ -4,9 +4,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { Introduction } from "@/components/Introduction";
 import { Beliefs } from "@/components/Beliefs";
 import { Process } from "@/components/Process";
-import { Blog } from "@/components/Blog";
 import { Bio } from "@/components/Bio";
-import { ContactCard } from "@/components/ContactCard";
 
 export default function About() {
   return (

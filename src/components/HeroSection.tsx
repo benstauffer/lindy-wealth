@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { FiArrowRight } from "react-icons/fi"
+import { FiArrowRight, FiArrowUpRight } from "react-icons/fi"
 import Link from 'next/link'
 
 export function HeroSection() {
@@ -22,15 +22,7 @@ export function HeroSection() {
         {/* Hero Text */}
         <div className="w-full space-y-2">
           <div className="space-y-6">
-            <h1 className="block text-4xl sm:text-5xl text-left">
-              <div className="leading-[1] text-neutral-700">
-                <span className="text-neutral-900 italic font-[300] font-['Georgia'] tracking-tight">Less guesswork, </span>
-                <br />
-                <span className="font-[200] tracking-tight">more peace of mind.</span>
-              </div>
-            </h1>
-
-            <div className="w-full h-[290px]">
+          <div className="w-full h-[290px]">
               <Image 
                 src="/images/map.png" 
                 alt="Lindy Wealth" 
@@ -40,6 +32,14 @@ export function HeroSection() {
                 priority
               />
             </div>
+
+            <h1 className="block text-4xl sm:text-5xl text-left">
+              <div className="leading-[1] text-neutral-700">
+                <span className="text-neutral-900 italic font-[300] font-['Georgia'] tracking-tight">Less guesswork, </span>
+                <br />
+                <span className="font-[200] tracking-tight">more peace of mind.</span>
+              </div>
+            </h1>
 
             <p className="text-[17.5px] text-neutral-700 leading-[1.5]">
               Lindy Wealth helps forward-looking individuals and families with their financial lives so they can keep more of their wealth and focus on what matters most.
@@ -80,11 +80,12 @@ export function HeroSection() {
               <Link href="/services" className="inline-flex items-center px-4 py-3 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200">
                 Services
               </Link>
-              <Link href="https://blog.lindywealth.com" className="inline-flex items-center px-4 py-3 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200">
-                Blog
-              </Link>
               <Link href="/faq" className="inline-flex items-center px-4 py-3 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200">
                 FAQ
+              </Link>
+              <Link href="https://blog.lindywealth.com" className="inline-flex items-center px-4 py-3 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200">
+                Blog
+                <FiArrowUpRight className="ml-2 transform transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
             </div>
 
