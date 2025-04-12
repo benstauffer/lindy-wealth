@@ -3,7 +3,7 @@ import React from 'react';
 const beliefs = [
   {
     id: 0,
-    text: 'Your money should reflect what\'s important to you.',
+    text: 'Your money should reflect what\'s important to you',
   },
   {
     id: 1,
@@ -19,7 +19,7 @@ const beliefs = [
   },
   {
     id: 4,
-    text: 'A good financial plan aligns a meaningful life with optimized finances.',
+    text: 'A good financial plan aligns a meaningful life with optimized finances',
   },
 ];
 

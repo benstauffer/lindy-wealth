@@ -42,7 +42,9 @@ export function HeroSection() {
             </h1>
 
             <p className="text-[17.5px] text-neutral-700 leading-[1.5]">
-              Lindy Wealth helps forward-looking individuals and families with their financial lives so they can keep more of their wealth and focus on what matters most.
+              Lindy Wealth is an independent wealth management firm for entrepreneurs who think long-term.
+
+
             </p>
 
             <div className="mt-6 space-y-2 text-base text-neutral-700">
