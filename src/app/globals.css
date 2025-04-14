@@ -6,8 +6,85 @@
   font-display: swap;
 }
 
+/* SuisseWorks Font Definitions */
+@font-face {
+  font-family: 'SuisseWorks';
+  src: url('/font/SuisseWorks-Book-WebS.ttf') format('truetype'),
+       url('/font/SuisseWorks-Book-WebXL.ttf') format('truetype');
+  font-weight: 400; /* Book weight */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SuisseWorks';
+  src: url('/font/SuisseWorks-BookItalic-WebS.ttf') format('truetype'),
+       url('/font/SuisseWorks-BookItalic-WebXL.ttf') format('truetype');
+  font-weight: 400; /* Book weight */
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SuisseWorks';
+  src: url('/font/SuisseWorks-Regular-WebS.ttf') format('truetype'),
+       url('/font/SuisseWorks-Regular-WebXL.ttf') format('truetype');
+  font-weight: 400; /* Regular weight */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SuisseWorks';
+  src: url('/font/SuisseWorks-RegularItalic-WebS.ttf') format('truetype'),
+       url('/font/SuisseWorks-RegularItalic-WebXL.ttf') format('truetype');
+  font-weight: 400; /* Regular weight */
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SuisseWorks';
+  src: url('/font/SuisseWorks-Medium-WebS.ttf') format('truetype'),
+       url('/font/SuisseWorks-Medium-WebXL.ttf') format('truetype');
+  font-weight: 500; /* Medium weight */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SuisseWorks';
+  src: url('/font/SuisseWorks-MediumItalic-WebS.ttf') format('truetype'),
+       url('/font/SuisseWorks-MediumItalic-WebXL.ttf') format('truetype');
+  font-weight: 500; /* Medium weight */
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SuisseWorks';
+  src: url('/font/SuisseWorks-Bold-WebS.ttf') format('truetype'),
+       url('/font/SuisseWorks-Bold-WebXL.ttf') format('truetype');
+  font-weight: 700; /* Bold weight */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'SuisseWorks';
+  src: url('/font/SuisseWorks-BoldItalic-WebS.ttf') format('truetype'),
+       url('/font/SuisseWorks-BoldItalic-WebXL.ttf') format('truetype');
+  font-weight: 700; /* Bold weight */
+  font-style: italic;
+  font-display: swap;
+}
+
 .deutsche-font {
   font-family: 'DeutscheZierschrift', serif;
+}
+
+.suisse-font {
+  font-family: 'SuisseWorks', Georgia, serif;
 }
 
 @tailwind base;

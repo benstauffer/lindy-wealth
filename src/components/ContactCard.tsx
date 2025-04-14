@@ -5,47 +5,43 @@ import Link from 'next/link'
 
 export function ContactCard() {
   return (
-    <div className="bg-neutral-50 rounded-xl p-4 flex items-center justify-between space-x-4 relative overflow-hidden">
-      {/* Background Overlay Image */}
-      <div className="absolute inset-0 opacity-60 hidden md:block">
-        <Image
-          src="/images/mail.png"
-          alt=""
-          fill
-          className="object-contain"
-        />
-      </div>
-
-      {/* Left: Image */}
-      <div className="flex-shrink-0 relative z-10">
+    <div className="border rounded-2xl border-neutral-200 aspect-square px-10 py-6 flex flex-col items-center text-center justify-between">
+      {/* Profile Image */}
+      <div className="mt-4 mb-6">
         <Image
           src="/images/ben.png"
           alt="Ben Stauffer"
-          width={72}
-          height={72}
-          className="w-[72px] h-[72px] rounded-full object-cover object-top"
+          width={120}
+          height={120}
+          className="rounded-full object-cover object-top"
         />
       </div>
 
-      {/* Middle: Text */}
-      <div className="flex-grow relative z-10">
-        <p className="text-base font-medium text-neutral-900">Ben Stauffer</p>
-        <p className="text-sm text-neutral-600">CFP®</p>
+      {/* Text Content */}
+      <div className="flex flex-col items-center my-1">
+        <p className="text-xl text-neutral-900">Ben Stauffer</p>
+        <p className="text-base text-neutral-900">Certified Financial Planner</p>
+        <p className="text-base text-neutral-900">Founder | Lindy Wealth, LLC</p>
       </div>
 
-      {/* Right: Links and Mail Icon */}
-      <div className="flex-shrink-0 flex flex-col items-end relative z-10">
-        <div className="flex items-center space-x-3 text-xs">
-          <a href="tel:+19163350755" className="hover:text-neutral-700 text-neutral-500 hover:underline">
+      {/* Contact Links */}
+      <div className="mb-4 mt-4 space-y-2">
+        {/* Top row: Phone and Email */}
+        <div className="flex justify-center gap-2 text-xs">
+          <a href="tel:+19163350755" className="group inline-flex items-center px-3 py-1 border border-neutral-900 text-black hover:text-white bg-white hover:bg-neutral-900 rounded-full">
             Phone
           </a>
-          <a href="mailto:ben@lindywealth.com" className="hover:text-neutral-700 text-neutral-500 hover:underline">
+          <a href="mailto:ben@lindywealth.com" className="group inline-flex items-center px-3 py-1 border border-neutral-900 text-black hover:text-white bg-white hover:bg-neutral-900 rounded-full">
             Email
           </a>
-          <Link href="https://twitter.com" target="_blank" className="hover:text-neutral-700 text-neutral-500 hover:underline">
+        </div>
+        
+        {/* Bottom row: Twitter and LinkedIn */}
+        <div className="flex justify-center gap-2 text-xs">
+          <Link href="https://twitter.com" target="_blank" className="group inline-flex items-center px-3 py-1 border border-neutral-900 text-black hover:text-white bg-white hover:bg-neutral-900 rounded-full">
             Twitter
           </Link>
-          <Link href="https://linkedin.com" target="_blank" className="hover:text-neutral-700 text-neutral-500 hover:underline">
+          <Link href="https://linkedin.com" target="_blank" className="group inline-flex items-center px-3 py-1 border border-neutral-900 text-black hover:text-white bg-white hover:bg-neutral-900 rounded-full">
             LinkedIn
           </Link>
         </div>

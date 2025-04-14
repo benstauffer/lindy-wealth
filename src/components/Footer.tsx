@@ -4,7 +4,10 @@ export function FooterSection() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="w-full py-8">
+    <footer 
+      id="contact" 
+      className="w-full py-4 mt-auto lg:fixed lg:bottom-0 lg:left-0 lg:right-0 lg:z-50 lg:border-t-0 lg:mt-0 lg:bg-transparent lg:backdrop-blur-none"
+    >
       <div className="w-full px-8 lg:px-12">
         <div className="flex flex-col sm:flex-row items-center justify-between">
           {/* Left Side - Stylized L and Copyright */}
@@ -12,9 +15,8 @@ export function FooterSection() {
             <div className="text-sm text-neutral-500">© {currentYear} Lindy Wealth, LLC</div>
           </div>
 
-          <div className="flex space-x-4 mt-4 sm:mt-0">
-           
-             <a 
+          <div className="flex flex-wrap justify-center sm:justify-end space-x-4 mt-4 sm:mt-0">
+            <a 
               href="https://client.schwab.com/Areas/Access/Login" 
               target="_blank" 
               rel="noopener noreferrer" 

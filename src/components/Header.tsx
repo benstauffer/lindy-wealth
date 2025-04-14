@@ -6,17 +6,17 @@ import Image from 'next/image';
 
 export function Header() {
   return (
-    <header className="w-full pt-8 pb-2 fixed top-0 z-50 bg-white/80 backdrop-blur-md lg:bg-transparent lg:backdrop-blur-none">
+    <header className="w-full pt-8 pb-2 fixed top-0 z-50">
       <div className="w-full h-full px-6 lg:px-12 flex items-center justify-between">
         {/* Left Logo */}
         <div>
           <Link href="/">
             {/* Mobile Logo: Use styled 'L' */}
-            <span className="md:hidden font-['Georgia'] text-xl md:text-2xl leading-none text-neutral-900">
+            <span className="md:hidden suisse-font  text-xl md:text-2xl leading-none text-neutral-800">
               Lindy
             </span>
             {/* Desktop Logo: Keep as text */}
-            <span className="hidden md:inline font-['Georgia'] text-xl md:text-2xl">
+            <span className="hidden md:inline suisse-font  text-xl md:text-2xl">
               Lindy Wealth
             </span>
           </Link>
@@ -26,9 +26,9 @@ export function Header() {
         <nav className="flex items-center space-x-8">
           <Link 
               href="https://form.typeform.com/to/xtuCtft7"
-              className="group inline-flex items-center px-4 py-3 text-sm font-medium text-neutral-900 bg-neutral-100 hover:bg-neutral-200 rounded-full transition-colors duration-200"
+              className="group inline-flex items-center px-4 py-3 text-sm font-medium border border-neutral-900 text-neutral-900 bg-white hover:bg-neutral-900 hover:text-white rounded-full transition-colors duration-200"
             >
-            Book a call
+            Start
             <FiArrowRight className="ml-2 transform transition-transform duration-200 group-hover:translate-x-1" />
           </Link>
         </nav>
