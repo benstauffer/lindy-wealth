@@ -72,7 +72,7 @@ export function Section01() {
                   className="group inline-flex items-center justify-center h-[52px] px-4 sm:px-5 text-sm sm:text-base border border-neutral-900 text-black hover:text-white bg-white hover:bg-neutral-900 rounded-full transition-colors duration-200"
                   href="https://form.typeform.com/to/xtuCtft7"
                 >
-                  Book an intro call
+                  Book intro call
                 </a>
               </motion.div>
               
