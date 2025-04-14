@@ -12,7 +12,7 @@ export default function Home() {
       <div className="flex-grow">
         {/* Desktop Layout */}
         <main className="hidden lg:block">
-          <div className="min-h-[90vh] flex items-center pt-32"> {/* Adjust min-h and pt as needed */} 
+          <div className="min-h-[90vh] flex items-center pt-24"> {/* Adjust min-h and pt as needed */} 
             <div className="w-full">
               <Section01 />              
             </div>
@@ -24,7 +24,7 @@ export default function Home() {
 
         {/* Mobile Layout */}
         <main className="lg:hidden">
-          <div className="min-h-[85vh] flex items-center pt-32"> {/* Adjust min-h and pt as needed */}
+          <div className="min-h-[85vh] flex items-center pt-24"> {/* Adjust min-h and pt as needed */}
             <div className="w-full">
               <Section01 />
             </div>
