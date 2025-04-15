@@ -38,10 +38,10 @@ export function ContactCard() {
         
         {/* Bottom row: Twitter and LinkedIn */}
         <div className="flex justify-center gap-2 text-xs">
-          <Link href="https://twitter.com" target="_blank" className="group inline-flex items-center px-3 py-1 border border-neutral-900 text-black hover:text-white bg-white hover:bg-neutral-900 rounded-full">
+          <Link href="https://x.com/_benstauffer" target="_blank" className="group inline-flex items-center px-3 py-1 border border-neutral-900 text-black hover:text-white bg-white hover:bg-neutral-900 rounded-full">
             Twitter
           </Link>
-          <Link href="https://linkedin.com" target="_blank" className="group inline-flex items-center px-3 py-1 border border-neutral-900 text-black hover:text-white bg-white hover:bg-neutral-900 rounded-full">
+          <Link href="https://www.linkedin.com/in/ben-stauffer/" target="_blank" className="group inline-flex items-center px-3 py-1 border border-neutral-900 text-black hover:text-white bg-white hover:bg-neutral-900 rounded-full">
             LinkedIn
           </Link>
         </div>
