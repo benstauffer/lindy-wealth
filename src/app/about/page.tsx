@@ -60,7 +60,9 @@ export default function About() {
                     I've helped clients across the wealth spectrum—most recently at AdvicePeriod, an ultra-high-net-worth firm in Los Angeles. 
                     <br />
                     <br />
-                    This site is simple and so are my goals:
+                    This site is simple 
+                    <br />
+                    and so are my goals:
                     <br />
                     <br />
                     Give you clear, actionable advice,
