@@ -24,6 +24,7 @@
     "@react-three/fiber": "^8.17.14",
     "@tabler/icons-react": "^3.31.0",
     "@typeform/embed-react": "^4.3.0",
+    "@vercel/analytics": "^1.5.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.5.2",

@@ -33,17 +33,10 @@ export function Section01() {
 
   return (
     <section className="relative flex flex-col items-center">
-      <motion.div
-        initial={{ opacity: 0, x: 10 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ delay: 0.5, duration: 0.3 }}
-        className="absolute top-[200px] left-[calc(50%+275px)] z-10 hidden lg:block"
-      >
-        <LindyLetter />
-      </motion.div>
+
       <div className="w-full max-w-xl mx-auto space-y-12 relative px-6">
         <div className="w-full text-xl sm:text-2xl">
-          <div className="text-center space-y-8">
+          <div className="text-center space-y-3">
             <motion.div
               initial="hidden"
               animate="visible"
@@ -72,31 +65,9 @@ export function Section01() {
                   className="group inline-flex items-center justify-center h-[52px] px-4 sm:px-5 text-sm sm:text-base border border-neutral-900 text-black hover:text-white bg-white hover:bg-neutral-900 rounded-full transition-colors duration-200"
                   href="https://form.typeform.com/to/xtuCtft7"
                 >
-                  Book intro call
+                  Start
+                  <FiArrowRight className="ml-2 transform transition-transform duration-200 group-hover:translate-x-1" />
                 </a>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.25 }}
-                className="w-full max-w-[300px] sm:max-w-[300px] h-[52px] border border-neutral-900 rounded-full overflow-hidden focus-within:border-neutral-900 focus-within:ring-1 focus-within:ring-neutral-900 transition-colors duration-200"
-              >
-                <iframe 
-                  src="https://embeds.beehiiv.com/54f15b08-8795-4782-ab61-185ea8baf6ab?slim=true"
-                  data-test-id="beehiiv-embed" 
-                  height="52" 
-                  frameBorder="0" 
-                  scrolling="no" 
-                  style={{ 
-                    margin: 0, 
-                    borderRadius: '0px', 
-                    backgroundColor: 'transparent', 
-                    width: '100%', 
-                    height: '100%',
-                    display: 'block' 
-                  }}
-                ></iframe>
               </motion.div>
             </div>
           </div>
