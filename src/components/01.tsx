@@ -55,23 +55,48 @@ export function Section01() {
             </motion.div>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.25 }}
-                className="flex-shrink-0"
+                className="flex items-center gap-4"
               >
+                <div className="text-neutral-900 suisse-font">Want to talk?</div>
                 <a 
                   className="group inline-flex items-center justify-center h-[52px] px-4 sm:px-5 text-sm sm:text-base border border-neutral-900 text-black hover:text-white bg-white hover:bg-neutral-900 rounded-full transition-colors duration-200"
                   href="https://form.typeform.com/to/xtuCtft7"
                 >
-                  Start
+                  Start here
                   <FiArrowRight className="ml-2 transform transition-transform duration-200 group-hover:translate-x-1" />
                 </a>
               </motion.div>
             </div>
           </div>
         </div>
+
+        {/* Inserted Links Section */}
+        <div className="flex flex-col items-center space-y-4 mt-6 sm:mt-6">
+          <motion.div 
+            className="flex justify-center gap-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.2 }}
+          >
+            <a 
+              href="/about"
+              className="group flex items-center justify-center w-24 h-24 text-base border border-neutral-900 text-black hover:text-white bg-white hover:bg-neutral-900 rounded-full transition-colors duration-200"
+            >
+              About
+            </a>
+            <Link 
+              href="/services"
+              className="group flex items-center justify-center w-24 h-24 text-base border border-neutral-900 text-black hover:text-white bg-white hover:bg-neutral-900 rounded-full transition-colors duration-200"
+            >
+              Services
+            </Link>
+          </motion.div>
+        </div>
+        {/* End Inserted Links Section */}
       
       </div>
     </section>
