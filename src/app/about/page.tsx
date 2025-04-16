@@ -55,30 +55,21 @@ export default function About() {
                 variants={textVariants}
               >
                 <motion.div variants={lineVariants}>
-                  <p>I'm Ben, founder of Lindy Wealth.
-                    <br />
-                    I've helped clients across the wealth spectrum—most recently at AdvicePeriod, an ultra-high-net-worth firm in Los Angeles. 
-                    <br />
-                    <br />
-                    This site is simple 
-                    <br />
-                    and so are my goals:
+                  <p>
+                    Hi, I’m Ben Stauffer, a Certified Financial Planner® and the founder of Lindy Wealth.
                     <br />
                     <br />
-                    Give you clear, actionable advice,
-                    <br />
-                    Create a plan that supports your goals,
-                    <br />
-                    Build an investment strategy around that plan,
-                    <br />
-                    And bring you clarity and peace of mind.
+                    I started Lindy to provide principled, long-term financial guidance for thoughtful entrepreneurs and families who want clarity—not complexity—in building and preserving their wealth.
                     <br />
                     <br />
-                    I'll act as your financial quarterback—coordinating and optimizing your financial life, with meticulous focus on what we can control and wise preparation for what we can't.
+                    Before Lindy, I worked at several firms serving clients across the wealth spectrum—from those just starting out to ultra-high-net-worth families with $100M+ in assets. Along the way, I’ve learned that simplicity, grounded in what we can control, consistently outperforms complexity dressed up as sophistication.
                     <br />
                     <br />
-                    First, we'll discuss your goals, values, and vision, and create a financial plan. Next, we'll work together to build an investment strategy that aligns with your financial plan. Finally, we'll execute the strategy & continuously adapt as your life evolves.
-                    </p>
+                    I don’t sell products. I don’t make market predictions. I focus on what we can control and prepare wisely for what we can’t.
+                    <br />
+                    <br />
+                    Whether you’re a business owner balancing personal and professional finances, or a family planning across generations, I’ll serve as your financial quarterback—coordinating the moving pieces and helping you make wise, confident decisions.
+                  </p>
                 </motion.div>
               </motion.div>
               
