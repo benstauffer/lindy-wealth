@@ -91,12 +91,12 @@ export function Section01() {
             >
               Services
             </Link>
-            {/*<Link 
-              href="/lab"
+            <Link 
+              href="https://lindyletter.substack.com"
               className="group flex items-center justify-center w-24 h-24 text-base border border-neutral-900 text-black hover:text-white bg-white hover:bg-neutral-900 rounded-full transition-colors duration-200"
             >
-              Resources
-            </Link>*/}
+              Blog
+            </Link>
           </motion.div>
         </div>
 
