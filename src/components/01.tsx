@@ -45,7 +45,7 @@ export function Section01() {
               className="text-neutral-900 suisse-font"
             >
               <motion.div variants={lineVariants}></motion.div>
-              <motion.div variants={lineVariants}>I'm Ben Stauffer, CFP®. I help entrepreneurs and creators manage their wealth.</motion.div>
+              <motion.div variants={lineVariants}>I'm Ben Stauffer, CFP®. I help creators manage their wealth.</motion.div>
               <motion.div variants={lineVariants} className="h-4 sm:h-6"></motion.div>
               <motion.div variants={lineVariants}>Lindy Wealth is an independent, fee-only wealth management firm based in Los Angeles offering full-service, personalized planning, investing, and long-term strategy.</motion.div> 
              
