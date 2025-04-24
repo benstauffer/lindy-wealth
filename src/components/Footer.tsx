@@ -33,12 +33,12 @@ export function FooterSection() {
               RightCapital
             </a>
             <a 
-              href="https://adviserinfo.sec.gov/firm/summary/335277"
+              href="/disclosure"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-neutral-500 hover:text-neutral-700"
             >
-              Form ADV
+              Disclosure
             </a>
             <a 
               href="/documents/Privacy.pdf"

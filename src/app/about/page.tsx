@@ -59,10 +59,7 @@ export default function About() {
                     Hi, I’m Ben Stauffer, a Certified Financial Planner® and the founder of Lindy Wealth.
                     <br />
                     <br />
-                    I started Lindy to provide principled, long-term financial guidance for thoughtful entrepreneurs and families who want clarity—not complexity—in building and preserving their wealth.
-                    <br />
-                    <br />
-                    Before Lindy, I worked at several firms serving clients across the wealth spectrum—from those just starting out to ultra-high-net-worth families with $100M+ in assets. Along the way, I’ve learned that simplicity, grounded in what we can control, consistently outperforms complexity dressed up as sophistication.
+                    I started Lindy to provide principled, long-term financial guidance. Before Lindy, I worked at several firms serving clients across the wealth spectrum—from those with $0 in assets to ultra-high-net-worth families with $100M+ in assets. Along the way, I’ve learned that simplicity, grounded in what we can control, consistently outperforms complexity dressed up as sophistication.
                     <br />
                     <br />
                     I don’t sell products. I don’t make market predictions. I focus on what we can control and prepare wisely for what we can’t.

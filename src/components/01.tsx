@@ -35,6 +35,7 @@ export function Section01() {
     <section className="relative flex flex-col items-center">
 
       <div className="w-full max-w-xl mx-auto space-y-12 relative px-6">
+
         <div className="w-full text-xl sm:text-2xl">
           <div className="text-center space-y-3">
             <motion.div
@@ -43,18 +44,16 @@ export function Section01() {
               variants={textVariants}
               className="text-neutral-900 suisse-font"
             >
-              <motion.div variants={lineVariants}>I'm Ben Stauffer, CFP®.</motion.div>
-              <motion.div variants={lineVariants}>I help entrepreneurs manage their wealth.</motion.div>
+              <motion.div variants={lineVariants}></motion.div>
+              <motion.div variants={lineVariants}>I'm Ben Stauffer, CFP®. I help entrepreneurs and creators manage their wealth.</motion.div>
               <motion.div variants={lineVariants} className="h-4 sm:h-6"></motion.div>
-              <motion.div variants={lineVariants}>Lindy Wealth is an independent,</motion.div> 
-              <motion.div variants={lineVariants}>fee-only wealth management firm.</motion.div>
-              <motion.div variants={lineVariants}>I offer full-service, personalized advice.</motion.div>
-              <motion.div variants={lineVariants}>Planning, investing, and long-term strategy.</motion.div>
-              <motion.div variants={lineVariants} className="h-4 sm:h-6"></motion.div>
+              <motion.div variants={lineVariants}>Lindy Wealth is an independent, fee-only wealth management firm based in Los Angeles offering full-service, personalized planning, investing, and long-term strategy.</motion.div> 
              
             </motion.div>
+          </div>
+        </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-xl sm:text-2xl">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -71,11 +70,9 @@ export function Section01() {
                 </a>
               </motion.div>
             </div>
-          </div>
-        </div>
 
-        {/* Inserted Links Section */}
-        <div className="flex flex-col items-center space-y-4 mt-6 sm:mt-6">
+            {/* Inserted Links Section */}
+<div className="flex flex-col items-center space-y-4 mt-6 sm:mt-6">
           <motion.div 
             className="flex justify-center gap-4"
             initial={{ opacity: 0 }}
@@ -94,9 +91,16 @@ export function Section01() {
             >
               Services
             </Link>
+            {/*<Link 
+              href="/lab"
+              className="group flex items-center justify-center w-24 h-24 text-base border border-neutral-900 text-black hover:text-white bg-white hover:bg-neutral-900 rounded-full transition-colors duration-200"
+            >
+              Resources
+            </Link>*/}
           </motion.div>
         </div>
-        {/* End Inserted Links Section */}
+
+        
       
       </div>
     </section>
