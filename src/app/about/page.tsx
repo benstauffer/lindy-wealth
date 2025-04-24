@@ -56,16 +56,26 @@ export default function About() {
               >
                 <motion.div variants={lineVariants}>
                   <p>
-                    Hi, I’m Ben Stauffer, a Certified Financial Planner® and the founder of Lindy Wealth.
+                    Hi, I’m Ben Stauffer.
                     <br />
                     <br />
-                    I started Lindy to provide principled, long-term financial guidance. Before Lindy, I worked at several firms serving clients across the wealth spectrum—from those with $0 in assets to ultra-high-net-worth families with $100M+ in assets. Along the way, I’ve learned that simplicity, grounded in what we can control, consistently outperforms complexity dressed up as sophistication.
+                    I'm a Certified Financial Planner® and the founder of Lindy Wealth.
                     <br />
                     <br />
-                    I don’t sell products. I don’t make market predictions. I focus on what we can control and prepare wisely for what we can’t.
+                    I started Lindy to provide principled, long-term financial guidance. Before Lindy, I worked at firms serving clients at every level of wealth with net worths ranging from zero to $100M+.
                     <br />
                     <br />
-                    Whether you’re a business owner balancing personal and professional finances, or a family planning across generations, I’ll serve as your financial quarterback—coordinating the moving pieces and helping you make wise, confident decisions.
+                    What I learned? Money doesn’t change the basics. The best plans are thoughtful, durable, and built around your actual life.
+                    <br />
+                    <br />
+                    My job is straightforward:
+                    <br />
+                    Help you reach your goals &
+                    <br />
+                    Bring you clarity and peace of mind so you can focus on what matters most.
+                    <br />
+                    <br />
+                    I’ll help you manage your wealth, avoid expensive mistakes, and move forward with confidence.
                   </p>
                 </motion.div>
               </motion.div>
