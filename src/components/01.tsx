@@ -34,7 +34,7 @@ export function Section01() {
   return (
     <section className="relative flex flex-col items-center">
 
-      <div className="w-full max-w-xl mx-auto space-y-12 relative px-6">
+      <div className="w-full max-w-xl mx-auto space-y-10 relative px-6">
 
         <div className="w-full text-xl sm:text-2xl">
           <div className="text-center space-y-3">
@@ -45,15 +45,18 @@ export function Section01() {
               className="text-neutral-900 suisse-font"
             >
               <motion.div variants={lineVariants}></motion.div>
-              <motion.div variants={lineVariants}>I'm Ben Stauffer, CFP®. I help creators manage their wealth.</motion.div>
-              <motion.div variants={lineVariants} className="h-4 sm:h-6"></motion.div>
-              <motion.div variants={lineVariants}>Lindy Wealth is an independent, fee-only wealth management firm based in Los Angeles offering full-service, personalized planning, investing, and long-term strategy.</motion.div> 
+              <motion.div variants={lineVariants}>Financial planning partner for entrepreneurs.
+                <br />
+                Planning, investing, and long-term strategy to help you manage and build wealth.</motion.div>
+              <motion.div variants={lineVariants} className="w-full h-6"></motion.div>
+              <motion.div variants={lineVariants}>Lindy Wealth is an independent wealth management firm based in Los Angeles.</motion.div>
+
              
             </motion.div>
           </div>
         </div>
 
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-xl sm:text-2xl">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-xl sm:text-2xl">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
