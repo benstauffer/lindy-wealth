@@ -45,7 +45,7 @@ function HeroSection() {
   ];
 
   return (
-    <div className="w-full max-w-xl mx-auto px-6 text-center relative md:pt-16 pb-16">
+    <div className="w-full max-w-5xl mx-auto px-6 text-center relative md:pt-16 pb-16">
       <div className="relative w-full h-[500px] mb-6">
         <Image 
           src="/images/art.png"
@@ -55,7 +55,7 @@ function HeroSection() {
           priority
         />
       </div>
-      <div className="w-full text-2xl sm:text-5xl font-normal mb-10 "> 
+      <div className="w-full text-3xl sm:text-5xl font-normal mb-10 "> 
         <div className="">
           <motion.div
             initial="hidden"
@@ -64,7 +64,7 @@ function HeroSection() {
             className="text-neutral-900"
           >
             <motion.div variants={lineVariants}>Financial planning for <br /> creators & entrepreneurs.</motion.div>
-            <motion.div variants={lineVariants} className="text-lg sm:text-2xl mt-4 text-neutral-600"> Planning, investing, & long-term strategy.</motion.div> 
+            <motion.div variants={lineVariants} className="text-xl sm:text-2xl mt-4 text-neutral-600"> Planning, investing, & long-term strategy.</motion.div> 
           </motion.div>
         </div>
       </div>
@@ -95,7 +95,7 @@ function HeroSection() {
 // --- AboutSection Component ---
 function AboutSection() {
   return (
-    <section className="w-full bg-white">
+    <section className="w-full bg-white px-6">
       <LeftRightSection
         leftContent={
           <div>
@@ -123,7 +123,7 @@ function AboutSection() {
 // --- ContactSection Component ---
 function ContactSection() {
   return (
-    <section className="w-full bg-white">
+    <section className="w-full bg-white px-6">
       <LeftRightSection
         leftContent={
           <h2 className="text-2xl md:text-2xl font-medium text-neutral-900">
@@ -168,7 +168,7 @@ interface WhereToStartSectionProps {
 
 function WhereToStartSection({ featureCards }: WhereToStartSectionProps) {
   return (
-    <section id="work-with-us" className="w-full pb-32 bg-white scroll-mt-36 sm:scroll-mt-28">
+    <section id="work-with-us" className="w-full pb-32 bg-white scroll-mt-36 sm:scroll-mt-28 px-6">
       <LeftRightSection
         leftContent={
           <h3 className="text-2xl md:text-2xl leading-tight text-neutral-900 font-medium">
@@ -186,7 +186,7 @@ function WhereToStartSection({ featureCards }: WhereToStartSectionProps) {
       />
       
       <motion.div 
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto px-6"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.4 }}
@@ -226,7 +226,7 @@ function WhereToStartSection({ featureCards }: WhereToStartSectionProps) {
 // --- RoadmapCTASection Component ---
 function RoadmapCTASection() {
   return (
-    <section className="w-full bg-white py-16 md:py-24">
+    <section className="w-full bg-white py-16 md:py-24 px-6">
       <LeftRightSection
         leftContent={
           <div>

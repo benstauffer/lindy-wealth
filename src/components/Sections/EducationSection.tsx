@@ -38,7 +38,6 @@ function EducationHero() {
   const overviewContent = {
     paragraphs: [
       "The Lindy Wealth Blueprint is a comprehensive 30-day program designed to transform your financial foundation and set you on the path to long-term wealth building.",
-      "We believe financial success is a prerequisite to bringing any life goal to fruition. The Blueprint is our attempt to create a structured approach to navigate financial challenges just as much as to capitalize on opportunities.",
       "We hope you'll leave with a clear financial roadmap, momentum toward your goals, and confidence in your financial future.",
     ],
   };
@@ -52,10 +51,10 @@ function EducationHero() {
 
   return (
     <motion.div 
-      className="w-full mx-auto px-6 text-center relative pt-36 md:pt-36 pb-16 bg-white"
+      className="w-full mx-auto text-center relative pt-36 md:pt-36 pb-16 bg-white"
     >
-      <div className="max-w-xl mx-auto">
-        <div className="w-full text-2xl sm:text-6xl font-normal mb-10">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="w-full text-3xl sm:text-5xl font-normal mb-10">
           <div className="">
             <motion.div
               initial="hidden"
@@ -64,20 +63,14 @@ function EducationHero() {
               className={"text-neutral-900"}
             >
               <div className="mb-4">
-                <Image 
-                  src={"/images/maps.png"}
-                  alt="Financial Roadmap Illustration" 
-                  width={700} 
-                  height={400} 
-                  className="w-full h-auto max-w-[350px] mx-auto" 
-                />
+
               </div>
               <motion.div variants={heroLineVariants}>
                 The Lindy <br /> Wealth Blueprint
               </motion.div>
               <motion.div
                 variants={heroLineVariants}
-                className={`text-lg sm:text-2xl mt-4 text-stone-600`}
+                className={`text-xl sm:text-2xl mt-4 text-neutral-600`}
               >
                 A 30-day guided sprint that gets <br /> your financial house in
                 order.
@@ -111,10 +104,10 @@ function EducationHero() {
         </motion.form>
       </div>
         
-      <div className="mt-32 flex flex-col items-center w-full mx-auto space-y-12">
+      <div className="mt-32 flex flex-col items-center w-full mx-auto space-y-12 px-6">
         <LeftRightSection 
           leftContent={
-            <h2 className={`text-2xl font-medium text-neutral-800`}>
+            <h2 className={`text-2xl font-medium text-neutral-900`}>
               TLDR
             </h2>
           }
@@ -131,7 +124,7 @@ function EducationHero() {
 
         <LeftRightSection 
           leftContent={
-            <h2 className={`text-2xl font-medium text-neutral-800`}>
+            <h2 className={`text-2xl font-medium text-neutral-900`}>
               Pricing:
             </h2>
           }
@@ -145,7 +138,7 @@ function EducationHero() {
         <div className="w-full mx-auto relative">
           <LeftRightSection 
             leftContent={
-              <h2 className={`text-2xl font-medium text-neutral-800`}>
+              <h2 className={`text-2xl font-medium text-neutral-900`}>
                 Next Cohort:
                 <br />
                 Q3 2025
@@ -243,10 +236,10 @@ function EducationLearning() {
     <motion.div
       className="w-full mx-auto relative py-24 md:py-32 bg-white"
     >
-      <div className="max-w-6xl mx-auto px-6 mb-16">
+      <div className="max-w-5xl mx-auto px-6 mb-16">
         <LeftRightSection
           leftContent={
-            <h2 className={`text-2xl font-medium text-neutral-800`}>
+            <h2 className={`text-2xl font-medium text-neutral-900`}>
               What you'll learn:
             </h2>
           }
@@ -258,7 +251,7 @@ function EducationLearning() {
         />
       </div>
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           <div className="flex flex-col gap-6 md:gap-8">
             {column1.map((objective, index) => (

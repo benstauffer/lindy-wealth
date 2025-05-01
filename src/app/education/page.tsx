@@ -1,6 +1,6 @@
 import { Header } from '@/components/Header'
 import { FooterSection } from '@/components/Footer'
-import { EducationSection } from '@/components/Education/EducationSection'
+import { EducationSection } from '@/components/Sections/EducationSection'
 
 export default function EducationPage() {
   return (
@@ -20,7 +20,7 @@ export default function EducationPage() {
 
         {/* Mobile Layout - Render EducationSection */}
         <main className="lg:hidden">
-          <div className="min-h-[85vh] flex items-center pt-24"> {/* Adjust as needed */} 
+          <div className="min-h-[85vh] flex items-center"> {/* Adjust as needed */} 
             <div className="w-full">
               <EducationSection />
             </div>

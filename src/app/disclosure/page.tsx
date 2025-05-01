@@ -1,7 +1,7 @@
 import { Header } from '@/components/Header'
 import { FooterSection } from '@/components/Footer'
 // import { LeftRightSection } from '@/components/ui/LeftRightSection' // No longer needed here
-import { DisclosureSection } from '@/components/Disclosure/DisclosureSection'
+import { DisclosureSection } from '@/components/Sections/DisclosureSection'
 
 export default function DisclosurePage() {
   // Define title element once
@@ -14,8 +14,8 @@ export default function DisclosurePage() {
       <div className="flex-grow">
         {/* Desktop Layout */}
         <main className="hidden lg:block">
-          <div className="min-h-[85vh] flex items-center justify-center py-16"> {/* Centering container */}
-            <div className="max-w-2xl w-full px-6">
+          <div className="min-h-screen flex items-center"> {/* Centering container */}
+            <div className="w-full">
               {/* Use DisclosureSection directly, passing the title */}
               <DisclosureSection />
             </div>
@@ -24,8 +24,8 @@ export default function DisclosurePage() {
 
         {/* Mobile Layout */}
         <main className="lg:hidden">
-           <div className="min-h-[85vh] flex flex-col items-center justify-center pt-24 pb-16 px-6"> {/* Centering container with vertical flex */}
-            <div className="w-full"> 
+           <div className="min-h-[85vh] flex items-center"> {/* Centering container with vertical flex */}
+            <div className="w-full">
               {/* Use DisclosureSection directly, passing the title */}
               {/* The component itself is now responsive */}
               <DisclosureSection />

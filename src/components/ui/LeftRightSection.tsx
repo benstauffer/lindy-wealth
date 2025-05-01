@@ -13,7 +13,7 @@ export function LeftRightSection({
 }: LeftRightSectionProps) {
   return (
     <div className={`w-full max-w-2xl mx-auto py-16 ${className}`}>
-      <div className="w-full mx-auto px-6">
+      <div className="w-full mx-auto ">
         {/* Desktop layout */}
         <div className="hidden md:flex">
           {/* Left side */}

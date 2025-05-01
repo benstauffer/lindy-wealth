@@ -1,5 +1,5 @@
 import { Header } from '@/components/Header'
-import { Section01 } from '@/components/01/01'
+import { Section01 } from '@/components/Sections/LandingSection'
 import { FooterSection } from '@/components/Footer'
 
 export default function Home() {
@@ -20,7 +20,7 @@ export default function Home() {
 
         {/* Mobile Layout */}
         <main className="lg:hidden">
-          <div className="min-h-[85vh] flex items-center pt-24"> {/* Adjust min-h and pt as needed */}
+          <div className="min-h-[85vh] flex items-center"> {/* Adjust min-h and pt as needed */}
             <div className="w-full">
               <Section01 />
             </div>

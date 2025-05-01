@@ -1,6 +1,6 @@
 import { Header } from '@/components/Header'
 import { FooterSection } from '@/components/Footer'
-import { PlanningSection } from '@/components/Planning/PlanningSection'
+import { PlanningSection } from '@/components/Sections/PlanningSection'
 
 export default function PlanningPage() {
   return (
@@ -20,7 +20,7 @@ export default function PlanningPage() {
 
         {/* Mobile Layout - Render PlanningSection */}
         <main className="lg:hidden">
-          <div className="min-h-[85vh] flex items-center pt-24"> {/* Adjust as needed */} 
+          <div className="min-h-[85vh] flex items-center"> {/* Adjust as needed */} 
             <div className="w-full">
               <PlanningSection />
             </div>

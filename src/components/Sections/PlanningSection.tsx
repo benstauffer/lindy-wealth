@@ -50,10 +50,10 @@ function PlanningHero() {
 
   return (
     <motion.div 
-      className="w-full mx-auto px-6 text-center relative pt-36 md:pt-36 pb-16 bg-white"
+      className="w-full mx-auto text-center relative pt-36 md:pt-36 pb-16 bg-white"
     >
-      <div className="max-w-xl mx-auto">
-        <div className="w-full text-2xl sm:text-6xl font-normal mb-10">
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="w-full text-3xl sm:text-5xl font-normal mb-10">
           <div className="">
             <motion.div
               initial="hidden"
@@ -66,7 +66,7 @@ function PlanningHero() {
               </motion.div>
               <motion.div
                 variants={heroLineVariants}
-                className={`text-lg sm:text-2xl mt-4 text-stone-600`}
+                className={`text-xl sm:text-2xl mt-4 text-neutral-600`}
               >
                  Build and grow your wealth <br/> with a unified strategy.
               </motion.div>
@@ -87,10 +87,10 @@ function PlanningHero() {
         </motion.form>
       </div>
         
-      <div className="mt-32 flex flex-col items-center w-full mx-auto space-y-12">
+      <div className="mt-32 flex flex-col items-center w-full mx-auto space-y-12 px-6">
         <LeftRightSection 
           leftContent={
-            <h2 className={`text-2xl font-medium text-neutral-800`}>
+            <h2 className={`text-2xl font-medium text-neutral-900`}>
               Our Approach
             </h2>
           }
@@ -108,7 +108,7 @@ function PlanningHero() {
          {/* Replaced Pricing Section with Investing Pricing Card */}
          <LeftRightSection 
           leftContent={
-            <h2 className={`text-2xl font-medium text-neutral-800`}>
+            <h2 className={`text-2xl font-medium text-neutral-900`}>
               Pricing:
             </h2>
           }
@@ -121,7 +121,7 @@ function PlanningHero() {
               {/* Investment Pricing Card */}
               <div className="space-y-6 bg-neutral-100 p-8 rounded-2xl text-left">
                  <div className="grid grid-cols-2 gap-x-8 gap-y-2 text-neutral-700 text-xl">
-                   <p className="font-medium text-2xl text-neutral-800m b-4">Assets Managed</p>
+                   <p className="font-medium text-2xl text-neutral-800m b-4">Assets <br /> Managed</p>
                    <p className="font-medium text-2xl text-neutral-800 mb-4">Annual <br /> Fee</p>
                    
                    <p>$0 - $1M</p>
@@ -231,11 +231,11 @@ function PlanningTopics() {
     <motion.div
       className="w-full mx-auto relative py-24 md:py-32 bg-white"
     >
-      {/* Updated Heading Section */}
-      <div className="max-w-6xl mx-auto px-6 mb-16">
+      {/* Updated Heading Section - Change max-w-6xl to max-w-5xl */}
+      <div className="max-w-5xl mx-auto px-6 mb-16">
         <LeftRightSection
           leftContent={
-            <h2 className={`text-2xl font-medium text-neutral-800`}>
+            <h2 className={`text-2xl font-medium text-neutral-900`}>
               Core Services:
             </h2>
           }
@@ -247,10 +247,9 @@ function PlanningTopics() {
         />
       </div>
 
-      {/* Card Grid - logic remains the same, displays more cards */}
-      <div className="max-w-6xl mx-auto px-6">
+      {/* Card Grid - Change max-w-6xl to max-w-5xl */}
+      <div className="max-w-5xl mx-auto px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {/* Column 1 */}
           <div className="flex flex-col gap-6 md:gap-8">
             {column1.map((topic, index) => (
               <motion.div
@@ -264,7 +263,6 @@ function PlanningTopics() {
             ))}
           </div>
           
-          {/* Column 2 */}
           <div className="flex flex-col gap-6 md:gap-8">
             {column2.map((topic, index) => (
               <motion.div
@@ -278,7 +276,6 @@ function PlanningTopics() {
             ))}
           </div>
           
-          {/* Column 3 */}
           <div className="flex flex-col gap-6 md:gap-8">
             {column3.map((topic, index) => (
               <motion.div
