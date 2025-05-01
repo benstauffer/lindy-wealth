@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   title: "Lindy Wealth",
   description: "An independent wealth management firm",
   icons: {
-    icon: '/assets/dropcaps/Logo.png',
-    apple: '/assets/dropcaps/Logo.png',
+    icon: '/images/LLL.png',
+    apple: '/images/LLL.png',
   },
   manifest: '/site.webmanifest',
   openGraph: {

@@ -1,26 +1,33 @@
 import Link from 'next/link'
 
-export function FooterSection() {
-  const currentYear = new Date().getFullYear();
+interface FooterProps {
+  darkTheme?: boolean;
+}
+
+export function FooterSection({ darkTheme = false }: FooterProps) {
+  // const currentYear = new Date().getFullYear(); // Copyright removed
 
   return (
     <footer 
       id="contact" 
-      className="w-full py-4 mt-auto lg:fixed lg:bottom-0 lg:left-0 lg:right-0 lg:z-50 lg:border-t-0 lg:mt-0 lg:bg-transparent lg:backdrop-blur-none"
+      // Using dynamic class based on darkTheme prop
+      className={`w-full py-16 md:py-24 mt-auto ${darkTheme ? 'bg-black' : 'bg-white'}`} 
     >
-      <div className="w-full px-8 lg:px-12">
-        <div className="flex flex-col sm:flex-row items-center justify-between">
-          {/* Left Side - Stylized L and Copyright */}
-          <div className="flex items-center space-x-2 justify-center sm:justify-start">
-            <div className="text-sm text-neutral-500">© {currentYear} Lindy Wealth, LLC</div>
-          </div>
+      {/* Centered container */}
+      <div className="w-full max-w-4xl mx-auto px-6 text-center">
+        {/* Large Heading */}
+        <h2 className={`text-5xl md:text-6xl ${darkTheme ? 'text-white' : 'text-neutral-900'} mb-6 suisse-font`}>
+          Lindy Wealth
+        </h2>
 
-          <div className="flex flex-wrap justify-center sm:justify-end space-x-4 mt-4 sm:mt-0">
+        {/* Links container - centered */}
+        <div className="flex flex-wrap justify-center items-center space-x-4 sm:space-x-6">
             <a 
               href="https://client.schwab.com/Areas/Access/Login" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-xs text-neutral-500 hover:text-neutral-700"
+            // Updated link styling with dynamic class
+            className={`text-base ${darkTheme ? 'text-gray-400 hover:text-white' : 'text-neutral-500 hover:text-neutral-900'} transition-colors`}
             >
               Charles Schwab
             </a>
@@ -28,28 +35,27 @@ export function FooterSection() {
               href="https://app.rightcapital.com/account/login" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-xs text-neutral-500 hover:text-neutral-700"
+            className={`text-base ${darkTheme ? 'text-gray-400 hover:text-white' : 'text-neutral-500 hover:text-neutral-900'} transition-colors`}
             >
               RightCapital
             </a>
-            <a 
+          <Link // Use NextLink for internal links
               href="/disclosure"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-neutral-500 hover:text-neutral-700"
+            className={`text-base ${darkTheme ? 'text-gray-400 hover:text-white' : 'text-neutral-500 hover:text-neutral-900'} transition-colors`}
             >
               Disclosure
-            </a>
+          </Link>
             <a 
               href="/documents/Privacy.pdf"
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-xs text-neutral-500 hover:text-neutral-700"
+            className={`text-base ${darkTheme ? 'text-gray-400 hover:text-white' : 'text-neutral-500 hover:text-neutral-900'} transition-colors`}
             >
               Privacy
             </a>
           </div>
-        </div>
+
+        {/* Removed copyright */}
       </div>
     </footer>
   )

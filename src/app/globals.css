@@ -94,7 +94,8 @@
 /* Set the root font size */
 html {
   font-size: 17px;
-  scroll-behavior: auto !important;
+  /* Enable smooth scrolling */
+  scroll-behavior: smooth; 
 }
 
 /* Remove or comment out the specific body font-family if you want Tailwind's default */
@@ -177,6 +178,19 @@ html.with-drawer-open body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
   }
 }
 

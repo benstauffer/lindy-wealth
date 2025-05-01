@@ -1,5 +1,5 @@
 import { Header } from '@/components/Header'
-import { Section01 } from '@/components/01'
+import { Section01 } from '@/components/01/01'
 import { FooterSection } from '@/components/Footer'
 
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
         <main className="hidden lg:block">
           <div className="min-h-screen flex items-center"> {/* Adjust min-h and pt as needed */} 
             <div className="w-full">
-              <Section01 />              
+              <Section01 />   
             </div>
           </div>
         </main>
