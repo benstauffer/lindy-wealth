@@ -37,7 +37,7 @@ function EducationHero() {
 
   const overviewContent = {
     paragraphs: [
-      "The Lindy Wealth Blueprint is a comprehensive 30-day program designed to transform your financial foundation and set you on the path to long-term wealth building.",
+      "The Lindy Wealth Playbook is a comprehensive 30-day program designed to transform your financial foundation and set you on the path to long-term wealth building.",
       "We hope you'll leave with a clear financial roadmap, momentum toward your goals, and confidence in your financial future.",
     ],
   };
@@ -66,14 +66,13 @@ function EducationHero() {
 
               </div>
               <motion.div variants={heroLineVariants}>
-                The Lindy <br /> Wealth Blueprint
+                The Lindy <br /> Wealth Playbook
               </motion.div>
               <motion.div
                 variants={heroLineVariants}
                 className={`text-xl sm:text-2xl mt-4 text-neutral-600`}
               >
-                A 30-day guided sprint that gets <br /> your financial house in
-                order.
+                A 30-day guided sprint that gets <br /> your financial house in order.
               </motion.div>
             </motion.div>
           </div>
@@ -119,7 +118,7 @@ function EducationHero() {
           }
           rightContent={
             <p className={`text-2xl text-neutral-600`}>
-              $250
+              $500
             </p>
           }
         />
