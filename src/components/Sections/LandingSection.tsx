@@ -275,7 +275,7 @@ interface Card {
 const featureCards: FeatureCard[] = [
     {
       subtitle: "A 30-day guided sprint that gets your financial house in order.",
-      description: "Best for early-stage creators & small business owners learning to manage their first serious online income.",
+      description: "Best for those managing their first significant income and building a financial foundation.",
       bgColorClass: "bg-[#F2E9E9]", 
       textColorClass: "text-neutral-900", // White text for medium bg
       badge: "EDUCATION",
@@ -284,7 +284,7 @@ const featureCards: FeatureCard[] = [
     },
     {
       subtitle: "Ongoing financial advice & planning that turns goals into action",
-      description: "Ideal for established creators & entrepreneurs seeking coordinated tax, investment, and long-term planning.",
+      description: "Ideal for those with more complex planning needs looking for coordinated full service planning.",
       bgColorClass: "bg-[#718087]", 
       textColorClass: "text-white", // White text for darker bg
       badge: "PLANNING",
