@@ -66,12 +66,11 @@ function HeroSection() {
             variants={textVariants}
             className="text-neutral-900"
           >
-            <motion.div variants={lineVariants}>
+            <motion.div variants={lineVariants} className="max-w-2xl mx-auto">
             Financial planning that helps you make sense of it all.
             </motion.div>
-            <motion.div variants={lineVariants} className="text-xl sm:text-2xl mt-2 md:mt-4 text-neutral-600">
-              Planning, investing, and long-term strategy <br />
-              to help you reach your goals with confidence.
+            <motion.div variants={lineVariants} className="text-xl sm:text-2xl mt-2 md:mt-4 text-neutral-600 max-w-xl mx-auto">
+              Planning, investing, and long-term strategy to help you reach your goals with confidence.
             </motion.div> 
           </motion.div>
         </div>

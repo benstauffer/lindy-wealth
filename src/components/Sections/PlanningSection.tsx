@@ -68,7 +68,7 @@ function PlanningHero() {
                 variants={heroLineVariants}
                 className={`text-xl sm:text-2xl mt-4 text-neutral-600`}
               >
-                 Build and managegit your wealth <br/> with a unified strategy.
+                 Build and manage your wealth with a unified strategy.
               </motion.div>
             </motion.div>
           </div>

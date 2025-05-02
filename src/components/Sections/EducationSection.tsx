@@ -78,30 +78,19 @@ function EducationHero() {
             </motion.div>
           </div>
         </div>
-        <motion.form
-          onSubmit={handleFormSubmit}
-          className="mt-8 max-w-sm mx-auto"
+        <motion.div
+          className="mt-8"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.3 }}
         >
-          <div className="relative flex items-center">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
-              required
-              className="w-full px-4 py-2.5 pr-32 border border-neutral-300 rounded-full text-neutral-900 placeholder-neutral-500 focus:outline-none focus:border-neutral-400 text-sm"
-            />
-            <button 
-              type="submit"
-              className="absolute right-1 top-1 bottom-1 group inline-flex items-center justify-center whitespace-nowrap rounded-full bg-neutral-900 px-4 py-1.5 text-xs font-semibold text-white transition-colors duration-200 hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-            >
-              Request Access
-            </button>
-          </div>
-        </motion.form>
+          <Link 
+            href="mailto:ben@lindywealth.com?subject=Blueprint Access Request"
+            className="inline-flex items-center justify-center rounded-full px-8 py-3 text-sm font-medium transition-colors bg-neutral-900 text-white hover:bg-neutral-800"
+          >
+            Request Access
+          </Link>
+        </motion.div>
       </div>
         
       <div className="mt-32 flex flex-col items-center w-full mx-auto space-y-12 px-6">
