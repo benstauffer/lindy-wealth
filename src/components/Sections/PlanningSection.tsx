@@ -35,9 +35,9 @@ function PlanningHero() {
 
   const overviewContent = {
     paragraphs: [
-      "We start by getting clear on your goals, values, and financial picture. Then design a personalized plan to get you where you want to go.",
-      "Next, we construct globally diversified, tax-efficient portfolio designed to support your financial plan.",
-      "Finally, we put your plan into action and manage the details so you can focus on your life, knowing everything is handled.",
+      "We start by getting clear on your goals, values, and financial picture. Then we design a personalized plan to help you acheive your objectives.",
+      "Next, we a construct globally diversified, tax-efficient portfolio designed to support your financial plan.",
+      "Finally, we put your plan into action and manage the day-to-day details so you can focus on your life, knowing everything is handled.",
     ],
   };
 
@@ -68,7 +68,7 @@ function PlanningHero() {
                 variants={heroLineVariants}
                 className={`text-xl sm:text-2xl mt-4 text-neutral-600`}
               >
-                 Build and grow your wealth <br/> with a unified strategy.
+                 Build and managegit your wealth <br/> with a unified strategy.
               </motion.div>
             </motion.div>
           </div>
@@ -124,19 +124,19 @@ function PlanningHero() {
                    <p className="font-medium text-2xl text-neutral-800m b-4">Assets <br /> Managed</p>
                    <p className="font-medium text-2xl text-neutral-800 mb-4">Annual <br /> Fee</p>
                    
-                   <p>$0 - $1M</p>
+                   <p>$0-1M</p>
                    <p>1.00%</p>
                    
-                   <p>$1M - $5M</p>
+                   <p>$1M-5M</p>
                    <p>0.75%</p>
                    
-                   <p>$5M - $10M</p> 
+                   <p>$5M-10M</p> 
                    <p>0.50%</p>
                    
-                   <p>$10M - $25M</p>
+                   <p>$10M-25M</p>
                    <p>0.40%</p>
                    
-                   <p>Above $25M</p>
+                   <p>$25M+</p>
                    <p>0.30%</p>
                  </div>
                  <p className="text-sm text-neutral-600 pt-2">

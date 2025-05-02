@@ -46,16 +46,19 @@ function HeroSection() {
 
   return (
     <div className="w-full max-w-5xl mx-auto px-6 text-center relative md:pt-16 pb-16">
-      <div className="relative w-full h-[500px] mb-6">
-        <Image 
-          src="/images/art.png"
-          alt="Hero illustration"
-          fill
-          className="object-contain"
-          priority
-        />
+      <div className="w-full flex justify-center items-center my-8">
+        <div className="relative" style={{ width: '100%', maxWidth: '500px' }}>
+          <Image 
+            src="/images/art.png"
+            alt="Hero illustration"
+            width={500}
+            height={350}
+            className="object-contain"
+            priority
+          />
+        </div>
       </div>
-      <div className="w-full text-3xl sm:text-5xl font-normal mb-10 "> 
+      <div className="w-full text-3xl sm:text-5xl font-normal mb-6 md:mb-10 mt-4 md:mt-0 max-w-2xl mx-auto"> 
         <div className="">
           <motion.div
             initial="hidden"
@@ -63,13 +66,18 @@ function HeroSection() {
             variants={textVariants}
             className="text-neutral-900"
           >
-            <motion.div variants={lineVariants}>Financial planning for <br /> creators & entrepreneurs.</motion.div>
-            <motion.div variants={lineVariants} className="text-xl sm:text-2xl mt-4 text-neutral-600"> Planning, investing, & long-term strategy.</motion.div> 
+            <motion.div variants={lineVariants}>
+            Financial planning that helps you make sense of it all.
+            </motion.div>
+            <motion.div variants={lineVariants} className="text-xl sm:text-2xl mt-2 md:mt-4 text-neutral-600">
+              Planning, investing, and long-term strategy <br />
+              to help you reach your goals with confidence.
+            </motion.div> 
           </motion.div>
         </div>
       </div>
       <motion.div
-        className="flex justify-center items-center gap-4"
+        className="flex justify-center items-center gap-4 mt-8"
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 0.3 }}
@@ -105,13 +113,13 @@ function AboutSection() {
         rightContent={
           <div className="space-y-6">
             <p className="text-2xl text-neutral-600">
-              Lindy Wealth is a financial planning firm focused on serving creators and entrepreneurs. We bring structure, clarity, and long-term thinking to your financial life.
+             Lindy Wealth is an independent financial planning firm based in Los Angeles and founded by Ben Stauffer, CFP®. We help people bring structure, clarity, and long-term thinking to their financial lives.
             </p>
             <p className="text-2xl text-neutral-600">
-              Our approach combines evidence-based investing, tax optimization strategies, and personalized financial roadmaps to help you build lasting wealth that supports your unique goals and values.
-            </p>
+            Our approach blends planning, investing, and long-term support to help you build and manage your wealth.
+              </p>
             <p className="text-2xl text-neutral-600">
-              We believe that financial success is a prerequisite to bringing any life goal to fruition. Our services are designed to give you the financial foundation you need to focus on what matters most to you.
+             We believe financial clarity helps you live a more meaningful life. Our work is designed to free you to focus on what matters most.
             </p>
           </div>
         }
