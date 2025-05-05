@@ -174,6 +174,8 @@ interface WhereToStartSectionProps {
 }
 
 function WhereToStartSection({ featureCards }: WhereToStartSectionProps) {
+  const card = featureCards[0]; // Get the single card
+
   return (
     <section id="work-with-us" className="w-full pb-32 bg-white scroll-mt-36 sm:scroll-mt-28 px-6">
       <LeftRightSection
@@ -185,47 +187,36 @@ function WhereToStartSection({ featureCards }: WhereToStartSectionProps) {
           </h3>
         }
         rightContent={
-          <p className="text-2xl text-neutral-600">
-            Choose the path below that best fits where you are today.
-          </p>
-        }
-        className="mb-16"
-      />
-      
-      <motion.div 
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.4 }}
-      > 
-        {featureCards.map((card, index) => (
-          <motion.div 
-            key={index} 
-            className={`rounded-2xl overflow-hidden flex flex-col h-full`}
-          >
-            <Link href={card.ctaLink} className="block h-full group">
-              <div className={`space-y-4 ${card.bgColorClass} p-8 rounded-2xl h-full flex flex-col relative`}>
-                
-                {/* Main Text (Subtitle) - Dynamic text color */}
-                <h3 className={`text-3xl ${card.textColorClass} flex-grow`}>{card.subtitle}</h3>
-                
-                {/* Container for bottom elements */}
-                <div className="mt-auto"> 
-                  {/* Description - Conditional text color */}
-                  <p className={`text-base mb-4 ${card.textColorClass === 'text-white' ? 'text-white/80' : 'text-neutral-700'}`}> 
-                    {card.description}
-                  </p>
-                  
-                  {/* Arrow Icon - Now absolutely positioned within the card link */}
-                  <div className="absolute bottom-8 right-8"> 
-                    <FiArrowRight className={`h-6 w-6 ${card.textColorClass} ${card.textColorClass === 'text-white' ? 'group-hover:text-white/80' : 'group-hover:text-neutral-700'} transition-colors`} /> 
+          <div className="space-y-8">
+            <p className="text-2xl text-neutral-600">
+              Full-service financial planning and investment management for those seeking clarity and confidence.
+            </p>
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <Link 
+                href={card.ctaLink}
+                className="block"
+              >
+                <div className="space-y-6 bg-[#718087] p-8 rounded-2xl">
+                  <div className="space-y-4">
+                    <h3 className="text-2xl text-white">{card.subtitle}</h3>
+                    <p className="text-white/80 text-base">
+                      {card.description}
+                    </p>
+                  </div>
+                  <div className="flex items-center">
+                    <span className="inline-flex items-center justify-center rounded-full px-8 py-3 text-sm font-medium transition-colors bg-white text-neutral-900 group-hover:bg-neutral-100">
+                      Learn More
+                    </span>
                   </div>
                 </div>
-              </div> 
-            </Link>
-          </motion.div>
-        ))}
-      </motion.div>
+              </Link>
+            </motion.div>
+          </div>
+        }
+      />
     </section>
   );
 } 
@@ -271,26 +262,16 @@ interface Card {
 
 
 // --- Data Definitions for Sections ---
-// Moved cardData into TopCardsSection
 const featureCards: FeatureCard[] = [
-    {
-      subtitle: "A 30-day guided sprint that gets your financial house in order.",
-      description: "Best for those managing their first significant income and building a financial foundation.",
-      bgColorClass: "bg-[#F2E9E9]", 
-      textColorClass: "text-neutral-900", // White text for medium bg
-      badge: "EDUCATION",
-      ctaText: "Learn more",
-      ctaLink: "/education"
-    },
     {
       subtitle: "Ongoing financial advice & planning that turns goals into action",
       description: "Ideal for those with more complex planning needs looking for coordinated full service planning.",
       bgColorClass: "bg-[#718087]", 
-      textColorClass: "text-white", // White text for darker bg
+      textColorClass: "text-white",
       badge: "PLANNING",
       ctaText: "Learn more",
       ctaLink: "/planning"
-    },
+    }
   ];
 
 // --- Main Export Component --- 
@@ -299,7 +280,6 @@ export function Section01() {
     <section className="relative flex flex-col items-center">
       {/* Render consolidated components directly */}
       <HeroSection />
-      {/* <TopCardsSection /> */} {/* Removed as TopCardsSection seemed unused */} 
       <AboutSection />
       <ContactSection />
       <WhereToStartSection featureCards={featureCards} />
