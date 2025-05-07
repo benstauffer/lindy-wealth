@@ -116,7 +116,7 @@ function PlanningHero() {
             <div className="w-full flex flex-col space-y-6"> {/* Allow stacking of pricing info */}
               {/* Planning Pricing Info */}
               <p className={`text-2xl text-neutral-600`}>
-                Planning engagements range from $2k to $20k and are based on complexity. If assets are managed, the following fee schedule will apply in addition to the planning fee.
+                Planning engagements range from $5k to $20k and are based on complexity. If assets are managed, the following fee schedule will apply in addition to the planning fee.
               </p>
               {/* Investment Pricing Card */}
               <div className="space-y-6 bg-neutral-100 p-8 rounded-2xl text-left">
