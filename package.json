@@ -29,7 +29,7 @@
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.5.2",
     "embla-carousel-wheel-gestures": "^8.0.1",
-    "framer-motion": "^12.6.5",
+    "framer-motion": "^12.12.1",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.475.0",
     "motion": "^12.6.5",
