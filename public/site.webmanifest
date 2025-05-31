@@ -1,0 +1,9 @@
+{
+  "name": "Lindy Wealth",
+  "short_name": "Lindy",
+  "description": "An independent wealth management firm",
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "start_url": "/"
+} 
