@@ -322,13 +322,13 @@ function PricingSection() {
   return (
     <section className="w-full bg-white px-6 py-8">
       <div className="max-w-5xl mx-auto">
-        <LeftRightSection 
-          leftContent={
-            <h2 className={`text-2xl font-medium text-neutral-900`}>
-              Services & Pricing
-            </h2>
-          }
-          rightContent={
+      <LeftRightSection 
+        leftContent={
+          <h2 className={`text-2xl font-medium text-neutral-900`}>
+            Services & Pricing
+          </h2>
+        }
+        rightContent={
             <div className="w-full flex flex-col space-y-8">
               {/* Pricing Card */}
               <div className="bg-neutral-100 rounded-3xl p-8 max-w-lg">
@@ -450,6 +450,8 @@ function PricingSection() {
 
 // --- ProcessSection Component ---
 function ProcessSection() {
+  const [currentIndex, setCurrentIndex] = React.useState(0);
+  
   const processSteps = [
     { 
       title: "1. Introduction", 
@@ -483,6 +485,18 @@ function ProcessSection() {
     },
   ];
 
+  const swipeToNext = () => {
+    if (currentIndex < processSteps.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const swipeToPrevious = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
+
   return (
     <section className="w-full bg-white px-6 py-8">
       <LeftRightSection
@@ -492,25 +506,101 @@ function ProcessSection() {
           </div>
         }
         rightContent={
-          <div className="max-w-lg">
-            {processSteps.map((step, index) => (
-              <div key={index} className="flex flex-col items-center mb-4">
-                <motion.div
-                  className={`${step.color} rounded-2xl p-6 w-full text-left`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 * index, duration: 0.5 }}
-                  whileHover={{ scale: 1.02, transition: { type: "spring", stiffness: 300 } }}
-                >
-                  <h3 className={`text-2xl font-medium ${step.textColor} mb-2`}>
-                    {step.title}
-                  </h3>
-                  <p className={`text-lg ${step.textColor === 'text-white' ? 'text-white' : 'text-neutral-700'}`}>
-                    {step.description}
-                  </p>
-                </motion.div>
-              </div>
-            ))}
+          <div className="max-w-lg relative">
+            {/* Card Stack Container */}
+            <div className="relative h-80 w-full flex justify-center">
+              {processSteps.map((step, index) => {
+                const isActive = index === currentIndex;
+                const offset = index - currentIndex;
+                const isVisible = Math.abs(offset) <= 4; // Show all cards (max 4 on each side)
+                
+                if (!isVisible) return null;
+                
+                return (
+                  <motion.div
+                    key={index}
+                    className={`absolute ${step.color} rounded-3xl p-8 text-left shadow-sm cursor-grab active:cursor-grabbing`}
+                    style={{
+                      width: '400px',
+                      height: '300px',
+                      pointerEvents: isActive ? 'auto' : 'none'
+                    }}
+                    initial={false}
+                    animate={{
+                      x: offset * 25, // Much closer together - reduced from 60 to 25
+                      y: Math.abs(offset) * 8, // Much closer vertical spacing - reduced from 20 to 8
+                      scale: 1 - Math.abs(offset) * 0.08, // Less scale reduction for tighter stack
+                      rotate: offset * 1, // Minimal rotation for tight stacking
+                      zIndex: processSteps.length - Math.abs(offset),
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 40,
+                      mass: 1
+                    }}
+                    drag={isActive ? "x" : false}
+                    dragConstraints={{ left: 0, right: 0 }}
+                    dragElastic={0.3}
+                    onDragEnd={(event, { offset, velocity }) => {
+                      const threshold = 80;
+                      const velocityThreshold = 300;
+                      
+                      if (Math.abs(offset.x) > threshold || Math.abs(velocity.x) > velocityThreshold) {
+                        if (offset.x > 0 && currentIndex > 0) {
+                          swipeToPrevious();
+                        } else if (offset.x < 0 && currentIndex < processSteps.length - 1) {
+                          swipeToNext();
+                        }
+                      }
+                    }}
+                    whileDrag={{
+                      scale: 1.05,
+                    }}
+                  >
+                    <div className="h-full flex flex-col">
+                      <h3 className={`text-2xl font-medium ${step.textColor} mb-3`}>
+                        {step.title}
+                      </h3>
+                      <p className={`text-xl ${step.textColor === 'text-white' ? 'text-white/90' : 'text-neutral-700'} flex-grow`}>
+                        {step.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+            
+            {/* Arrow navigation */}
+            <div className="flex justify-center items-center mt-2 space-x-8">
+              <button
+                onClick={swipeToPrevious}
+                disabled={currentIndex === 0}
+                className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300 ${
+                  currentIndex === 0 
+                    ? 'bg-neutral-200 text-neutral-400 cursor-not-allowed' 
+                    : 'bg-neutral-200 text-neutral-700 hover:bg-neutral-300'
+                }`}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              
+              <button
+                onClick={swipeToNext}
+                disabled={currentIndex === processSteps.length - 1}
+                className={`w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300 ${
+                  currentIndex === processSteps.length - 1 
+                    ? 'bg-neutral-200 text-neutral-400 cursor-not-allowed' 
+                    : 'bg-neutral-200 text-neutral-700 hover:bg-neutral-300'
+                }`}
+              >
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
           </div>
         }
       />
