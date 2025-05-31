@@ -519,9 +519,10 @@ function ProcessSection() {
                 return (
                   <motion.div
                     key={index}
-                    className={`absolute ${step.color} rounded-3xl p-8 text-left shadow-sm cursor-grab active:cursor-grabbing`}
+                    className={`absolute ${step.color} rounded-3xl p-6 sm:p-8 text-left shadow-sm cursor-grab active:cursor-grabbing`}
                     style={{
-                      width: '400px',
+                      width: '100%',
+                      maxWidth: '400px',
                       height: '300px',
                       pointerEvents: isActive ? 'auto' : 'none'
                     }}
@@ -559,10 +560,10 @@ function ProcessSection() {
                     }}
                   >
                     <div className="h-full flex flex-col">
-                      <h3 className={`text-2xl font-medium ${step.textColor} mb-3`}>
+                      <h3 className={`text-xl sm:text-2xl font-medium ${step.textColor} mb-3`}>
                         {step.title}
                       </h3>
-                      <p className={`text-xl ${step.textColor === 'text-white' ? 'text-white/90' : 'text-neutral-700'} flex-grow`}>
+                      <p className={`text-lg sm:text-xl ${step.textColor === 'text-white' ? 'text-white/90' : 'text-neutral-700'} flex-grow`}>
                         {step.description}
                       </p>
                     </div>
