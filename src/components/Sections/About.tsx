@@ -279,10 +279,6 @@ export function AboutHeroSection() {
 
 
 export function AboutSection() {
-  function handleMenuItemClick(arg0: string): void {
-    throw new Error('Function not implemented.')
-  }
-
   return (
     <section className="w-full ">
       <div className="max-w-5xl mx-auto flex flex-col ">
@@ -320,7 +316,7 @@ export function AboutSection() {
                         </p>
                       </div>
                       <button 
-              onClick={() => handleMenuItemClick('contact')}
+              onClick={() => window.open('https://cal.com/ben-stauffer-ysbawo/30min', '_blank')}
               className="group px-3 py-3 bg-black rounded-xl text-white hover:bg-neutral-800 transition-colors text-base font-medium flex items-center justify-start gap-3"
             >
               Schedule a call

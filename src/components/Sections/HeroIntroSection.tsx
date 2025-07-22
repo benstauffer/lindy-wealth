@@ -45,7 +45,7 @@ export function HeroIntroSection() {
                         {/* Buttons */}
                         <div className="flex gap-4">
                             <button 
-                                onClick={() => {}}
+                                onClick={() => window.open('https://cal.com/ben-stauffer-ysbawo/30min', '_blank')}
                                 className="group px-4 py-3 bg-[#17A7FF] rounded-xl text-white hover:bg-[#17A7FF]/80 transition-colors text-base font-medium flex items-center justify-center gap-3"
                             >
                                 See if you're a fit

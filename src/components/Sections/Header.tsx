@@ -79,8 +79,7 @@ export function Header({ isDarkMode = false }: HeaderProps) {
     } else if (action === 'email') {
       window.open('mailto:ben@lindywealth.com', '_self');
     } else if (action === 'calendar') {
-      // Replace with actual calendar booking link
-      window.open('https://calendly.com/your-link', '_blank');
+      window.open('https://cal.com/ben-stauffer-ysbawo/30min', '_blank');
     }
   }
 
