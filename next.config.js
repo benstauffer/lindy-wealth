@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
+  transpilePackages: ["geist"],
+  
   // Webpack configuration for production build
   webpack(config) {
     config.module.rules.push({
