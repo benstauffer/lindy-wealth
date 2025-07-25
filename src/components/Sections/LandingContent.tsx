@@ -4,7 +4,8 @@ import React from 'react'
 import { Header } from './Header'
 import { FooterSection } from './Footer'
 import { HeroIntroSection } from './HeroIntroSection'
-import { AboutSection } from './About'
+import { AboutSummarySection } from './AboutSummary'
+import { AboutContent } from './About'
 
 export function LandingContent() {
   return (
@@ -18,15 +19,10 @@ export function LandingContent() {
           <HeroIntroSection />
         </div>
 
- 
-
-        {/* About Section */}
-        <section className="relative">
-          <div className="absolute inset-0 -z-10 w-screen left-1/2 -ml-[50vw] " />
-          <div className="py-10" data-section="about">
-            <AboutSection />
-          </div>
-        </section>
+        {/* About Summary Section */}
+        <div className="mb-20">
+          <AboutSummarySection />
+        </div>
 
       </div>
       

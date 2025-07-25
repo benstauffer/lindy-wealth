@@ -100,10 +100,10 @@ export function ServiceGraphic() {
                 {services.slice(0, 3).map((service, index) => (
                     <div key={index} className="flex items-center gap-4">
                         <div ref={leftServiceRefs[index]} className={`w-28 h-28 ${service.bgColor} flex flex-col items-center justify-center border rounded-3xl border-gray-200 bg-[#F5F5EE] shadow-sm p-2`}>
-                            <service.icon className={`w-6 h-6 ${service.textColor} mb-2`} strokeWidth={1.5} />
+                            <service.icon className={`w-6 h-6 ${service.textColor} mb-1`} strokeWidth={1.5} />
                             <div className="text-center">
-                                <div className="text-xs font-medium text-gray-800 leading-tight">{service.title.split(' ')[0]}</div>
-                                <div className="text-xs font-medium text-gray-800 leading-tight">{service.title.split(' ').slice(1).join(' ')}</div>
+                                <div className="text-xs font-semibold text-gray-800 leading-tight">{service.title.split(' ')[0]}</div>
+                                <div className="text-xs font-semibold text-gray-800 leading-tight">{service.title.split(' ').slice(1).join(' ')}</div>
                             </div>
                         </div>
                     </div>
@@ -115,10 +115,10 @@ export function ServiceGraphic() {
                 {services.slice(3).map((service, index) => (
                     <div key={index} className="flex items-center gap-4 flex-row-reverse ">
                         <div ref={rightServiceRefs[index]} className={`w-28 h-28 ${service.bgColor} flex flex-col items-center justify-center border rounded-3xl border-gray-200 bg-[#F5F5EE] shadow-sm p-2`}>
-                            <service.icon className={`w-6 h-6 ${service.textColor} mb-2`} strokeWidth={1.5} />
+                            <service.icon className={`w-6 h-6 ${service.textColor} mb-1`} strokeWidth={1.5} />
                             <div className="text-center">
-                                    <div className="text-xs font-medium text-gray-800 leading-tight">{service.title.split(' ')[0]}</div>
-                                <div className="text-xs font-medium text-gray-800 leading-tight">{service.title.split(' ').slice(1).join(' ')}</div>
+                                <div className="text-xs font-semibold text-gray-800 leading-tight">{service.title.split(' ')[0]}</div>
+                                <div className="text-xs font-semibold text-gray-800 leading-tight">{service.title.split(' ').slice(1).join(' ')}</div>
                             </div>
                         </div>
                     </div>

@@ -78,15 +78,13 @@ export function Header({ isDarkMode = false }: HeaderProps) {
       window.open('tel:+1234567890', '_self');
     } else if (action === 'email') {
       window.open('mailto:ben@lindywealth.com', '_self');
-    } else if (action === 'calendar') {
-      window.open('https://cal.com/ben-stauffer-ysbawo/30min', '_blank');
     }
   }
 
   return (
     <>
       {/* ============ HEADER CONTAINER ============ */}
-      <header className="fixed top-0 left-0 right-0 z-[102] bg-gray-50 max-w-5xl mx-auto px-6 py-3 md:px-12">
+      <header className="max-w-5xl mx-auto  py-3 ">
         {/* Pricing Panel - positioned within header */}
 
 
@@ -96,7 +94,7 @@ export function Header({ isDarkMode = false }: HeaderProps) {
           {/* ============ LEFT - LOGO ============ */}
           <div className="flex items-center">
             <Link href="/" className="group flex items-center hover:opacity-80 transition-opacity">
-                <span className="text-base font-medium text-black block tracking-wider uppercase">
+                <span className="text-sm md:text-base font-light text-black block tracking-wider uppercase">
                  Lindy Wealth
                 </span>
             </Link>
@@ -109,45 +107,31 @@ export function Header({ isDarkMode = false }: HeaderProps) {
           {/* ============ RIGHT - NAVIGATION AND SCHEDULE CALL BUTTON ============ */}
           <div className="items-center gap-4 hidden sm:flex">
             <button 
-              onClick={() => handleMenuItemClick('process')}
+              onClick={() => {
+                const aboutSection = document.querySelector('[data-section="about-summary"]')
+                if (aboutSection) {
+                  aboutSection.scrollIntoView({ behavior: 'smooth' })
+                }
+              }}
               className="px-4 py-2 hover:opacity-80 transition-opacity"
             >
-              <span className="text-sm font-medium text-black">
-                How it works
-              </span>
+
             </button>
             <button 
-              onClick={() => handleMenuItemClick('faqs')}
-              className="px-4 py-2 hover:opacity-80 transition-opacity"
+              onClick={() => window.open('https://cal.com/ben-stauffer-ysbawo/30min', '_blank')}
+              className="group px-4 py-2 bg-[#17A7FF] text-white rounded-xl hover:bg-[#17A7FF]/80 transition-colors text-xs md:text-sm font-normal flex items-center justify-center gap-2"
             >
-              <span className="text-sm font-medium text-black">
-                FAQs
-              </span>
-            </button>
-            <button 
-              onClick={() => handleCallAction('calendar')}
-              className="group px-4 py-2 bg-[#17A7FF] text-white rounded-xl hover:bg-[#17A7FF]/80 transition-colors text-sm font-medium flex items-center justify-center gap-2"
-            >
-              Schedule a call
+              See if we're a fit
             </button>
           </div>
 
-          {/* ============ MOBILE - MENU BUTTON ============ */}
+          {/* ============ MOBILE - NAVIGATION ============ */}
           <div className="flex items-center gap-4 sm:hidden">
             <button 
-              onClick={() => handleCallAction('calendar')}
-              className="px-3 py-2 bg-[#17A7FF] text-white rounded-lg hover:bg-[#17A7FF]/80 transition-colors text-sm font-medium"
+              onClick={() => window.open('https://cal.com/ben-stauffer-ysbawo/30min', '_blank')}
+              className="px-3 py-2 bg-[#17A7FF] text-white rounded-lg hover:bg-[#17A7FF]/80 transition-colors text-xs md:text-sm font-medium"
             >
-              Book Call
-            </button>
-            
-            <button
-              onClick={handleMenuClick}
-              className="p-2 hover:opacity-80 transition-opacity"
-            >
-              <svg className="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+              See if we're a fit
             </button>
           </div>
 

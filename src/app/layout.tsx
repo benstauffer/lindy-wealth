@@ -4,7 +4,7 @@ import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
-import SmoothScroll from "@/components/ui/SmoothScroll";
+
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
 const cormorantGaramond = Cormorant_Garamond({ 
@@ -66,14 +66,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body 
-        className={`${inter.variable} ${caveat.variable} min-h-screen text-black font-sans  flex flex-col bg-gray-50`}
+        className={`${inter.variable} ${caveat.variable} min-h-screen text-black font-sans  flex flex-col`}
         style={{ 
           overscrollBehavior: 'none', 
           position: 'relative',
           overflowX: 'hidden',
         }}
       >
-        <SmoothScroll />
         <main className="w-full max-w-5xl mx-auto px-6 md:px-12 ">
           {children}
         </main>
