@@ -1,297 +1,273 @@
 'use client'
 
-import React from 'react'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
+import React, { useEffect, useRef, useState } from 'react'
 import { DigitalAssetsGraphic } from '../Graphics/DigitalAssetsGraphic'
-import CalBooking from '@/components/ui/CalBooking'
 
-// Badge component for navigation
-const Badge = ({ children }: { children: React.ReactNode }) => (
-  <span className="inline-block px-3 py-1 bg-neutral-200 text-neutral-600 text-xs font-medium rounded-full mr-4">
-    {children}
-  </span>
-)
+// Add CSS animations for the cards
+const cardAnimations = `
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+  
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+  
+  .animate-delay-1 {
+    animation-delay: 0.2s;
+  }
+  
+  .animate-delay-2 {
+    animation-delay: 0.4s;
+  }
+  
+  .animate-delay-3 {
+    animation-delay: 0.6s;
+  }
+`;
 
 export function AboutSummarySection() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of the section is visible
+        rootMargin: '0px 0px -100px 0px'
+      }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <section className="w-full" data-section="about-summary">
-      <div className="max-w-xl mx-auto">
+    <section ref={sectionRef} className="w-full bg-[#F1F0EA] pb-20 md:pb-32" data-section="about-summary">
+      <style>{cardAnimations}</style>
+      <div className="max-w-6xl mx-auto px-4">
         <div className="w-full space-y-4">
           
-
-          {/* Services Section */}
-          <div className="mb-32">
-            <h4 className="text-2xl md:text-3xl text-black mb-8 text-center font-light">Full-service financial planning. 
-              Coordinated and built around <span className="italic">you</span>.</h4>
+          {/* Centered Intro Text */}
+          <div className="text-center py-8 md:py-16">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl text-black font-medium leading-tight tracking-tight mt-12">
+              Three ways 
+              <br />
+              I can help you.
+            </h2>
           </div>
 
-          <div className="flex justify-center">
+          {/* Financial Plan Graphic
+          <div className="flex justify-center py-8 md:py-16">
             <DigitalAssetsGraphic />
           </div>
+          */}
 
-          {/* All Sections as Accordion */}
-          <div className="space-y-2 pt-32">
-            <Accordion type="multiple" className="w-full">
-              
-              {/* BADGED SECTIONS FIRST */}
-              
-              {/* 1. What is Lindy Wealth? - About */}
-              <AccordionItem value="what-is-lindy" className="bg-neutral-100 rounded-2xl px-6 mb-2.5">
-                <AccordionTrigger className="hover:no-underline py-5 font-normal text-left">
-                  <div className="flex items-center justify-between w-full">
-                    <h4 className="text-sm md:text-base text-black">What is Lindy Wealth?</h4>
-                    <Badge>About</Badge>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pb-6 pt-0">
-                  <p className="text-sm md:text-base text-black/80 leading-relaxed">
-                  Lindy Wealth is an independent registered investment advisor. This means we're not beholden to specific products or strategies and can recommend what's truly the best fit for your situation. It also means we're a fiduciary financial advisor and are legally obligated to put your best interests first. 
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
+          {/* Staggered Text Sections */}
+          <div className="space-y-20 md:space-y-40 py-8 md:py-16">
+            
+            {/* Section 1: Full Service Planning - Left Aligned */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
+              <div className="space-y-4 order-1">
+                <h2 className="text-2xl md:text-5xl text-black font-medium leading-tight tracking-tight">
+                  Full-service planning. Coordinated and built around <span className="italic">you</span>.
+                </h2>
+                <p className="text-base md:text-lg text-black/80 tracking-tight">
+                  I help clients with the 
+                  key areas to help you get the most out of life: your cash flow, how your investments 
+                  are structured, where your taxes can be optimized, and protection strategies. All to 
+                  make sure your finances are optimized and clear so you can have the confidence to 
+                  focus on what matters most to you.
+                </p>
+              </div>
+              <div className="flex justify-center lg:justify-end order-2 lg:order-2">
+                <div className="space-y-2 w-96">
+                  {/* Cash Flow Planning Pill - Left */}
+                  <div className={`bg-[#9893A5] px-3 py-2 flex items-center justify-between mr-12 ${isVisible ? 'animate-slide-in-right animate-delay-1' : ''} opacity-0`}>
+                    <div className="flex items-center space-x-8">
+                      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
 
-              {/* 2. What's the process to get started? - Process */}
-              <AccordionItem value="process" className="bg-neutral-100 rounded-2xl px-6 mb-2.5">
-                <AccordionTrigger className="hover:no-underline py-5 font-normal text-left">
-                  <div className="flex items-center justify-between w-full">
-                    <h4 className="text-sm md:text-base text-black">What's the process to get started?</h4>
-                    <Badge>Process</Badge>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pb-6 pt-0">
-                  <div className="space-y-8">
-                    <div className="flex gap-4">
-                        <p className="text-sm md:text-base text-black/80">
-                        <span className="text-black/50 text-sm">Step 1: A 15–30 Minute Intro Call</span><br />
-                          We'll talk through your goals, financial situation, and what you're hoping to get out of the process. You'll get a feel for how I work, and we'll decide if it makes sense to move forward.
-                        </p>
-                    </div>
-                    
-                    <div className="flex gap-4">
-                        <p className="text-sm md:text-base text-black/80">
-                        <span className="text-black/50 text-sm">Step 2: Discovery + Assessment</span><br />
-                          After our intro call, I'll request a few key documents and put together a detailed assessment and proposal for our engagement.
-                        </p>
-                    </div>
-                    
-                    <div className="flex gap-4">
-                        <p className="text-sm md:text-base text-black/80">
-                        <span className="text-black/50 text-sm">Step 3: Implementation + Ongoing Support</span><br />
-                          We start by mapping out the life you actually want and once your objectives are clear, we’ll review key areas to help you get the most out of life. All to make sure your finances are optimized and clear so you can have the confidence to focus on what matters most to you.
-                          <br /><br />
-                          I'll help you put your strategy into action and we'll stay in close contact through email, Zoom, and check-ins to keep everything aligned and moving forward.
-                        </p>
-                    </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              {/* 3. What services do you offer? - Services */}
-              <AccordionItem value="services" className="bg-neutral-100 rounded-2xl px-6 mb-2.5">
-                <AccordionTrigger className="hover:no-underline py-5 font-normal text-left">
-                  <div className="flex items-center justify-between w-full">
-                    <h4 className="text-sm md:text-base text-black">What services do you offer?</h4>
-                    <Badge>Services</Badge>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pb-6 pt-0">
-                  <p className="text-sm md:text-base text-black/80 leading-relaxed">
-                    I offer comprehensive financial planning. That includes:
-                    <br />- Investment management
-                    <br />- Retirement planning
-                    <br />- Tax strategy
-                    <br />- Estate planning
-                    <br />- Insurance reviews
-                    <br />- Cash flow planning
-                    <br />- Ongoing financial advice
-                    <br /><br />
-                    And everything else you need to feel confident about your financial future.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-
-              {/* 4. How do you get paid? - Pricing */}
-              <AccordionItem value="pricing" className="bg-neutral-100 rounded-2xl px-6 mb-2.5">
-                <AccordionTrigger className="hover:no-underline py-5 font-normal text-left">
-                  <div className="flex items-center justify-between w-full">
-                    <h4 className="text-sm md:text-base text-black">How do you get paid?</h4>
-                    <Badge>Pricing</Badge>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pb-6 pt-0">
-                  <p className="text-sm md:text-base text-black/80 leading-relaxed mb-6">
-                    I'm fee-only, which means I'm only paid by you and never by product companies, banks, or insurance companies. This eliminates conflicts of interest and ensures my advice is always in your best interest.
-                  </p>
-                  
-                  <div>
-                    <div className="mt-2">
-                      <p className="text-sm md:text-base text-black/80 leading-relaxed mb-6">For clients with $2M+ in assets, our tiered asset-based fee structure is shown below. Fees are pulled quarterly in advance. For those with less than $2M, we offer flat fee engagements starting at $5,000/year with an optional investment management component.</p>
-                      
-                      <div className="flex justify-start">
-                        <Table className="border-neutral-200 rounded-xl overflow-hidden">
-                          <TableHeader>
-                            <TableRow className="bg-neutral-50">
-                              <TableHead className="text-xs md:text-sm text-black/70">Assets Under Management</TableHead>
-                              <TableHead className="text-xs md:text-sm text-black/70">Annual Fee</TableHead>
-                            </TableRow>
-                          </TableHeader>
-                                                      <TableBody>
-                              <TableRow>
-                                <TableCell className="text-xs md:text-sm text-black/70">$0 - $1M</TableCell>
-                                <TableCell className="text-xs md:text-sm text-black/70">1.00%</TableCell>
-                              </TableRow>
-                              <TableRow>
-                                <TableCell className="text-xs md:text-sm text-black/70">$1M - $5M</TableCell>
-                                <TableCell className="text-xs md:text-sm text-black/70">0.75%</TableCell>
-                              </TableRow>
-                              <TableRow>
-                                <TableCell className="text-xs md:text-sm text-black/70">$5M - $10M</TableCell>
-                                <TableCell className="text-xs md:text-sm text-black/70">0.50%</TableCell>
-                              </TableRow>
-                              <TableRow>
-                                <TableCell className="text-xs md:text-sm text-black/70">$10M - $25M</TableCell>
-                                <TableCell className="text-xs md:text-sm text-black/70">0.40%</TableCell>
-                              </TableRow>
-                              <TableRow>
-                                <TableCell className="text-xs md:text-sm text-black/70">Above $25M</TableCell>
-                                <TableCell className="text-xs md:text-sm text-black/70">0.30%</TableCell>
-                              </TableRow>
-                            </TableBody>
-                        </Table>
+                      </div>
+                      <div>
+                        <div className="text-sm text-black">Cash Flow Planning</div>
+                        <div className="text-sm text-black/80">Optimize your spending</div>
                       </div>
                     </div>
                   </div>
-                </AccordionContent>
-              </AccordionItem>
 
-              {/* 5. How can I contact you? - Contact */}
-              <AccordionItem value="contact" className="bg-neutral-100 rounded-2xl px-6 mb-2.5">
-                <AccordionTrigger className="hover:no-underline py-5 font-normal text-left">
-                  <div className="flex items-center justify-between w-full">
-                    <h4 className="text-sm md:text-base text-black">How can I contact you?</h4>
-                    <Badge>Contact</Badge>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="pb-6 pt-0">
-                  <p className="text-sm md:text-base text-black/80 leading-relaxed mb-4">
-                    The best way to reach me is by email. I typically respond within a few hours during business days.
-                  </p>
-                  <div className="bg-white rounded-lg p-4 border border-neutral-200">
-                    <p className="text-sm md:text-base text-black font-medium">
-                      Email: <a href="mailto:ben@lindywealth.com" className="text-[#17A7FF] hover:underline">ben@lindywealth.com</a>
-                    </p>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
+                  {/* Investment Management Pill - Right */}
+                  <div className={`bg-[#17A7FF] px-3 py-2 flex items-center justify-between ml-12 ${isVisible ? 'animate-slide-in-right animate-delay-2' : ''} opacity-0`}>
+                    <div className="flex items-center space-x-8">
+                      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
 
-              {/* REMAINING SECTIONS WITHOUT BADGES */}
-
-              <AccordionItem value="is-my-advisor-a-cfp" className="bg-neutral-100 rounded-2xl px-6 mb-2.5">
-                <AccordionTrigger className="hover:no-underline py-5 font-normal text-left">
-                  <h4 className="text-sm md:text-base text-black">Is my advisor a CFP?</h4>
-                </AccordionTrigger>
-                <AccordionContent className="pb-6 pt-0">
-                  <p className="text-sm md:text-base text-black/80 leading-relaxed">Yes, I'm a Certified Financial Planner® Professional. As a CFP®, I'm held to the highest standards of ethics, education, and competency in financial planning.</p>
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="who-we-help" className="bg-neutral-100 rounded-2xl px-6 mb-2.5">
-                <AccordionTrigger className="hover:no-underline py-5 font-normal text-left">
-                  <h4 className="text-sm md:text-base text-black">Who do you help?</h4>
-                </AccordionTrigger>
-                <AccordionContent className="pb-6 pt-0">
-                  <div className="space-y-5">
-                  <p className="text-sm md:text-base text-black/80">
-                          <span className="text-black">I work with people who want a clear, confident strategy and often don’t have the time to figure it all out themselves. If that sounds like you, here are a few examples of who I help most often:</span>  
-                        </p>
-                        <p className="text-sm md:text-base text-black/80">
-                          <span className="text-black font-medium">1. You're planning for early retirement, aiming for a work-optional life, or already retired</span> and you feel unsure if your strategy is optimized — or if it will actually support the lifestyle you want.
-                        </p>
-                    
-                    <div className="flex gap-4">
-                        <p className="text-sm md:text-base text-black/80">
-                          <span className="text-black font-medium">2. You're a high-earning family managing a busy life</span> and you feel like there's too much on your plate. Between careers, kids, maybe a business, you don't want to DIY it anymore.
-                        </p>
+                      </div>
+                      <div>
+                        <div className="text-sm text-white">Investment Management</div>
+                        <div className="text-sm text-white/80">Low-cost & globally diversified</div>
+                      </div>
                     </div>
                   </div>
-                </AccordionContent>
-              </AccordionItem>
 
-              <AccordionItem value="client-fit" className="bg-neutral-100 rounded-2xl px-6 mb-2.5">
-                <AccordionTrigger className="hover:no-underline py-5 font-normal text-left">
-                  <h4 className="text-sm md:text-base text-black">Do I have enough to become a client?</h4>
-                </AccordionTrigger>
-                <AccordionContent className="pb-6 pt-0">
-                  <p className="text-sm md:text-base text-black/80 leading-relaxed">
-                    I typically work with individuals and families who have $2M+ in investable assets. If you're not quite there yet but are committed to your financial future, let's talk about flat fee engagements.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
+                  {/* Tax & Protection Pill - Left */}
+                  <div className={`bg-[#D0D6E5] px-3 py-2 flex items-center justify-between mr-12 ${isVisible ? 'animate-slide-in-right animate-delay-3' : ''} opacity-0`}>
+                    <div className="flex items-center space-x-8">
+                      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
 
-              <AccordionItem value="custody" className="bg-neutral-100 rounded-2xl px-6 mb-2.5">
-                <AccordionTrigger className="hover:no-underline py-5 font-normal text-left">
-                  <h4 className="text-sm md:text-base text-black">Where will my money be held?</h4>
-                </AccordionTrigger>
-                <AccordionContent className="pb-6 pt-0">
-                  <p className="text-sm md:text-base text-black/80 leading-relaxed">
-                    Your money is held at Charles Schwab. The accounts are in your name, and Lindy Wealth acts as your advisor to manage them on your behalf. We don't work for Schwab or earn commissions, so every recommendation we make is in your best interest.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
+                      </div>
+                      <div>
+                        <div className="text-sm text-white">Tax & Protection</div>
+                        <div className="text-sm text-white/80">Optimization & strategies</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-              <AccordionItem value="approach" className="bg-neutral-100 rounded-2xl px-6 mb-2.5">
-                <AccordionTrigger className="hover:no-underline py-5 font-normal text-left">
-                  <h4 className="text-sm md:text-base text-black">What's your approach?</h4>
-                </AccordionTrigger>
-                <AccordionContent className="pb-6 pt-0">
-                  <p className="text-sm md:text-base text-black/80 leading-relaxed">
-                    I built this firm to deliver tangible results without unnecessary complexity. We focus on building the right structure around your finances, optimizing for taxes, and creating a smart portfolio strategy that's durable, flexible, and clear.
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
+            {/* Section 2: Early Retirement - Right Aligned */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
+              <div className="flex justify-center lg:justify-start order-2 lg:order-1">
+                <div className="space-y-2 w-96">
+                  {/* Tax-Efficient Funds Pill - Left */}
+                  <div className={`bg-[#9893A5] px-3 py-2 flex items-center justify-between ml-12 ${isVisible ? 'animate-slide-in-left animate-delay-1' : ''} opacity-0`}>
+                    <div className="flex items-center space-x-8">
+                      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+ 
+                      </div>
+                      <div>
+                        <div className="text-sm text-black">Tax-Efficient Funds</div>
+                        <div className="text-sm text-black/80">ETFs & index funds</div>
+                      </div>
+                    </div>
+                  </div>
 
-            </Accordion>
+                  {/* Asset Location Pill - Right */}
+                  <div className={`bg-[#17A7FF] px-3 py-2 flex items-center justify-between mr-12 ${isVisible ? 'animate-slide-in-left animate-delay-2' : ''} opacity-0`}>
+                    <div className="flex items-center space-x-8">
+                      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+ 
+                      </div>
+                      <div>
+                        <div className="text-sm text-white">Asset Location</div>
+                        <div className="text-sm text-white/80">Tax-optimized placement</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Tax-Loss Harvesting Pill - Left */}
+                  <div className={`bg-[#D0D6E5] px-3 py-2 flex items-center justify-between ml-12 ${isVisible ? 'animate-slide-in-left animate-delay-3' : ''} opacity-0`}>
+                    <div className="flex items-center space-x-8">
+                      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+ 
+                      </div>
+                      <div>
+                        <div className="text-sm text-white">Tax-Loss Harvesting</div>
+                        <div className="text-sm text-white/80">Annual optimization</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-6 order-1 lg:order-2">
+                <h2 className="text-2xl md:text-5xl text-black font-medium leading-tight tracking-tight">
+                  Tax-Efficient Portfolios.
+                </h2>
+                <p className="text-base md:text-lg text-black/80 tracking-tight">
+                My investment process is built on simplicity, evidence, and discipline. Markets generally work, costs and taxes matter, and long-term investing beats short-term movements, but only if you can survive the journey. That's why I tailor portfolios to your goals and manage risk to help you stay invested during turbulent times. I reject promises to "beat the market" and instead focus on building custom, gloablly diversified, low-cost, tax-efficient portfolios.</p>
+              </div>
+            </div>
+
+            {/* Section 3: High-Earning Households - Left Aligned */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
+              <div className="space-y-6 order-1">
+                <h2 className="text-2xl md:text-5xl text-black font-medium leading-tight tracking-tight">
+                  Receive A Free Assessment.
+                </h2>
+                <p className="text-base md:text-lg text-black/80 tracking-tight">
+                If you're not 100% confident in your current financial plan or just want a second opinion, I offer a free, no strings attached assessment of your plan. There's no hard sell or pressure to say yes. Just thoughtful conversations, honest feedback, and a chance for you to see how I work. Whether we move forward together or not, my goal is for you to walk away feeling clearer and glad we connected.
+                </p>
+              </div>
+              <div className="flex justify-center lg:justify-end order-2">
+                <div className="space-y-2 w-96">
+                  {/* Free Review Pill - Left */}
+                  <div className={`bg-[#9893A5] px-3 py-2 flex items-center justify-between mr-12 ${isVisible ? 'animate-slide-in-right animate-delay-1' : ''} opacity-0`}>
+                    <div className="flex items-center space-x-8">
+                      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+ 
+                      </div>
+                      <div>
+                        <div className="text-sm text-black">Free Plan Review</div>
+                        <div className="text-sm text-black/80">No strings attached</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Risk Assessment Pill - Right */}
+                  <div className={`bg-[#17A7FF] px-3 py-2 flex items-center justify-between ml-12 ${isVisible ? 'animate-slide-in-right animate-delay-2' : ''} opacity-0`}>
+                    <div className="flex items-center space-x-8">
+                      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+ 
+                      </div>
+                      <div>
+                        <div className="text-sm text-white">Risk Assessment</div>
+                        <div className="text-sm text-white/80">Identify potential issues</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Next Steps Pill - Left */}
+                  <div className={`bg-[#D0D6E5] px-3 py-2 flex items-center justify-between mr-12 ${isVisible ? 'animate-slide-in-right animate-delay-3' : ''} opacity-0`}>
+                    <div className="flex items-center space-x-8">
+                      <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+ 
+                      </div>
+                      <div>
+                        <div className="text-sm text-white">Next Steps</div>
+                        <div className="text-sm text-white/80">Clear action plan</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
-        </div>
-      </div>
-      
-      {/* Cal.com Booking Section - Full Width */}
-      <div className="w-full pt-16 pb-8">
-        <div className="max-w-5xl mx-auto">
-          <div className="mb-8 text-center">
-            <h2 className="text-xl md:text-2xl text-black font-light mb-2">
-              Ready to get started?
-            </h2>
-            <p className="text-sm md:text-base text-black/70 font-light">
-              Schedule a call with Ben 
-              <br />
-              to see if we're a fit:
-            </p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <CalBooking 
-              style={{ 
-                width: "100%", 
-                border: "none"
-              }}
-              className="mx-auto"
-            />
-          </div>
         </div>
       </div>
     </section>

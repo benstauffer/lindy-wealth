@@ -11,12 +11,6 @@ export function AboutHeroSection() {
           {/* Left-Right Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
             
-            {/* Left 1/3 - Company Info */}
-            <div className="lg:col-span-1">
-              <p className="text-lg text-black/80 leading-relaxed">
-                Lindy Wealth is an independent financial planning firm based in Los Angeles, but serving clients virtually.
-              </p>
-            </div>
 
             {/* Right 2/3 - Main Content */}
             <div className="lg:col-span-2 space-y-6">
@@ -48,16 +42,6 @@ export function AboutHeroSection() {
                   <br />
                   <br />
                   If you're ready to make a change, I'd be happy to help.
-                </p>
-              </div>
-
-              {/* Signature */}
-              <div className="pt-6">
-                <p className="text-4xl font-handwritten text-black mb-2 transform -rotate-1">
-                  Ben Stauffer
-                </p>
-                <p className="text-lg text-black/60">
-                  CFP®, Founder, Lindy Wealth
                 </p>
               </div>
             </div>

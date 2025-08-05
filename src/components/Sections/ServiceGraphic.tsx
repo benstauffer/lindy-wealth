@@ -9,48 +9,48 @@ const services = [
       icon: Check,
       title: 'Life & Goals Planning',
       description: 'Aligning your money with what matters most.',
-      bgColor: 'bg-white',
-      textColor: 'text-gray-700',
+      bgColor: 'bg-[#FFDA40]',
+      textColor: 'text-black',
       position: 'top-left'
     },
     {
       icon: Box,
       title: 'Retirement Planning',
       description: 'A clear path to a secure retirement.',
-      bgColor: 'bg-white',
-      textColor: 'text-gray-700',
+      bgColor: 'bg-[#17A7FF]',
+      textColor: 'text-white',
       position: 'top'
     },
     {
       icon: Search,
       title: 'Investment Management',
       description: 'Evidence-based portfolios to grow your wealth.',
-      bgColor: 'bg-white',
-      textColor: 'text-gray-700',
+      bgColor: 'bg-[#FB651F]',
+      textColor: 'text-white',
       position: 'top-right'
     },
     {
       icon: Landmark,
       title: 'Tax Strategy',
       description: 'Minimize taxes and maximize efficiency.',
-      bgColor: 'bg-white',
-      textColor: 'text-gray-700',
+      bgColor: 'bg-[#5BD363]',
+      textColor: 'text-black',
       position: 'bottom-right'
     },
     {
       icon: Workflow,
       title: 'Estate Planning',
       description: 'Protect and transfer your legacy.',
-      bgColor: 'bg-white',
-      textColor: 'text-gray-700',
+      bgColor: 'bg-[#D0D6E5]',
+      textColor: 'text-black',
       position: 'bottom'
     },
     {
       icon: ShieldCheck,
       title: 'Insurance Review',
       description: 'Right coverage at the right price.',
-      bgColor: 'bg-white',
-      textColor: 'text-gray-700',
+      bgColor: 'bg-[#9893A5]',
+      textColor: 'text-white',
       position: 'bottom-left'
     }
 ]
@@ -89,7 +89,7 @@ export function ServiceGraphic() {
     ]
 
     return (
-        <div className="hidden md:flex relative justify-center items-center min-h-[600px] w-full rounded-3xl border border-gray-200 shadow-sm bg-white">
+        <div className="hidden md:flex relative justify-center items-center min-h-[700px] w-full rounded-3xl border border-gray-200 shadow-sm bg-[#E9E8E4]">
             <ConnectionCanvas 
                 connections={connections}
                 isReady={isReady}
@@ -97,13 +97,13 @@ export function ServiceGraphic() {
             />
             {/* Left side services */}
             <div className="absolute left-0 top-1/2 -translate-y-1/2 flex flex-col gap-6 z-20 p-12 ">
-                {services.slice(0, 3).map((service, index) => (
+                {services.slice(3).map((service, index) => (
                     <div key={index} className="flex items-center gap-4">
-                        <div ref={leftServiceRefs[index]} className={`w-28 h-28 ${service.bgColor} flex flex-col items-center justify-center border rounded-3xl border-gray-200 bg-[#F5F5EE] shadow-sm p-2`}>
+                        <div ref={leftServiceRefs[index]} className={`w-28 h-28 ${service.bgColor} flex flex-col items-center justify-center p-2`}>
                             <service.icon className={`w-6 h-6 ${service.textColor} mb-1`} strokeWidth={1.5} />
                             <div className="text-center">
-                                <div className="text-xs font-semibold text-gray-800 leading-tight">{service.title.split(' ')[0]}</div>
-                                <div className="text-xs font-semibold text-gray-800 leading-tight">{service.title.split(' ').slice(1).join(' ')}</div>
+                                <div className={`text-xs font-semibold ${service.textColor} leading-tight`}>{service.title.split(' ')[0]}</div>
+                                <div className={`text-xs font-semibold ${service.textColor} leading-tight`}>{service.title.split(' ').slice(1).join(' ')}</div>
                             </div>
                         </div>
                     </div>
@@ -112,13 +112,13 @@ export function ServiceGraphic() {
 
             {/* Right side services */}
             <div className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-6 z-20 p-12">
-                {services.slice(3).map((service, index) => (
+                {services.slice(0, 3).map((service, index) => (
                     <div key={index} className="flex items-center gap-4 flex-row-reverse ">
-                        <div ref={rightServiceRefs[index]} className={`w-28 h-28 ${service.bgColor} flex flex-col items-center justify-center border rounded-3xl border-gray-200 bg-[#F5F5EE] shadow-sm p-2`}>
+                        <div ref={rightServiceRefs[index]} className={`w-28 h-28 ${service.bgColor} flex flex-col items-center justify-center p-2`}>
                             <service.icon className={`w-6 h-6 ${service.textColor} mb-1`} strokeWidth={1.5} />
                             <div className="text-center">
-                                <div className="text-xs font-semibold text-gray-800 leading-tight">{service.title.split(' ')[0]}</div>
-                                <div className="text-xs font-semibold text-gray-800 leading-tight">{service.title.split(' ').slice(1).join(' ')}</div>
+                                <div className={`text-xs font-semibold ${service.textColor} leading-tight`}>{service.title.split(' ')[0]}</div>
+                                <div className={`text-xs font-semibold ${service.textColor} leading-tight`}>{service.title.split(' ').slice(1).join(' ')}</div>
                             </div>
                         </div>
                     </div>

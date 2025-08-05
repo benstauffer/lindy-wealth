@@ -16,6 +16,7 @@ export function Header({ isDarkMode = false }: HeaderProps) {
   const [isOverHero, setIsOverHero] = useState(true)
   const pathname = usePathname()
   const isHomePage = pathname === '/'
+  const isPricingPage = pathname === '/pricing'
 
   useEffect(() => {
     // Only track scroll on home page
@@ -84,7 +85,7 @@ export function Header({ isDarkMode = false }: HeaderProps) {
   return (
     <>
       {/* ============ HEADER CONTAINER ============ */}
-      <header className="max-w-5xl mx-auto  py-3 ">
+      <header className={`max-w-6xl mx-auto py-5 px-4 ${isPricingPage ? 'bg-white' : ''}`}>
         {/* Pricing Panel - positioned within header */}
 
 
@@ -94,14 +95,32 @@ export function Header({ isDarkMode = false }: HeaderProps) {
           {/* ============ LEFT - LOGO ============ */}
           <div className="flex items-center">
             <Link href="/" className="group flex items-center hover:opacity-80 transition-opacity">
-                <span className="text-sm md:text-base font-light text-black block tracking-wider uppercase">
+                <span className="text-2xl text-black block tracking-tight">
                  Lindy Wealth
                 </span>
             </Link>
           </div>
 
-          {/* ============ CENTER - EMPTY ============ */}
-          <div className="hidden sm:flex">
+          {/* ============ CENTER - NAVIGATION ============ */}
+          <div className="hidden sm:flex items-center gap-8">
+            <Link 
+              href="/about"
+              className="py-2 hover:opacity-80 transition-opacity text-lg font-medium"
+            >
+              About
+            </Link>
+            <Link 
+              href="/process"
+              className="py-2 hover:opacity-80 transition-opacity text-lg font-medium"
+            >
+              How it works
+            </Link>
+            <Link 
+              href="/pricing"
+              className="py-2 hover:opacity-80 transition-opacity text-lg font-medium"
+            >
+              Pricing
+            </Link>
           </div>
 
           {/* ============ RIGHT - NAVIGATION AND SCHEDULE CALL BUTTON ============ */}
@@ -113,13 +132,13 @@ export function Header({ isDarkMode = false }: HeaderProps) {
                   aboutSection.scrollIntoView({ behavior: 'smooth' })
                 }
               }}
-              className="px-4 py-2 hover:opacity-80 transition-opacity"
+              className="py-2 hover:opacity-80 transition-opacity"
             >
 
             </button>
             <button 
               onClick={() => window.open('https://cal.com/ben-stauffer-ysbawo/30min', '_blank')}
-              className="group px-4 py-2 bg-[#17A7FF] text-white rounded-xl hover:bg-[#17A7FF]/80 transition-colors text-xs md:text-sm font-normal flex items-center justify-center gap-2"
+              className="group px-4 py-3 bg-[#17A7FF] text-white  hover:bg-[#17A7FF]/80 transition-colors text-xs md:text-sm font-normal flex items-center justify-center gap-2"
             >
               See if we're a fit
             </button>
@@ -129,7 +148,7 @@ export function Header({ isDarkMode = false }: HeaderProps) {
           <div className="flex items-center gap-4 sm:hidden">
             <button 
               onClick={() => window.open('https://cal.com/ben-stauffer-ysbawo/30min', '_blank')}
-              className="px-3 py-2 bg-[#17A7FF] text-white rounded-lg hover:bg-[#17A7FF]/80 transition-colors text-xs md:text-sm font-medium"
+              className="px-3 py-3 bg-[#17A7FF] text-white  hover:bg-[#17A7FF]/80 transition-colors text-xs md:text-sm font-medium"
             >
               See if we're a fit
             </button>

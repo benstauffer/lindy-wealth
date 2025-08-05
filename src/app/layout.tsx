@@ -70,10 +70,9 @@ export default function RootLayout({
         style={{ 
           overscrollBehavior: 'none', 
           position: 'relative',
-          overflowX: 'hidden',
         }}
       >
-        <main className="w-full max-w-5xl mx-auto px-6 md:px-12 ">
+        <main className="w-full">
           {children}
         </main>
         <Analytics />

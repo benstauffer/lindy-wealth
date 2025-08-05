@@ -3,6 +3,8 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { RiArrowRightLine, RiPlayCircleLine, RiVolumeUpFill } from 'react-icons/ri'
+import { ServiceGraphic } from './ServiceGraphic'
+import { Graphic } from './Graphic'
 
 
 
@@ -27,80 +29,43 @@ export function HeroIntroSection() {
     return (
         <section className="relative">
             {/* Content container that respects layout constraints */}
-            <div className="relative z-10 flex flex-col items-center justify-center pt-12  max-w-5xl mx-auto ">
+            <div className="relative z-10 flex flex-col items-center justify-center pt-32  mx-auto max-w-6xl px-4">
                 {/* Main Hero Headline */}
-                <div className="w-full mb-4 text-center">
+                <div className="w-full mb-4 text-center ">
                     <motion.h1
-                        className="text-3xl md:text-5xl leading-tight text-black text-center max-w-xl mx-auto font-['Georgia']"
+                        className="text-4xl md:text-5xl lg:text-7xl tracking-tight text-black text-center max-w-3xl mx-auto mt-24 font-medium"
                         style={{ lineHeight: '1' }}
                     >
-                        Plan Smarter, 
+                        Helping you secure 
                         <br />
-                        Live Better. 
+                        your financial future.
                     </motion.h1>
+                    <p className="text-xl md:text-2xl text-black max-w-xl mx-auto mt-8 tracking-tight">
+                        Lindy Wealth is an independent wealth management firm helping families optimize their finances through tax-focused planning and investment management.
+                    </p>
                 </div>
                 <div className="w-full mb-4 text-center">
                     <motion.h1
                         className="text-lg md:text-2xl text-black max-w-lg mx-auto font-light"
                     >
-                        Want a financial partner who helps you get the most out of life with your money? 
                     </motion.h1>
                 </div>
 
-
-
-
-
-    
-
-                {/* Video Section */}
-                <div className="w-full mb-8">
-                    <div className="relative aspect-[16/9] bg-neutral-100 overflow-hidden ">
-                        {/* Auto-playing muted video */}
-                        <iframe
-                            src={showAudioOverlay 
-                                ? "https://www.youtube.com/embed/UA0vm-s32vU?autoplay=1&mute=1&controls=0&modestbranding=1&rel=0&showinfo=0&loop=1&playlist=UA0vm-s32vU&iv_load_policy=3&disablekb=1&fs=0&cc_load_policy=0&hd=1&vq=hd2160"
-                                : "https://www.youtube.com/embed/UA0vm-s32vU?autoplay=1&mute=0&controls=1&modestbranding=1&rel=0&showinfo=0&hd=1&vq=hd2160"
-                            }
-                            title="YouTube video player"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen
-                            className="absolute inset-0 w-full h-full"
-                        ></iframe>
-                        
-                        {/* Audio overlay */}
-                        {showAudioOverlay && (
-                                                             <div 
-                                 onClick={handlePlayAudio}
-                                 className="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/30 transition-all duration-300 cursor-pointer group"
-                             >
-                                 <div className="flex flex-col items-center gap-2">
-                                     <RiVolumeUpFill className="w-12 h-12 text-white drop-shadow-lg" />
-                                     <span className="text-white font-medium uppercase text-lg text-center">Click for sound</span>
-                                 </div>
-                             </div>
-                        )}
-                    </div>
-                </div>
-
-                {/* Scroll target for typeform - positioned to account for fixed header */}
-                <div id="typeform-section" className="w-full" style={{ paddingTop: '100px', marginTop: '-100px' }}>
-                </div>
-                
-                {/* Call to Action Section */}
-                <div className="w-full mb-12 text-center">
+                               {/* Call to Action Section */}
+                               <div className="w-full mb-8 text-center mt-4">
                     <button 
                         onClick={() => window.open('https://cal.com/ben-stauffer-ysbawo/30min', '_blank')}
-                        className="group px-6 py-4 bg-[#17A7FF] text-white hover:bg-[#17A7FF]/80 rounded-xl transition-colors text-sm md:text-lg  font-normal flex items-center justify-center gap-2 mx-auto"
+                        className="group px-6 py-4 bg-[#17A7FF] text-white hover:bg-[#17A7FF]/80 transition-colors text-sm md:text-lg  font-normal flex items-center justify-center gap-2 mx-auto"
                     >
-                        Book a call
+                        Let's Begin
                         <RiArrowRightLine className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </button>
                 </div>
 
-
-
+                {/* Graphic */}
+                <div className="w-full mt-8 max-w-4xl">
+                    <Graphic />
+                </div>
             </div>
         </section>
     )
