@@ -19,7 +19,7 @@ export function ServicesSection() {
                 {/* Image Container */}
                 <div className="w-32 h-32 lg:w-32 lg:h-32 mb-3">
                   <img 
-                    src="/images/BenS.png" 
+                    src="/images/BenHeadshot.png" 
                     alt="Ben Stauffer - Certified Financial Planner® Professional and founder of Lindy Wealth"
                     className="w-full h-full object-cover object-left rounded-full justify-center items-center"
                   />

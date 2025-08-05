@@ -24,7 +24,7 @@ export function AboutContent() {
         <div className="relative z-20 flex justify-center" style={{ marginTop: '-112px', marginBottom: '-112px' }}>
           <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden bg-black">
             <Image
-              src="/images/BenS.png"
+              src="/images/BenHeadshot.png"
               alt="Ben Stauffer"
               width={224}
               height={224}
