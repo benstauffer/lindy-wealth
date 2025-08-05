@@ -208,7 +208,7 @@ export function AboutSummarySection() {
                   Tax-Efficient Portfolios.
                 </h2>
                 <p className="text-base md:text-lg text-black/80 tracking-tight">
-                My investment process is built on simplicity, evidence, and discipline. Markets generally work, costs and taxes matter, and long-term investing beats short-term movements, but only if you can survive the journey. That's why I tailor portfolios to your goals and manage risk to help you stay invested during turbulent times. I reject promises to "beat the market" and instead focus on building custom, gloablly diversified, low-cost, tax-efficient portfolios.</p>
+                My investment process is built on simplicity, evidence, and discipline. Markets generally work, costs and taxes matter, and long-term investing beats short-term movements, but only if you can survive the journey. That's why I tailor portfolios to your goals and manage risk to help you stay invested during turbulent times. I reject promises to "beat the market" and instead focus on building custom, globally diversified, low-cost, tax-efficient portfolios.</p>
               </div>
             </div>
 
