@@ -110,7 +110,7 @@ export function AboutSummarySection() {
                   Tax Strategies.
                 </h2>
                 <p className="text-base md:text-lg text-black/80 tracking-tight">
-                  We build retirement plans using tax‑efficient approaches to maximize long‑term growth, reduce lifetime taxes, and support early retirement goals.
+                  I build retirement plans using tax‑efficient approaches to maximize long‑term growth, reduce lifetime taxes, and support early retirement goals.
                 </p>
               </div>
               <div className="flex justify-center lg:justify-end order-2 lg:order-2">
@@ -148,8 +148,8 @@ export function AboutSummarySection() {
 
                       </div>
                       <div>
-                        <div className="text-sm text-white">Plan Clarity</div>
-                        <div className="text-sm text-white/80">Actionable roadmap</div>
+                        <div className="text-sm text-black">Plan Clarity</div>
+                        <div className="text-sm text-black/80">Actionable roadmap</div>
                       </div>
                     </div>
                   </div>
@@ -194,8 +194,8 @@ export function AboutSummarySection() {
  
                       </div>
                       <div>
-                        <div className="text-sm text-white">Tax & Protection</div>
-                        <div className="text-sm text-white/80">Optimization & strategies</div>
+                        <div className="text-sm text-black">Tax & Protection</div>
+                        <div className="text-sm text-black/80">Optimization & strategies</div>
                       </div>
                     </div>
                   </div>
@@ -263,8 +263,8 @@ export function AboutSummarySection() {
  
                       </div>
                       <div>
-                        <div className="text-sm text-white">Tax-Loss Harvesting</div>
-                        <div className="text-sm text-white/80">Annual optimization</div>
+                        <div className="text-sm text-black">Tax-Loss Harvesting</div>
+                        <div className="text-sm text-black/80">Annual optimization</div>
                       </div>
                     </div>
                   </div>
