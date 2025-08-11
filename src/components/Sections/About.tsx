@@ -50,11 +50,6 @@ export function AboutContent() {
               <p className="text-lg md:text-xl text-black/80 leading-relaxed mb-8">
               I don't promise to beat the market or sell flashy strategies. I help people get clear on what they want, then build tax smart strategies that help secure their financial future.
               </p>
-              
-
-                
-
-
             </div>
           </div>
         </section>

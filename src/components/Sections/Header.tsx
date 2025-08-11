@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 import { RiArrowRightLine } from 'react-icons/ri'
+import { Drawer, DrawerTrigger, DrawerContent, DrawerClose, DrawerTitle } from '@/components/ui/drawer'
 import { usePathname } from 'next/navigation'
 
 
@@ -110,12 +111,6 @@ export function Header({ isDarkMode = false }: HeaderProps) {
               About
             </Link>
             <Link 
-              href="/process"
-              className="py-2 hover:opacity-80 transition-opacity text-lg font-medium"
-            >
-              How it works
-            </Link>
-            <Link 
               href="/pricing"
               className="py-2 hover:opacity-80 transition-opacity text-lg font-medium"
             >
@@ -145,13 +140,50 @@ export function Header({ isDarkMode = false }: HeaderProps) {
           </div>
 
           {/* ============ MOBILE - NAVIGATION ============ */}
-          <div className="flex items-center gap-4 sm:hidden">
+          <div className="flex items-center gap-2 sm:hidden">
             <button 
               onClick={() => window.open('https://cal.com/ben-stauffer-ysbawo/30min', '_blank')}
               className="px-3 py-3 bg-[#17A7FF] text-white  hover:bg-[#17A7FF]/80 transition-colors text-xs md:text-sm font-medium"
             >
-              See if we're a fit
+              Book Intro
             </button>
+            <Drawer>
+              <DrawerTrigger asChild>
+                <button aria-label="Open menu" className="p-3 border border-black/10 text-black">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                  </svg>
+                </button>
+              </DrawerTrigger>
+              <DrawerContent className="bg-white border-t border-black/10">
+                <DrawerTitle className="sr-only">Main menu</DrawerTitle>
+                <nav className="p-4">
+                  <ul className="space-y-2">
+                    <li>
+                      <Link href="/about" className="block w-full px-3 py-3 text-base">About</Link>
+                    </li>
+                    <li>
+                      <Link href="/pricing" className="block w-full px-3 py-3 text-base">Pricing</Link>
+                    </li>
+                  </ul>
+                  <div className="mt-4">
+                    <button 
+                      onClick={() => window.open('https://cal.com/ben-stauffer-ysbawo/30min', '_blank')}
+                      className="w-full px-4 py-3 bg-[#17A7FF] text-white hover:bg-[#17A7FF]/80 transition-colors text-sm"
+                    >
+                      Book a 15‑min Intro
+                    </button>
+                  </div>
+                  <div className="mt-2 flex justify-center">
+                    <DrawerClose asChild>
+                      <button className="px-3 py-2 text-black/60 text-sm" aria-label="Close menu">Close</button>
+                    </DrawerClose>
+                  </div>
+                </nav>
+              </DrawerContent>
+            </Drawer>
           </div>
 
         </div>

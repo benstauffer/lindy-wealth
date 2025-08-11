@@ -41,7 +41,7 @@ export function HeroIntroSection() {
                         your financial future.
                     </motion.h1>
                     <p className="text-xl md:text-2xl text-black max-w-xl mx-auto mt-8 tracking-tight">
-                        Lindy Wealth is an independent wealth management firm helping families optimize their finances through tax-focused planning and investment management.
+                        Lindy Wealth is an independent wealth management firm helping families manage their wealth with smart tax optimization and investment management.
                     </p>
                 </div>
                 <div className="w-full mb-4 text-center">

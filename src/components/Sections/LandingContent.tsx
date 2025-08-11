@@ -32,7 +32,7 @@ export function LandingContent() {
           <ServicesSection />
         </div>
 
-        {/* Who Are You Section
+        {/* Who Are You Section 
         <div className="mb-0">
           <WhoAreYouSection />
         </div> */}

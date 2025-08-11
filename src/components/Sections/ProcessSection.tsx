@@ -69,23 +69,11 @@ export function ProcessSection() {
 
         {/* Description below cards */}
         <div className="w-full mb-4 text-center">
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
+          <p className="text-xl text-white/80 max-w-2xl mx-auto pb-24">
             No cookie-cutter financial advice. This process is guided by your why so you get a plan that's truly yours.
           </p>
         </div>
         
-        {/* Learn More Button */}
-        <div className="w-full mb-24 text-center mt-8">
-          <a 
-            href="/process"
-            className="group px-8 py-4 bg-[#17A7FF] text-white hover:bg-[#17A7FF]/80 transition-colors text-lg font-normal flex items-center justify-center gap-2 mx-auto w-fit"
-          >
-            Learn more
-            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-        </div>
       </div>
     </section>
   )

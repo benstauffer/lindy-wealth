@@ -6,7 +6,7 @@ export function FooterSection() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="pb-6 pt-32 max-w-3xl mx-auto px-4">
+    <footer className="pb-6 pt-32 max-w-4xl mx-auto px-4">
       <div className="w-full mx-auto text-black">
         <div className="mx-auto py-4">
           <div className="flex flex-col md:flex-row md:justify-between items-start gap-8">
@@ -19,8 +19,8 @@ export function FooterSection() {
               </p>
             </div>
 
-            {/* Right side - Three columns */}
-            <div className="flex flex-col md:flex-row gap-4 md:gap-16">
+            {/* Right side - Columns */}
+            <div className="flex flex-col md:flex-row gap-4 md:gap-16 w-full md:w-auto">
               
               {/* Clients Section */}
               <div className="flex flex-col space-y-1">
@@ -52,6 +52,17 @@ export function FooterSection() {
                 <p className="text-xs md:text-sm text-black font-light">
                   Email: <a href="mailto:Ben@lindywealth.com" className="hover:text-black transition-colors">Ben@lindywealth.com</a>
                 </p>
+              </div>
+
+              {/* Navigate Section (helps on mobile when header links collapse) */}
+              <div className="flex flex-col space-y-1">
+                <h4 className="text-xs md:text-sm text-black font-medium mb-2">Navigate</h4>
+                <Link href="/about" className="text-black hover:text-black transition-colors text-xs md:text-sm font-light">
+                  About
+                </Link>
+                <Link href="/pricing" className="text-black hover:text-black transition-colors text-xs md:text-sm font-light">
+                  Pricing
+                </Link>
               </div>
 
               {/* Legal Section */}
