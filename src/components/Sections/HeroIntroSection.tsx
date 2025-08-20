@@ -6,7 +6,6 @@ import { RiArrowRightLine, RiPlayCircleLine, RiVolumeUpFill } from 'react-icons/
 import { Graphic } from './Graphic'
 import { MarqueeLogoScroller } from "@/components/ui/marquee-logo-scroller"
 import { BeehiivEmbed } from "@/components/ui/BeehiivEmbed"
-import Script from 'next/script'
 
 export function HeroIntroSection() {
     const [showAudioOverlay, setShowAudioOverlay] = useState(true)
@@ -77,8 +76,7 @@ export function HeroIntroSection() {
                 </div>
             </div>
             
-            {/* Beehiiv attribution tracking (optional; forwards UTM params) */}
-            <Script src="https://subscribe-forms.beehiiv.com/attribution.js" strategy="afterInteractive" async />
+
         </section>
     )
 }
