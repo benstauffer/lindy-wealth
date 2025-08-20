@@ -6,7 +6,7 @@ import { Check } from 'lucide-react'
 
 export function PricingSection() {
   return (
-    <section className="w-full py-20">
+    <section className="w-full py-20" data-section="pricing">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Title */}

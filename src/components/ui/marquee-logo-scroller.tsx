@@ -12,6 +12,8 @@ interface MarqueeLogoScrollerProps extends React.HTMLAttributes<HTMLDivElement> 
   description: string;
   services: Service[];
   speed?: 'normal' | 'slow' | 'fast';
+  itemClassName?: string; // optional override for service text color/styles
+  itemGapClassName?: string; // optional override for gap between items
 }
 
 /**
@@ -20,11 +22,11 @@ interface MarqueeLogoScrollerProps extends React.HTMLAttributes<HTMLDivElement> 
  * This component includes its own CSS animation and does not require tailwind.config.js modifications.
  */
 const MarqueeLogoScroller = React.forwardRef<HTMLDivElement, MarqueeLogoScrollerProps>(
-  ({ title, description, services, speed = 'normal', className, ...props }, ref) => {
+  ({ title, description, services, speed = 'normal', itemClassName, itemGapClassName, className, ...props }, ref) => {
     // Map speed prop to animation duration
     const durationMap = {
       normal: '40s',
-      slow: '80s',
+      slow: '130s',
       fast: '5s',
     };
     const animationDuration = durationMap[speed];
@@ -55,11 +57,11 @@ const MarqueeLogoScroller = React.forwardRef<HTMLDivElement, MarqueeLogoScroller
             className="w-full overflow-hidden"
             style={{
               maskImage:
-                'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+                'linear-gradient(to right, transparent, black 30%, black 70%, transparent)',
             }}
           >
             <div 
-              className="flex w-max items-center gap-4 py-4 pr-4 hover:[animation-play-state:paused] transition-all duration-300 ease-in-out" 
+              className={cn('flex w-max items-center py-4 pr-4 hover:[animation-play-state:paused] transition-all duration-300 ease-in-out', itemGapClassName ?? 'gap-4')} 
               style={{
                 animation: `marquee ${animationDuration} linear infinite`,
               }}
@@ -68,7 +70,7 @@ const MarqueeLogoScroller = React.forwardRef<HTMLDivElement, MarqueeLogoScroller
               {[...services, ...services].map((service, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 text-white/60 text-lg font-medium"
+                  className={cn('flex items-center gap-2 text-lg font-medium', itemClassName ?? 'text-white/60')}
                 >
                   <div className="w-2 h-2 bg-blue-500"></div>
                   <span>{service.name}</span>

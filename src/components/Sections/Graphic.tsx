@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import { Check } from 'lucide-react'
 
 export function Graphic() {
   return (
@@ -34,14 +35,21 @@ export function Graphic() {
               { title: "New Home Purchase", category: "$3M by 2025", priority: "In Progress", color: "from-green-400 to-green-600" },
               { title: "College Funding", category: "Fully Funded", priority: "Complete", color: "from-blue-400 to-blue-600" },
               { title: "Emergency Fund", category: "$100K Target", priority: "High", color: "from-red-400 to-red-600" },
-              { title: "Tax Optimization", category: "37% Bracket", priority: "Critical", color: "from-purple-400 to-purple-600" }
+              { title: "Tax Optimization", category: "37% Bracket", priority: "In Progress", color: "from-purple-400 to-purple-600" }
             ].map((item, index) => (
               <div key={index} className="flex items-center space-x-3 p-2 hover:bg-[#51555D] rounded-lg transition-colors">
-                <div className={`w-12 h-12 bg-gradient-to-br ${item.color} rounded-lg flex items-center justify-center`}>
-                  <div className="w-6 h-6 bg-white/20 rounded"></div>
-                </div>
+                {(() => {
+                  const bulletColors = ['#FFDA40', '#17A7FF', '#FB651F', '#5BD363']
+                  const bg = bulletColors[index % bulletColors.length]
+                  return (
+                    <div className="w-10 h-10 flex items-center justify-center" style={{ backgroundColor: bg }}>
+                      <Check className="w-5 h-5 text-black" />
+                    </div>
+                  )
+                })()}
+                
                 <div className="flex-1">
-                  <div className="text-white text-sm font-medium">{item.title}</div>
+                  <div className="text-white text-sm font-medium leading-tight">{item.title}</div>
                   <div className="text-gray-400 text-xs">{item.category}</div>
                 </div>
                 <div className="text-gray-400 text-xs">{item.priority}</div>
@@ -49,23 +57,15 @@ export function Graphic() {
               </div>
             ))}
           </div>
-
           {/* Bottom navigation */}
-          <div className="absolute bottom-0 left-0 right-0 bg-gray-800 border-t border-gray-700 p-3">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg"></div>
+          <div className="absolute bottom-0 left-0 right-0 bg-[#2A2C33] border-t border-gray-700 p-3">
+            <div className="flex items-center justify-center">
+              <div className="flex items-center">
                 <div>
-                  <div className="text-white text-sm font-medium">Financial Plan</div>
-                  <div className="text-gray-400 text-xs">Lindy Wealth</div>
+                  <div className="text-gray-400 text-xs text-center">With Lindy Wealth</div>
                 </div>
               </div>
-              <div className="flex items-center space-x-4">
-                <div className="text-gray-400">📊</div>
-                <div className="text-white text-lg">▶️</div>
-                <div className="text-gray-400">📈</div>
-                <div className="text-gray-400">📤</div>
-              </div>
+
             </div>
           </div>
           </div>

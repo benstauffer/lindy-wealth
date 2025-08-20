@@ -88,7 +88,7 @@ export const ConnectionCanvas: React.FC<ConnectionCanvasProps> = ({
 
         ctx.bezierCurveTo(controlX1, controlY1, controlX2, controlY2, endX, endY)
         
-        ctx.strokeStyle = '#9893A5'
+        ctx.strokeStyle = '#51555D'
         ctx.lineWidth = 8
         ctx.stroke()
       }

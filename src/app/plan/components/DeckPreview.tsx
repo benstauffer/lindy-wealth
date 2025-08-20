@@ -94,7 +94,7 @@ export function PlanDeckPreview(): React.ReactElement {
             <div className="flex gap-2"><Check className="w-4 h-4 mt-0.5 text-[#1F7AE0]" /> Equity comp analysis (SAUs/RSUs, ISOs, NQSOs, ESPP)</div>
             <div className="flex gap-2"><Check className="w-4 h-4 mt-0.5 text-[#1F7AE0]" /> Tender‑window playbook and scenarios</div>
             <div className="flex gap-2"><Check className="w-4 h-4 mt-0.5 text-[#1F7AE0]" /> Tax map and estimated payments cadence</div>
-            <div className="flex gap-2"><Check className="w-4 h-4 mt-0.5 text-[#1F7AE0]" /> AMT credit and cost‑basis trackers</div>
+            <div className="flex gap-2"><Check className="w-4 h-4 mt-0.5 text-[#1F7AE0]" /> Model tax impact for different sale/exercise schedules.</div>
             <div className="flex gap-2"><Check className="w-4 h-4 mt-0.5 text-[#1F7AE0]" /> Action plan with owners and due dates</div>
           </div>
         </div>

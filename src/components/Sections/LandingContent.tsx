@@ -4,10 +4,14 @@ import React from 'react'
 import { Header } from './Header'
 import { FooterSection } from './Footer'
 import { HeroIntroSection } from './HeroIntroSection'
-import { ServicesSection } from './AboutBen'
+import { AboutBen } from './AboutBen'
+import { AboutBenFullWidthSection } from './AboutBenFullWidth'
+
+
 import { AboutSummarySection } from './AboutSummary'
 import { CompareSection } from './CompareSection'
 import { ProcessSection } from './ProcessSection'
+
 import { PricingSection } from './PricingSection'
 import { CTASection } from './CTASection'
 import { BigCTASection } from './BigCTASection'
@@ -27,10 +31,12 @@ export function LandingContent() {
           <HeroIntroSection />
         </div>
 
-        {/* Services Section */}
-        <div className="mb-0">
-          <ServicesSection />
+        {/* Services Section (About Ben) */}
+        <div className="mb-0" id="services" data-section="services">
+          <AboutBen />
         </div>
+
+
 
         {/* Who Are You Section 
         <div className="mb-0">
@@ -43,10 +49,6 @@ export function LandingContent() {
           <AboutSummarySection />
         </div>
 
-        {/* Process Section */}
-        <div className="mb-0">
-          <ProcessSection />
-        </div>
 
         {/* Big CTA Section */}
         <div className="mb-0">

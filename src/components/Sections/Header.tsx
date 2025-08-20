@@ -86,7 +86,8 @@ export function Header({ isDarkMode = false }: HeaderProps) {
   return (
     <>
       {/* ============ HEADER CONTAINER ============ */}
-      <header className={`max-w-6xl mx-auto py-5 px-4 ${isPricingPage ? 'bg-white' : ''}`}>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm">
+        <div className="max-w-6xl mx-auto py-5 px-4">
         {/* Pricing Panel - positioned within header */}
 
 
@@ -96,7 +97,7 @@ export function Header({ isDarkMode = false }: HeaderProps) {
           {/* ============ LEFT - LOGO ============ */}
           <div className="flex items-center">
             <Link href="/" className="group flex items-center hover:opacity-80 transition-opacity">
-                <span className="text-2xl text-black block tracking-tight">
+                <span className="text-2xl text-black block tracking-tight font-medium hover:rotate-[-2.5deg] transition-transform duration-300">
                  Lindy Wealth
                 </span>
             </Link>
@@ -106,13 +107,13 @@ export function Header({ isDarkMode = false }: HeaderProps) {
           <div className="hidden sm:flex items-center gap-8">
             <Link 
               href="/about"
-              className="py-2 hover:opacity-80 transition-opacity text-lg font-medium"
+              className="py-2 hover:opacity-80 transition-opacity text-base"
             >
               About
             </Link>
             <Link 
               href="/pricing"
-              className="py-2 hover:opacity-80 transition-opacity text-lg font-medium"
+              className="py-2 hover:opacity-80 transition-opacity text-base"
             >
               Pricing
             </Link>
@@ -133,7 +134,7 @@ export function Header({ isDarkMode = false }: HeaderProps) {
             </button>
             <button 
               onClick={() => window.open('https://cal.com/ben-stauffer-ysbawo/30min', '_blank')}
-              className="group px-4 py-3 bg-[#17A7FF] text-white  hover:bg-[#17A7FF]/80 transition-colors text-xs md:text-sm font-normal flex items-center justify-center gap-2"
+              className="group px-4 py-3 bg-[#17A7FF] text-white  hover:bg-[#17A7FF]/80 transition-colors text-xs md:text-sm font-medium flex items-center justify-center gap-2"
             >
               See if we're a fit
             </button>
@@ -186,6 +187,7 @@ export function Header({ isDarkMode = false }: HeaderProps) {
             </Drawer>
           </div>
 
+        </div>
         </div>
       </header>
     </>

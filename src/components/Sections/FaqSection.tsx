@@ -114,28 +114,6 @@ export function FaqSection() {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="who-we-help" className="bg-neutral-100 px-6 mb-2.5 hover:bg-neutral-200">
-              <AccordionTrigger className="hover:no-underline py-5 font-normal text-left">
-                <h4 className="text-sm md:text-lg text-black">Who do you help?</h4>
-              </AccordionTrigger>
-              <AccordionContent className="pb-6 pt-0">
-                <div className="space-y-5">
-                <p className="text-sm md:text-base text-black/80">
-                        <span className="text-black">I work with people who want a clear, confident strategy and often don't have the time to figure it all out themselves. If that sounds like you, here are a few examples of who I help most often:</span>  
-                      </p>
-                      <p className="text-sm md:text-base text-black/80">
-                        <span className="text-black font-medium">1. You're planning for early retirement, aiming for a work-optional life, or already retired</span> and you feel unsure if your strategy is optimized — or if it will actually support the lifestyle you want.
-                      </p>
-                  
-                  <div className="flex gap-4">
-                      <p className="text-sm md:text-base text-black/80">
-                        <span className="text-black font-medium">2. You're a high-earning family managing a busy life</span> and you feel like there's too much on your plate. Between careers, kids, maybe a business, you don't want to DIY it anymore.
-                      </p>
-                  </div>
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-
             <AccordionItem value="custody" className="bg-neutral-100 px-6 mb-2.5 hover:bg-neutral-200">
               <AccordionTrigger className="hover:no-underline py-5 font-normal text-left">
                 <h4 className="text-sm md:text-lg text-black">Where will my money be held?</h4>

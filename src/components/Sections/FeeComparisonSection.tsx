@@ -2,8 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 import { IoMdCheckmark } from 'react-icons/io'
-import { DigitalAssetsGraphic } from '../Graphics/DigitalAssetsGraphic'
-import Link from 'next/link'
+import { AumCalculatorSection } from './AumCalculatorSection'
 
 // Add CSS animations for the cards (natural, spring-like)
 const cardAnimations = `
@@ -29,13 +28,21 @@ const cardAnimations = `
   @media (prefers-reduced-motion: reduce) { .animate-spring-in-left, .animate-spring-in-right { animation: none; opacity: 1 !important; transform: none !important; filter: none !important; } }
 `;
 
-export function AboutSummarySection() {
+export function FeeComparisonSection() {
   const group1Ref = useRef<HTMLDivElement>(null);
   const group2Ref = useRef<HTMLDivElement>(null);
   const group3Ref = useRef<HTMLDivElement>(null);
   const [visibleGroup1, setVisibleGroup1] = useState(false);
   const [visibleGroup2, setVisibleGroup2] = useState(false);
   const [visibleGroup3, setVisibleGroup3] = useState(false);
+
+  const feeData = [
+    { assets: '$1,000,000', percentage: '1.00%', amount: '$10,000' },
+    { assets: '$2,000,000', percentage: '0.91%', amount: '$18,200' },
+    { assets: '$5,000,000', percentage: '0.84%', amount: '$42,000' },
+    { assets: '$10,000,000', percentage: '0.69%', amount: '$69,000' },
+    { assets: '$20,000,000', percentage: '0.65%', amount: '$130,000' },
+  ]
 
   useEffect(() => {
     const options: IntersectionObserverInit = {
@@ -70,59 +77,52 @@ export function AboutSummarySection() {
   }, []);
 
   return (
-    <section className="w-full bg-[#F1F0EA] pb-20 md:pb-32" data-section="about-summary">
+    <section className="w-full bg-[#F1F0EA] pb-20 md:pb-32">
       <style>{cardAnimations}</style>
       <div className="max-w-6xl mx-auto px-4">
         <div className="w-full space-y-4">
           
-          {/* Centered Intro Text */}
+          {/* Title Section */}
           <div className="text-center py-8 md:py-16 max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl lg:text-6xl text-black font-medium leading-tight tracking-tight mt-12 mb-6">
-              The Formula for Delivering Better Outcomes
+            A better way to
+                  <br />
+                  pay for advice
             </h2>
-            <p className="text-xl md:text-2xl text-black max-w-md mx-auto mt-8 tracking-tight">
-              Flat fees + smart investing + personalized planning = better outcomes
-            </p>
           </div>
-
-          {/* Financial Plan Graphic
-          <div className="flex justify-center py-8 md:py-16">
-            <DigitalAssetsGraphic />
-          </div>
-          */}
-
+          
           {/* Staggered Text Sections */}
           <div className="space-y-20 md:space-y-40 py-8 md:py-16">
             
-            {/* Section 1: Flat Fees - Left Aligned */}
+            
+            {/* Section 1: How Our Fee Works - Left Aligned */}
             <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
               <div className="space-y-4 order-1">
                 <h2 className="text-3xl md:text-5xl text-black font-medium leading-tight tracking-tight">
-                  Flat Fees,
-                  <br />
-                  No Surprises.
+                  
+                  How our flat 
+              <br />
+              fee works
+
                 </h2>
                 <p className="text-base md:text-lg text-black/80 tracking-tight mb-6">
-                  Save thousands vs. traditional AUM fees. Pay one transparent fee, not a percentage of your assets that grows every year.
+                  Lindy assess an annual fee of $5,000 per year, paid quarterly. One fee covers an entire household and all services.
                 </p>
-                <Link 
-                  href="/pricing"
-                  className="inline-flex items-center text-black hover:text-black/80 transition-colors text-base font-medium py-2 px-4 border border-[#51555D]"
-                >
-                  Learn more
-                </Link>
+                <p className="text-base md:text-lg text-black/70 tracking-tight">
+                  And because I serve as fiduciary, I receive no commissions, kick-backs, sales charges, or hidden fees.
+                </p>
               </div>
               <div className="flex justify-center lg:justify-end order-2 lg:order-2">
                 <div ref={group1Ref} className="space-y-6 w-[28rem]">
                   {/* Pill 1 */}
                   <div className={`pill bg-white pl-4 pr-2 py-4 rounded-full flex items-center justify-between mr-12 ${visibleGroup1 ? 'animate-spring-in-right animate-delay-1' : ''} opacity-0`}>
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#9893A5' }}>
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#5BD363' }}>
                         <IoMdCheckmark className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <div className="text-base text-black">Transparent Pricing</div>
-                        <div className="text-sm text-black/50">No hidden fees</div>
+                        <div className="text-base text-black">$5,000/year</div>
+                        <div className="text-sm text-black/50">Fixed annual fee</div>
                       </div>
                     </div>
                   </div>
@@ -134,8 +134,8 @@ export function AboutSummarySection() {
                         <IoMdCheckmark className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <div className="text-base text-black">Cost Savings</div>
-                        <div className="text-sm text-black/50">Save $30K+ annually</div>
+                        <div className="text-base text-black">No Asset Limits</div>
+                        <div className="text-sm text-black/50">Entire household covered</div>
                       </div>
                     </div>
                   </div>
@@ -143,12 +143,12 @@ export function AboutSummarySection() {
                   {/* Pill 3 */}
                   <div className={`pill bg-white pl-4 pr-2 py-4 rounded-full flex items-center justify-between mr-12 ${visibleGroup1 ? 'animate-spring-in-right animate-delay-3' : ''} opacity-0`}>
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#D0D6E5' }}>
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#9893A5' }}>
                         <IoMdCheckmark className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <div className="text-base text-black">Fixed Fee Model</div>
-                        <div className="text-sm text-black/50">Predictable costs</div>
+                        <div className="text-base text-black">Fee-Only Fiduciary</div>
+                        <div className="text-sm text-black/50">No commissions or kickbacks</div>
                       </div>
                     </div>
                   </div>
@@ -159,138 +159,106 @@ export function AboutSummarySection() {
             {/* Divider between sections */}
             <div className="h-px bg-black/10" />
 
-            {/* Section 2: Tax-Efficient Portfolios - Right Aligned */}
+            {/* Section 2: How Much Did You Pay - Right Aligned */}
             <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
               <div className="flex justify-center lg:justify-start order-2 lg:order-1">
                 <div ref={group2Ref} className="space-y-6 w-[28rem]">
-                  {/* Tax-Efficient Funds Pill */}
-                  <div className={`pill bg-white pl-4 pr-2 py-4 rounded-full flex items-center justify-between ml-12 ${visibleGroup2 ? 'animate-spring-in-left animate-delay-1' : ''} opacity-0`}>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#9893A5' }}>
-                        <IoMdCheckmark className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <div className="text-base text-black">Tax-Efficient Funds</div>
-                        <div className="text-sm text-black/50">ETFs & index funds</div>
-                      </div>
+                  
+                  {/* Fee Table */}
+                  <div className={`pill bg-white p-6  ${visibleGroup2 ? 'animate-spring-in-left animate-delay-1' : ''} opacity-0`}>
+                    <h4 className="text-lg font-medium text-black mb-4">Industry Average AUM Fees</h4>
+                    <div className="space-y-3">
+                      {feeData.map((row, index) => (
+                        <div key={index} className="grid grid-cols-3 gap-4 text-sm">
+                          <div className="text-black">{row.assets}</div>
+                          <div className="text-black text-center">{row.percentage}</div>
+                          <div className="text-black text-right font-medium">{row.amount}</div>
+                        </div>
+                      ))}
                     </div>
                   </div>
 
-                  {/* Asset Location Pill */}
-                  <div className={`pill bg-white pl-4 pr-2 py-4 rounded-full flex items-center justify-between mr-12 ${visibleGroup2 ? 'animate-spring-in-left animate-delay-2' : ''} opacity-0`}>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#17A7FF' }}>
-                        <IoMdCheckmark className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <div className="text-base text-black">Asset Location</div>
-                        <div className="text-sm text-black/50">Tax-optimized placement</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Tax-Loss Harvesting Pill */}
-                  <div className={`pill bg-white pl-4 pr-2 py-4 rounded-full flex items-center justify-between ml-12 ${visibleGroup2 ? 'animate-spring-in-left animate-delay-3' : ''} opacity-0`}>
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#D0D6E5' }}>
-                        <IoMdCheckmark className="w-5 h-5 text-white" />
-                      </div>
-                      <div>
-                        <div className="text-base text-black">Tax-Loss Harvesting</div>
-                        <div className="text-sm text-black/50">Annual optimization</div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
               <div className="space-y-6 order-1 lg:order-2">
                 <h2 className="text-3xl md:text-5xl text-black font-medium leading-tight tracking-tight">
-                  Tax-Efficient Portfolios.
+                  How Much Did You Pay
                   <br />
-                  Low-cost & Diversified.
+                  Your Advisor Last Year?
                 </h2>
-                <p className="text-base md:text-lg text-black/80 tracking-tight mb-6">
-                My investment process is built on simplicity, evidence, and discipline. Markets generally work, costs and taxes matter, and long-term investing beats short-term movements.
+                <p className="text-base md:text-lg text-black/80 tracking-tight">
+                  Most financial advisors hide their true costs behind confusing percentage fees. Instead of telling you exactly what you'll pay, they charge a percentage of your total assets—meaning your fees grow every year as your wealth grows.
                 </p>
-                <Link 
-                  href="/pricing"
-                  className="inline-flex items-center text-black hover:text-black/80 transition-colors text-base font-medium py-2 px-4 border border-[#51555D]"
-                >
-                  Learn more
-                </Link>
               </div>
             </div>
 
             {/* Divider between sections */}
             <div className="h-px bg-black/10" />
 
-            {/* Section 3: Full-Service Personalized Planning - Left Aligned */}
+            {/* Section 3: Are AUM Fees Destroying Your Wealth - Left Aligned */}
             <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-8 items-center">
               <div className="space-y-6 order-1">
                 <h2 className="text-3xl md:text-5xl text-black font-medium leading-tight tracking-tight">
-                  Personalized Planning.
+                  Are AUM Fees
                   <br />
-                  Tailored For <span className="italic">You</span>.
+                  Destroying Your Wealth?
                 </h2>
-                <p className="text-base md:text-lg text-black/80 tracking-tight mb-6">
-                  I help with cash flow, investments, taxes, and protection strategies so you can focus on what matters most.
+                <p className="text-base md:text-lg text-black/80 tracking-tight">
+                  These seemingly small numbers are destroying your wealth. For many HNW investors their largest discretionary expense is the fee they pay their advisor.
                 </p>
-                <Link 
-                  href="/pricing"
-                      className="inline-flex items-center text-black hover:text-black/80 transition-colors text-base font-medium py-2 px-4 border border-[#51555D]"
-                >
-                  Learn more
-                </Link>
               </div>
               <div className="flex justify-center lg:justify-end order-2">
                 <div ref={group3Ref} className="space-y-6 w-[28rem]">
-                  {/* Cash Flow Planning Pill */}
+                  
+                  {/* Problem Pills */}
                   <div className={`pill bg-white pl-4 pr-2 py-4 rounded-full flex items-center justify-between mr-12 ${visibleGroup3 ? 'animate-spring-in-right animate-delay-1' : ''} opacity-0`}>
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#9893A5' }}>
-                        <IoMdCheckmark className="w-5 h-5 text-white" />
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#FB651F' }}>
+                        <span className="text-white text-lg">!</span>
                       </div>
                       <div>
-                        <div className="text-base text-black">Cash Flow Planning</div>
-                        <div className="text-sm text-black/50">Optimize your spending</div>
+                        <div className="text-base text-black">Fees compound against you</div>
+                        <div className="text-sm text-black/50">Higher assets = higher fees forever</div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Retirement Planning Pill */}
                   <div className={`pill bg-white pl-4 pr-2 py-4 rounded-full flex items-center justify-between ml-12 ${visibleGroup3 ? 'animate-spring-in-right animate-delay-2' : ''} opacity-0`}>
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#17A7FF' }}>
-                        <IoMdCheckmark className="w-5 h-5 text-white" />
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#FB651F' }}>
+                        <span className="text-white text-lg">!</span>
                       </div>
                       <div>
-                        <div className="text-base text-black">Retirement Planning</div>
-                        <div className="text-sm text-black/50">Work-optional strategies</div>
+                        <div className="text-base text-black">Your success costs you more</div>
+                        <div className="text-sm text-black/50">Penalized for growing wealth</div>
                       </div>
                     </div>
                   </div>
 
-                  {/* Tax & Protection Pill */}
                   <div className={`pill bg-white pl-4 pr-2 py-4 rounded-full flex items-center justify-between mr-12 ${visibleGroup3 ? 'animate-spring-in-right animate-delay-3' : ''} opacity-0`}>
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#D0D6E5' }}>
-                        <IoMdCheckmark className="w-5 h-5 text-white" />
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center" style={{ backgroundColor: '#FB651F' }}>
+                        <span className="text-white text-lg">!</span>
                       </div>
                       <div>
-                        <div className="text-base text-black">Tax & Protection</div>
-                        <div className="text-sm text-black/50">Optimization & strategies</div>
+                        <div className="text-base text-black">Same advice, higher price</div>
+                        <div className="text-sm text-black/50">Work doesn't scale with assets</div>
                       </div>
                     </div>
                   </div>
+
                 </div>
               </div>
             </div>
 
+            
 
           </div>
+
+
 
         </div>
       </div>
     </section>
   )
-} 
+}

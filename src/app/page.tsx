@@ -1,7 +1,8 @@
-'use client'
+"use client"
 
 import { LandingContent } from "@/components/Sections/LandingContent";
 import { useEffect, useState } from 'react'
+import Script from 'next/script'
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false)
@@ -36,6 +37,13 @@ export default function Home() {
 
   return (
     <>
+      <Script
+        id="convertkit-form"
+        async
+        strategy="afterInteractive"
+        data-uid="674dbc58b7"
+        src="https://benstauffer.kit.com/674dbc58b7/index.js"
+      />
       {/* Full viewport background */}
       <div className="fixed inset-0 w-full h-full -z-10 transition-colors duration-400 ease-in-out" />
       
