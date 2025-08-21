@@ -74,7 +74,7 @@ export function CompareSection() {
               {/* Header */}
               <div className="mb-8">
                 <div className="mb-2">
-                  <span className="text-3xl md:text-5xl font-medium text-black">$1,250</span>
+                  <span className="text-3xl md:text-5xl font-medium text-black">Starting at $1,250</span>
                   <span className="text-lg text-black">/quarter</span>
                 </div>
                 <div className="text-black/80 text-base">
