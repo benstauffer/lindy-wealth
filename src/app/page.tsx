@@ -62,25 +62,25 @@ export default function Home() {
             <div className="mt-12 flex flex-col md:flex-row gap-6 md:gap-8 justify-start items-start">
               <button
                 onClick={() => window.open('https://cal.com/ben-stauffer-ysbawo/30min', '_blank')}
-                className="text-black underline hover:text-black/70 transition-colors font-medium"
+                className="text-black/80 underline hover:text-black/70 transition-colors"
               >
                 Book a call
               </button>
               <Link 
                 href="/about"
-                className="text-black underline hover:text-black/70 transition-colors font-medium"
+                className="text-black/80 underline hover:text-black/70 transition-colors"
               >
                 About
               </Link>
               <Link 
                 href="/faq"
-                className="text-black underline hover:text-black/70 transition-colors font-medium"
+                className="text-black/80 underline hover:text-black/70 transition-colors"
               >
                 FAQ
               </Link>
               <Link 
                 href="/pricing"
-                className="text-black underline hover:text-black/70 transition-colors font-medium"
+                className="text-black/80 underline hover:text-black/70 transition-colors"
               >
                 Pricing
               </Link>
