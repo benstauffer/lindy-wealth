@@ -5,7 +5,7 @@ import React from 'react'
 export function FullPlan() {
   return (
     <section className="w-full py-24 md:py-32">
-      <div className="max-w-xl mx-auto px-4">
+      <div className="max-w-lg mx-auto px-4">
         
         {/* Centered title section */}
         <div className="mb-2">
@@ -45,7 +45,7 @@ export function FullPlan() {
         </div>
 
         {/* Signature section */}
-        <div className="max-w-xl mx-auto text-left">
+        <div className="max-w-lg mx-auto text-left">
           <div className="flex items-center gap-6">
             <div className="w-28 h-28 rounded-lg overflow-hidden flex-shrink-0">
               <img 

@@ -5,7 +5,7 @@ import React from 'react'
 export function FaqSection() {
   return (
     <section className="w-full py-24 md:py-32">
-      <div className="max-w-xl mx-auto px-4">
+      <div className="max-w-lg mx-auto px-4">
         
         {/* Section Header */}
         <div className="mb-12">
