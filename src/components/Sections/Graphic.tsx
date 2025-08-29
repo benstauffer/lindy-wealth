@@ -6,16 +6,13 @@ import { Check } from 'lucide-react'
 export function Graphic() {
   return (
     <div className="relative w-full h-[600px] overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-[#F8F7F4]">
-        {/* Yellow strip at bottom */}
-        
-        {/* Mountain peaks */}
+      {/* Background with sophisticated gradient styling */}
+      <div className="absolute inset-0 rounded-3xl p-8 md:p-16 shadow-inner" style={{
+        border: '.5px solid transparent',
+        borderRadius: '24px',
+        background: 'linear-gradient(45deg, #141517 0%, #1A1C1F 15%, #1E2023 30%, #1A1C1F 50%, #141517 100%) padding-box, linear-gradient(to bottom, #686E61, #1A1C1F) border-box'
+      }}>
 
-        
-                  {/* Abstract shapes */}
-          <div className="absolute bottom-0 left-0 w-1/2 h-40 bg-[#9893A5]"></div>
-          <div className="absolute bottom-40 right-0 w-1/2 h-40 bg-[#17A7FF]"></div>
       </div>
 
       {/* Mobile Interface */}

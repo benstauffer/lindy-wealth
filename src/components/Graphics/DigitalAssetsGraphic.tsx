@@ -42,9 +42,9 @@ const PAGE_CONFIGS: PageConfig[] = [
     zIndex: "z-[15]",
     titleFontSize: "18px",
     subtitleFontSize: "18px",
-    backgroundColor: "#ffffff",
+    backgroundColor: "#2A2C33",
     borderColor: "#ffffff",
-    textColor: "#000000",
+    textColor: "#ffffff",
     contentType: "checklist",
     boxShadow: "0 4px 8px rgba(0, 0, 0, 0.15)"
   },
@@ -57,7 +57,7 @@ const PAGE_CONFIGS: PageConfig[] = [
     openTransform: "translate(-90%, -100%) rotate(-10deg)",
     zIndex: "z-[9]",
     titleFontSize: "18px",
-    backgroundColor: "#75776B",
+    backgroundColor: "#2A2C33",
     borderColor: "#ffffff",
     textColor: "#ffffff",
     contentType: "checklist",
@@ -72,7 +72,7 @@ const PAGE_CONFIGS: PageConfig[] = [
     openTransform: "translate(40%, -30%) rotate(10deg)",
     zIndex: "z-[10]",
     titleFontSize: "15px",
-    backgroundColor: "#3F4662",
+    backgroundColor: "#2A2C33",
     borderColor: "#ffffff",
     textColor: "#ffffff",
     contentType: "pie-chart",
@@ -87,7 +87,7 @@ const PAGE_CONFIGS: PageConfig[] = [
     openTransform: "translate(-120%, -40%) rotate(-10deg)",
     zIndex: "z-[12]",
     titleFontSize: "18px",
-    backgroundColor: "#718087",
+    backgroundColor: "#2A2C33",
     borderColor: "#ffffff",
     textColor: "#ffffff",
     contentType: "checklist",
@@ -102,9 +102,9 @@ const PAGE_CONFIGS: PageConfig[] = [
       openTransform: "translate(-30%, -120%) rotate(8deg)",
       zIndex: "z-[9]",
       titleFontSize: "18px",
-      backgroundColor: "#D2D4D1",
+      backgroundColor: "#2A2C33",
       borderColor: "#ffffff",
-      textColor: "#000000",
+      textColor: "#ffffff",
       contentType: "retirement-chart",
       boxShadow: "0 4px 8px rgba(0, 0, 0, 0.15)"
     },
@@ -116,7 +116,7 @@ const PAGE_CONFIGS: PageConfig[] = [
     openTransform: "translate(-225%, -520%) rotate(-12deg)",
     zIndex: "z-[10]",
     titleFontSize: "15px",
-    backgroundColor: "#17A7FF",
+    backgroundColor: "#2A2C33",
     borderColor: "#17A7FF",
     textColor: "#ffffff",
     contentType: "badge",
@@ -130,7 +130,7 @@ const PAGE_CONFIGS: PageConfig[] = [
     openTransform: "translate(50%, -80%) rotate(10deg)",
     zIndex: "z-[10]",
     titleFontSize: "15px",
-    backgroundColor: "#17A7FF",
+    backgroundColor: "#2A2C33",
     borderColor: "#17A7FF",
     textColor: "#ffffff",
     contentType: "badge",
@@ -432,7 +432,6 @@ export const Folder: FC<FolderProps> = ({ color = "#00d8ff", size = 1, items = [
                    fontSize: '24px',
                    opacity: open ? 0 : 1
                  }}>
-              <div>Your</div>
               <div>Financial</div>
               <div>Plan</div>
             </div>
@@ -443,7 +442,7 @@ export const Folder: FC<FolderProps> = ({ color = "#00d8ff", size = 1, items = [
   )
 }
 
-export function DigitalAssetsGraphic() {
+export function DigitalAssetsGraphic({ size = 1 }: { size?: number }) {
   return (
     <div className="flex flex-col items-center justify-center py-12">
       <motion.div 
@@ -451,7 +450,7 @@ export function DigitalAssetsGraphic() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
       >
-        <Folder color="#d1d5db" size={1} />
+        <Folder color="#d1d5db" size={size} />
       </motion.div>
       
       {/* Folder Label */}

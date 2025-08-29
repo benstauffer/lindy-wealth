@@ -1,142 +1,100 @@
 'use client'
 
 import React from 'react'
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
-
-// Badge component for navigation
-const Badge = ({ children }: { children: React.ReactNode }) => (
-  <span className="inline-block px-3 py-1 bg-white text-neutral-600 text-xs font-medium mr-4">
-    {children}
-  </span>
-)
 
 export function FaqSection() {
   return (
-    <section className="w-full" data-section="faq">
-      <div className="max-w-3xl mx-auto px-4">
-        {/* All Sections as Accordion */}
-        <div className="space-y-2 mx-auto py-20">
+    <section className="w-full py-24 md:py-32">
+      <div className="max-w-xl mx-auto px-4">
+        
+        {/* Section Header */}
+        <div className="mb-12">
+          <h3 className="text-2xl md:text-3xl text-white font-medium">FAQ</h3>
+        </div>
 
-            <div className="flex justify-center mb-8">
-                <h2 className="text-4xl md:text-5xl lg:text-7xl tracking-tight text-black mb-8 font-medium text-center mt-12">Frequently Asked Questions</h2>
-            </div>
+        {/* FAQ Items - Simple text with arrows */}
+        <div className="space-y-8">
+          
+          <div>
+            <p className="text-white font-medium mb-2">
+              <span className="text-white/60 mr-2">&gt;</span>
+              How is comprehensive planning only $1,000?
+            </p>
+            <p className="text-white/80 text-sm ml-4">
+              Financial planning can be delivered cost-effectively without the overhead of large firms. It can be both comprehensive and thorough when advisors focus on client work instead of spending half their time on the golf course.
+            </p>
+          </div>
 
+          <div>
+            <p className="text-white font-medium mb-2">
+              <span className="text-white/60 mr-2">&gt;</span>
+              Is the quality worse because it's cheaper?
+            </p>
+            <p className="text-white/80 text-sm ml-4">
+              No. You get the same depth of analysis I provided at traditional firms charging 5-10x more. The difference is my flat-fee model, not the quality of work.
+            </p>
+          </div>
 
+          <div>
+            <p className="text-white font-medium mb-2">
+              <span className="text-white/60 mr-2">&gt;</span>
+              What's included?
+            </p>
+            <p className="text-white/80 text-sm ml-4">
+              I focus on key areas: investments, retirement planning, tax strategy, estate planning, insurance reviews, cash flow planning, and financial advice tailored to your situation.
+            </p>
+          </div>
 
-          <Accordion type="multiple" className="w-full">
-            
-            {/* BADGED SECTIONS FIRST */}
-            
+          <div>
+            <p className="text-white font-medium mb-2">
+              <span className="text-white/60 mr-2">&gt;</span>
+              How long does it take?
+            </p>
+            <p className="text-white/80 text-sm ml-4">
+              One month from start to finish.
+            </p>
+          </div>
 
+          <div>
+            <p className="text-white font-medium mb-2">
+              <span className="text-white/60 mr-2">&gt;</span>
+              How do I pay?
+            </p>
+            <p className="text-white/80 text-sm ml-4">
+              50% upfront when we begin, 50% at plan delivery.
+            </p>
+          </div>
 
+          <div>
+            <p className="text-white font-medium mb-2">
+              <span className="text-white/60 mr-2">&gt;</span>
+              Who is this right for?
+            </p>
+            <p className="text-white/80 text-sm ml-4">
+              People who want comprehensive planning without ongoing percentage fees. If you prefer hands-on management, I offer flat-fee ongoing engagements as well.
+            </p>
+          </div>
 
-            {/* 3. What services do you offer? - Services */}
-            <AccordionItem value="services" className="bg-neutral-100 px-6 mb-2.5 hover:bg-neutral-200">
-              <AccordionTrigger className="hover:no-underline py-5 font-normal text-left">
-                <div className="flex items-center justify-between w-full">
-                  <h4 className="text-sm md:text-lg text-black">What services do you offer?</h4>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pb-6 pt-0">
-                <p className="text-sm md:text-base text-black/80 leading-relaxed">
-                  I offer comprehensive financial planning. That includes:
-                  <br />- Investment management
-                  <br />- Retirement planning
-                  <br />- Tax strategy
-                  <br />- Estate planning
-                  <br />- Insurance reviews
-                  <br />- Cash flow planning
-                  <br />- Ongoing financial advice
-                  <br /><br />
-                  And everything else you need to feel confident about your financial future.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
+          <div>
+            <p className="text-white font-medium mb-2">
+              <span className="text-white/60 mr-2">&gt;</span>
+              What if I want ongoing services?
+            </p>
+            <p className="text-white/80 text-sm ml-4">
+              I provide ongoing flat-fee engagements for clients who want continued support. We can discuss these options during your plan delivery if interested.
+            </p>
+          </div>
 
-            {/* 4. How do you get paid? - Pricing */}
-            <AccordionItem value="pricing" className="bg-neutral-100 px-6 mb-2.5 hover:bg-neutral-200">
-              <AccordionTrigger className="hover:no-underline py-5 font-normal text-left">
-                <div className="flex items-center justify-between w-full">
-                  <h4 className="text-sm md:text-lg text-black">How do you get paid?</h4>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pb-6 pt-0">
-                <p className="text-sm md:text-base text-black/80 leading-relaxed mb-6">
-                  I'm fee-only, which means I'm only paid by you and never by product companies, banks, or insurance companies. This eliminates conflicts of interest and ensures my advice is always in your best interest.
-                </p>
-                
-                <div>
+          <div>
+            <p className="text-white font-medium mb-2">
+              <span className="text-white/60 mr-2">&gt;</span>
+              What's your approach?
+            </p>
+            <p className="text-white/80 text-sm ml-4">
+              I aim to give you an unbiased view of your options, but I'll also share my honest take on what I think makes the most sense for your situation.
+            </p>
+          </div>
 
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* 5. How can I contact you? - Contact */}
-            <AccordionItem value="contact" className="bg-neutral-100 px-6 mb-2.5 hover:bg-neutral-200">
-              <AccordionTrigger className="hover:no-underline py-5 font-normal text-left">
-                <div className="flex items-center justify-between w-full">
-                  <h4 className="text-sm md:text-lg text-black">How can I contact you?</h4>
-                </div>
-              </AccordionTrigger>
-              <AccordionContent className="pb-6 pt-0">
-                <p className="text-sm md:text-base text-black/80 leading-relaxed mb-4">
-                  The best way to reach me is by email. 
-                </p>
-                <div className="">
-                  <p className="text-sm md:text-base text-black">
-                    Email: <a href="mailto:ben@lindywealth.com" className="hover:underline">ben@lindywealth.com</a>
-                  </p>
-                </div>
-              </AccordionContent>
-            </AccordionItem>
-
-            {/* REMAINING SECTIONS WITHOUT BADGES */}
-
-            <AccordionItem value="is-my-advisor-a-cfp" className="bg-neutral-100 px-6 mb-2.5 hover:bg-neutral-200">
-              <AccordionTrigger className="hover:no-underline py-5 font-normal text-left">
-                <h4 className="text-sm md:text-lg text-black">Is my advisor a CFP?</h4>
-              </AccordionTrigger>
-              <AccordionContent className="pb-6 pt-0">
-                <p className="text-sm md:text-base text-black/80 leading-relaxed">Yes, I'm a Certified Financial Planner® Professional. As a CFP®, I'm held to the highest standards of ethics, education, and competency in financial planning.</p>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="custody" className="bg-neutral-100 px-6 mb-2.5 hover:bg-neutral-200">
-              <AccordionTrigger className="hover:no-underline py-5 font-normal text-left">
-                <h4 className="text-sm md:text-lg text-black">Where will my money be held?</h4>
-              </AccordionTrigger>
-              <AccordionContent className="pb-6 pt-0">
-                <p className="text-sm md:text-base text-black/80 leading-relaxed">
-                  Your money is held at Charles Schwab. The accounts are in your name, and Lindy Wealth acts as your advisor to manage them on your behalf. We don't work for Schwab or earn commissions, so every recommendation we make is in your best interest.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="approach" className="bg-neutral-100 px-6 mb-2.5 hover:bg-neutral-200">
-              <AccordionTrigger className="hover:no-underline py-5 font-normal text-left">
-                <h4 className="text-sm md:text-lg text-black">What's your approach?</h4>
-              </AccordionTrigger>
-              <AccordionContent className="pb-6 pt-0">
-                <p className="text-sm md:text-base text-black/80 leading-relaxed">
-                  I built this firm to deliver tangible results without unnecessary complexity. We focus on building the right structure around your finances, optimizing for taxes, and creating a smart portfolio strategy that's durable, flexible, and clear.
-                </p>
-              </AccordionContent>
-            </AccordionItem>
-
-          </Accordion>
         </div>
       </div>
     </section>

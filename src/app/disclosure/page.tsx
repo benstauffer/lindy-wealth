@@ -1,4 +1,3 @@
-import { Header } from '../../components/Sections/Header'
 import { FooterSection } from '../../components/Sections/Footer'
 import { DisclosureSection } from '../../components/Sections/Disclosures'
 
@@ -6,7 +5,6 @@ export default function DisclosurePage() {
   return (
     <>
       {/* Header */}
-      <Header />
       
       {/* Main content container */}
       <div 

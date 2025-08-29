@@ -1,12 +1,12 @@
 'use client'
 
 import React, { useRef, useState, useEffect } from 'react'
-import { Search, Box, Workflow, Home, ShieldCheck, Landmark, PiggyBank, Check } from 'lucide-react'
+import { Calculator, TrendingUp, FileText, Calendar, Shield, Heart } from 'lucide-react'
 import { ConnectionCanvas, Connection } from '../ui/ConnectionCanvas'
 
 const services = [
     {
-      icon: Check,
+      icon: Heart,
       title: 'Life & Goals Planning',
       description: 'Aligning your money with what matters most.',
       bgColor: 'bg-[#FFDA40]',
@@ -14,7 +14,7 @@ const services = [
       position: 'top-left'
     },
     {
-      icon: Box,
+      icon: FileText,
       title: 'Retirement Planning',
       description: 'A clear path to a secure retirement.',
       bgColor: 'bg-[#17A7FF]',
@@ -22,7 +22,7 @@ const services = [
       position: 'top'
     },
     {
-      icon: Search,
+      icon: Calculator,
       title: 'Investment Management',
       description: 'Evidence-based portfolios to grow your wealth.',
       bgColor: 'bg-[#FB651F]',
@@ -30,7 +30,7 @@ const services = [
       position: 'top-right'
     },
     {
-      icon: Landmark,
+      icon: Shield,
       title: 'Tax Strategy',
       description: 'Minimize taxes and maximize efficiency.',
       bgColor: 'bg-[#5BD363]',
@@ -38,7 +38,7 @@ const services = [
       position: 'bottom-right'
     },
     {
-      icon: Workflow,
+      icon: TrendingUp,
       title: 'Estate Planning',
       description: 'Protect and transfer your legacy.',
       bgColor: 'bg-[#D0D6E5]',
@@ -46,7 +46,7 @@ const services = [
       position: 'bottom'
     },
     {
-      icon: ShieldCheck,
+      icon: Calendar,
       title: 'Insurance Review',
       description: 'Right coverage at the right price.',
       bgColor: 'bg-[#9893A5]',
@@ -89,60 +89,78 @@ export function ServiceGraphic() {
     ]
 
     return (
-        <div className="hidden md:flex relative justify-center items-center min-h-[700px] w-full rounded-3xl border border-gray-200 shadow-sm bg-[#E9E8E4]">
-            <ConnectionCanvas 
-                connections={connections}
-                isReady={isReady}
-                className="absolute inset-0 w-full h-full pointer-events-none z-30 "
-            />
-            {/* Left side services */}
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 flex flex-col gap-6 z-20 p-12 ">
-                {services.slice(3).map((service, index) => (
-                    <div key={index} className="flex items-center gap-4">
-                        <div ref={leftServiceRefs[index]} className={`w-28 h-28 ${service.bgColor} flex flex-col items-center justify-center p-2`}>
-                            <service.icon className={`w-6 h-6 ${service.textColor} mb-1`} strokeWidth={1.5} />
-                            <div className="text-center">
-                                <div className={`text-xs font-semibold ${service.textColor} leading-tight`}>{service.title.split(' ')[0]}</div>
-                                <div className={`text-xs font-semibold ${service.textColor} leading-tight`}>{service.title.split(' ').slice(1).join(' ')}</div>
+        <section className="w-full pb-24 md:pb-32">
+            <div className="max-w-5xl mx-auto px-4">
+                <div className="max-w-3xl mx-auto rounded-3xl p-8 md:p-16 shadow-inner" style={{
+                    border: '.5px solid transparent',
+                    borderRadius: '24px',
+                    background: 'linear-gradient(45deg, #141517 0%, #1A1C1F 15%, #1E2023 30%, #1A1C1F 50%, #141517 100%) padding-box, linear-gradient(to bottom, #686E61, #1A1C1F) border-box'
+                }}>
+                    <div className="flex justify-center items-center">
+                        <div className="hidden md:flex relative justify-center items-center min-h-[400px] w-full">
+                                <ConnectionCanvas 
+                                    connections={connections}
+                                    isReady={isReady}
+                                    className="absolute inset-0 w-full h-full pointer-events-none z-30"
+                                />
+                                {/* Left side services */}
+                                <div className="absolute left-0 top-1/2 -translate-y-1/2 flex flex-col gap-6 z-20">
+                                    {services.slice(3).map((service, index) => (
+                                        <div key={index} className="flex items-center gap-4">
+                                            <div ref={leftServiceRefs[index]} className="w-20 h-20 rounded-2xl border border-neutral-600 flex items-center justify-center shadow-inner" style={{
+                                                border: '.5px solid transparent',
+                                                borderRadius: '16px',
+                                                background: 'linear-gradient(45deg, #141517 0%, #1A1C1F 15%, #1E2023 30%, #1A1C1F 50%, #141517 100%) padding-box, linear-gradient(to bottom, #686E61, #1A1C1F) border-box'
+                                            }}>
+                                                <service.icon className="w-8 h-8 text-white" strokeWidth={1.5} />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* Right side services */}
+                                <div className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-6 z-20">
+                                    {services.slice(0, 3).map((service, index) => (
+                                        <div key={index} className="flex items-center gap-4 flex-row-reverse">
+                                            <div ref={rightServiceRefs[index]} className="w-20 h-20 rounded-2xl border border-neutral-600 flex items-center justify-center shadow-inner" style={{
+                                                border: '.5px solid transparent',
+                                                borderRadius: '16px',
+                                                background: 'linear-gradient(45deg, #141517 0%, #1A1C1F 15%, #1E2023 30%, #1A1C1F 50%, #141517 100%) padding-box, linear-gradient(to bottom, #686E61, #1A1C1F) border-box'
+                                            }}>
+                                                <service.icon className="w-8 h-8 text-white" strokeWidth={1.5} />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                {/* Central Hub */}
+                                <div className="relative z-20 w-48 h-64 flex items-center justify-center">
+                                    <div ref={centralHubRef} className="w-full h-full shadow-inner rounded-lg flex flex-col p-6" style={{
+                                        border: '.5px solid transparent',
+                                        borderRadius: '16px',
+                                        background: 'linear-gradient(45deg, #141517 0%, #1A1C1F 15%, #1E2023 30%, #1A1C1F 50%, #141517 100%) padding-box, linear-gradient(to bottom, #686E61, #1A1C1F) border-box'
+                                    }}>
+                                        <div className="flex-shrink-0 mb-4">
+                                            <h3 className="text-lg font-bold text-white leading-tight">Financial <br /> Plan</h3>
+                                        </div>
+                                        <div className="flex-grow space-y-2">
+                                            <div className="h-1.5 bg-white/20 rounded-full w-full"></div>
+                                            <div className="h-1.5 bg-white/20 rounded-full w-10/12"></div>
+                                            <div className="h-1.5 bg-white/20 rounded-full w-full"></div>
+                                            <div className="h-1.5 bg-white/20 rounded-full w-8/12"></div>
+                                            <div className="h-1.5 bg-white/20 rounded-full w-9/12"></div>
+                                            <div className="h-1.5 bg-white/20 rounded-full w-full"></div>
+                                            <div className="h-1.5 bg-white/20 rounded-full w-10/12"></div>
+                                            <div className="h-1.5 bg-white/20 rounded-full w-full"></div>
+                                            <div className="h-1.5 bg-white/20 rounded-full w-8/12"></div>
+                                            <div className="h-1.5 bg-white/20 rounded-full w-9/12"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
-            </div>
-
-            {/* Right side services */}
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-6 z-20 p-12">
-                {services.slice(0, 3).map((service, index) => (
-                    <div key={index} className="flex items-center gap-4 flex-row-reverse ">
-                        <div ref={rightServiceRefs[index]} className={`w-28 h-28 ${service.bgColor} flex flex-col items-center justify-center p-2`}>
-                            <service.icon className={`w-6 h-6 ${service.textColor} mb-1`} strokeWidth={1.5} />
-                            <div className="text-center">
-                                <div className={`text-xs font-semibold ${service.textColor} leading-tight`}>{service.title.split(' ')[0]}</div>
-                                <div className={`text-xs font-semibold ${service.textColor} leading-tight`}>{service.title.split(' ').slice(1).join(' ')}</div>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
-
-            {/* Central Hub */}
-            <div className="relative z-20 w-48 h-64 flex items-center justify-center">
-                <div ref={centralHubRef} className=" w-full h-full bg-white shadow-sm border border-gray-200 rounded-lg  flex flex-col p-6">
-                    <div className="flex-shrink-0 mb-4">
-                        <h3 className="text-lg font-bold text-black leading-tight">Your <br /> Financial <br /> Plan</h3>
-                    </div>
-                    <div className="flex-grow space-y-2">
-                        <div className="h-1.5 bg-black/20 rounded-full w-full"></div>
-                        <div className="h-1.5 bg-black/20 rounded-full w-10/12"></div>
-                        <div className="h-1.5 bg-black/20 rounded-full w-full"></div>
-                        <div className="h-1.5 bg-black/20 rounded-full w-8/12"></div>
-                        <div className="h-1.5 bg-black/20 rounded-full w-9/12"></div>
-                    </div>
-                    <div className="flex-shrink-0 mt-4 text-xs text-black text-center">
-                        A Lindy Financial Plan
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
     )
 } 

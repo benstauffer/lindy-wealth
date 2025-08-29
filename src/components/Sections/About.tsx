@@ -1,61 +1,67 @@
 'use client'
 
 import React from 'react'
-import Image from 'next/image'
 
-export function AboutContent() {
+export function FullPlan() {
   return (
-    <>
-      {/* Main content container */}
-      <div 
-        id="main-content-that-scrolls"
-        className="w-full relative z-10"
-      >
-        {/* Title Section */}
-        <section className="bg-white py-32">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl tracking-tight text-black font-medium leading-tight mb-16">
-              Hi, I'm Ben. I help families optimize their finances through tax-focused planning and investment management.
-            </h1>
-          </div>
-        </section>
+    <section className="w-full py-24 md:py-32">
+      <div className="max-w-xl mx-auto px-4">
         
-        {/* Image Overlay - positioned between sections */}
-        <div className="relative z-20 flex justify-center" style={{ marginTop: '-112px', marginBottom: '-112px' }}>
-          <div className="w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden bg-black">
-            <Image
-              src="/images/BenHeadshot.png"
-              alt="Ben Stauffer"
-              width={224}
-              height={224}
-              className="w-full h-full object-cover object-left"
-              priority
-            />
+        {/* Centered title section */}
+        <div className="mb-2">
+          <h2 className="text-left text-2xl md:text-3xl text-white mb-4 font-medium">
+            Keep it simple.
+            <br />
+            Keep it smart.
+          </h2>
+        </div>
+
+        {/* Financial Planning Philosophy Content */}
+        <div className="mb-12">
+          <div className="w-full text-left text-white/90 leading-relaxed">
+            <p className="text-xl">
+              This should be your financial planning philosophy.<br/><br/>
+              Financial planning has become unnecessarily complicated. Much of the complexity has been created by advisors, fintech companies, and the wealth management industry to justify their existence.<br/><br/>
+              Most people's financial lives can be addressed with straightforward strategies: save consistently, invest in low-cost diversified funds, optimize taxes, protect against major risks, have a clear retirement plan, and handle estate matters.<br/><br/>
+              Instead, advisors recommend complex products, charge expensive AUM fees, and pitch that their sophisticated approach will deliver better outcomes.<br/><br/>
+              And guess what? They don't. Over and over again. Why?<br/><br/>
+              Because high fees and overcomplicated strategies aren't a winning formula. They eat at your wealth over time.<br/><br/>
+              The truth is that simple works. Boring works.<br/><br/>
+              Your financial planning philosophy should look like this:<br/><br/>
+              1. Build a plan based on your actual goals, not market predictions.<br/><br/>
+              2. Stick to simple strategies unless there's compelling evidence something complex will deliver better after-tax, after-fee results.<br/><br/>
+              3. Review your plan periodically, not constantly, and question whether complexity is adding value.<br/><br/>
+              Financial planning should be simple. Human behavior is typically the problem, not the lack of sophisticated strategies.<br/><br/>
+              My goal as a financial planner is to help with what I believe moves the needle:<br/><br/>
+              1. Clear roadmap to your financial goals.<br/>
+              2. Smart tax planning and education as laws change.<br/>
+              3. Keeping you disciplined when markets get volatile.<br/>
+              4. Simple strategies that actually work.<br/><br/>
+              The increasingly noisy financial media makes us think we need something more complex. We don't.<br/><br/>
+              The formula for better financial outcomes = flat fees + simple strategies + comprehensive custom planning.<br/><br/>
+              If you take away one thing: Keep It Simple.
+            </p>
+          </div>
+        </div>
+
+        {/* Signature section */}
+        <div className="max-w-xl mx-auto text-left">
+          <div className="flex items-center gap-6">
+            <div className="w-28 h-28 rounded-lg overflow-hidden flex-shrink-0">
+              <img 
+                src="/images/BenHeadshot.png" 
+                alt="Ben Stauffer - Financial Planner" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="text-left">
+              <p className="text-lg font-mono font-medium text-white mb-1">Ben Stauffer, CFP®</p>
+              <p className="text-base font-mono leading-tight tracking-tight text-white/80 ">Financial Planner <br />Owner of Lindy Wealth</p>
+            </div>
           </div>
         </div>
         
-        {/* Bottom Text Section */}
-        <section className="bg-[#F1F0EA] pt-40 pb-16">
-          <div className="max-w-lg mx-auto px-4">
-            <div className="text-left">
-                <p className="text-lg md:text-xl text-black/80 leading-relaxed mb-8">
-                Over the years, I've had the opportunity to help hundreds of clients—from high earners and retirees to business owners and ultra-high-net-worth families.
-                </p>
-                <p className="text-lg md:text-xl text-black/80 leading-relaxed mb-8">
-                These experiences have given me a deep understanding of wealth management, retirement planning, and investment strategy. I bring that expertise to every client relationship, helping you make confident, well-informed financial decisions.
-                </p>
-                <p className="text-lg md:text-xl text-black/80 leading-relaxed mb-8">
-                Whether you're planning for early retirement or simply want to make smarter financial decisions, I'm here to help you navigate your financial journey with expert advice and a personalized approach.
-              </p>
-              <p className="text-lg md:text-xl text-black/80 leading-relaxed mb-8">
-              I don't promise to beat the market or sell flashy strategies. I help people get clear on what they want, then build tax smart strategies that help secure their financial future.
-              </p>
-            </div>
-          </div>
-        </section>
-        
       </div>
-      
-    </>
+    </section>
   )
 } 

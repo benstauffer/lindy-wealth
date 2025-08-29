@@ -66,7 +66,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body 
-        className={`${inter.variable} ${caveat.variable} min-h-screen text-black font-sans  flex flex-col`}
+        className={`${inter.variable} ${caveat.variable} min-h-screen text-black font-sans  flex flex-col `}
         style={{ 
           overscrollBehavior: 'none', 
           position: 'relative',
