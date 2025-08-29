@@ -28,14 +28,12 @@ export default function Pricing() {
               <div>
                 <p className="text-base leading-relaxed text-black/80">
                   One-time Plan: starting at $1,000.
-                </p>
-              </div>
-
-              <div>
-                <p className="text-base leading-relaxed text-black/80">
+                  <br />
                   Ongoing Planning: $5,000-$10,000/year.
                 </p>
               </div>
+
+
 
               <div>
                 <p className="text-base leading-relaxed text-black/80">
