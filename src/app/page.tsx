@@ -2,6 +2,7 @@
 
 import { HeaderSection } from "@/components/Sections/Header";
 import { FooterSection } from "@/components/Sections/Footer";
+import { BackButton } from "@/components/ui/BackButton";
 import Link from "next/link";
 
 export default function Home() {

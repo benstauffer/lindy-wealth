@@ -2,6 +2,7 @@
 
 import { HeaderSection } from "@/components/Sections/Header";
 import { FooterSection } from "@/components/Sections/Footer";
+import { BackButton } from "@/components/ui/BackButton";
 import Link from "next/link";
 
 export default function About() {
@@ -12,12 +13,7 @@ export default function About() {
         <div className="max-w-lg mx-auto px-4">
           {/* Back Button */}
           <div className="mt-8 mb-8">
-            <Link 
-              href="/"
-              className="text-black underline hover:text-black/70 transition-colors font-medium"
-            >
-              ← Back
-            </Link>
+            <BackButton href="/" />
           </div>
           {/* About Content */}
           <div className="space-y-6">
