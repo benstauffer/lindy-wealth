@@ -56,11 +56,14 @@ export default function Home() {
                 <p className="text-base leading-relaxed text-black/80 ">
                   - Ben Stauffer, CFP®
                 </p>
+                <p className="text-base leading-relaxed italic text-black/80 ">
+                  Owner of Lindy Wealth
+                </p>
               </div>
             </div>
 
             {/* Action Links */}
-            <div className="mt-12 flex flex-col md:flex-row gap-6 md:gap-8 justify-start items-start">
+            <div className="mt-12 flex flex-col md:flex-row gap-3 md:gap-8 justify-start items-start">
               <button
                 onClick={() => window.open('https://cal.com/ben-stauffer-ysbawo/30min', '_blank')}
                 className="text-black/80 underline hover:text-black/70 transition-colors"
