@@ -35,13 +35,13 @@ export default function About() {
                 Hi, I'm Ben. I'm a CFP® running Lindy Wealth - a tax-focused financial planning firm.
               </p>
                 <p className="text-base leading-relaxed text-black/80">
-              I've worked at several firms serving 100s of clients - retirees, high-earners, HNWs, UHNWs. Now I happily serve my clients at Lindy Wealth.
+              I've worked at several firms serving 100s of clients - retirees, high-earners, HNWs, UHNWs. Now, I happily serve my clients at Lindy Wealth.
               </p>
               <p className="text-base leading-relaxed text-black/80">
               I'm from Sacramento, CA, and now live in Los Angeles, CA.
               </p>
               <p className="text-base leading-relaxed text-black/80">
-              You can reach me at <a href="mailto:ben@lindywealth.com" className="text-black underline hover:text-black/70 transition-colors font-medium">ben@lindywealth.com</a>.
+              You can reach me at <a href="mailto:ben@lindywealth.com" className="text-black underline hover:text-black/60 transition-colors">ben@lindywealth.com</a>.
               </p>
               
 

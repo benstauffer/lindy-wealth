@@ -2,7 +2,7 @@
 
 import { HeaderSection } from "@/components/Sections/Header";
 import { FooterSection } from "@/components/Sections/Footer";
-import { BackButton } from "@/components/ui/BackButton";
+import { HiOutlineExternalLink } from "react-icons/hi";
 import Link from "next/link";
 
 export default function Home() {
@@ -53,10 +53,10 @@ export default function Home() {
                 </p>
               </div>
               <div>
-                <p className="text-base leading-relaxed text-black/80 ">
+                <p className="text-base leading-tight text-black/80 ">
                   - Ben Stauffer, CFP®
                 </p>
-                <p className="text-base leading-relaxed italic text-black/80 ">
+                <p className="text-base leading-relaxed text-black/50 ">
                   Owner of Lindy Wealth
                 </p>
               </div>
@@ -66,25 +66,26 @@ export default function Home() {
             <div className="mt-12 flex flex-col md:flex-row gap-3 md:gap-8 justify-start items-start">
               <button
                 onClick={() => window.open('https://cal.com/ben-stauffer-ysbawo/30min', '_blank')}
-                className="text-black/80 underline hover:text-black/70 transition-colors"
+                className="text-black/80 underline hover:text-black/60 transition-colors flex items-center gap-1"
               >
                 Book a call
+                <HiOutlineExternalLink className="w-4 h-4" />
               </button>
               <Link 
                 href="/about"
-                className="text-black/80 underline hover:text-black/70 transition-colors"
+                className="text-black/80 underline hover:text-black/60 transition-colors"
               >
                 About
               </Link>
               <Link 
                 href="/faq"
-                className="text-black/80 underline hover:text-black/70 transition-colors"
+                className="text-black/80 underline hover:text-black/60 transition-colors"
               >
                 FAQ
               </Link>
               <Link 
                 href="/pricing"
-                className="text-black/80 underline hover:text-black/70 transition-colors"
+                className="text-black/80 underline hover:text-black/60 transition-colors"
               >
                 Pricing
               </Link>

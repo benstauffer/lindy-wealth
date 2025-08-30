@@ -23,9 +23,14 @@ export default function Pricing() {
               
               <div>
                 <p className="text-base leading-relaxed text-black/80">
-                  One-time Plan: starting at $1,000.
+                  One-time plan: Starting at $1,000.
                   <br />
-                  Ongoing Planning: $5,000-$10,000/year.
+                  <span className="text-black/50">50% paid upfront, 50% paid at completion.</span>
+                  <br />
+                  <br />
+                  Ongoing planning: $5,000-$10,000/year.
+                  <br />
+                  <span className="text-black/50">Paid quarterly in advance.</span>
                 </p>
               </div>
 
@@ -33,7 +38,7 @@ export default function Pricing() {
 
               <div>
                 <p className="text-base leading-relaxed text-black/80">
-                  I'm flat-fee only. No AUM fees, no commissions, no hidden costs. I'm only paid by you and never by product companies, banks, or insurance companies. This eliminates conflicts of interest and ensures my advice is always in your best interest.
+                  I'm flat-fee only. No AUM fees, no commissions, no hidden costs. I'm only paid by you and never by product companies, banks, or insurance companies. 
                 </p>
               </div>
 
