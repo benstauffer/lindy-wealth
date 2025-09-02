@@ -13,6 +13,36 @@ export default function Home() {
         <div className="max-w-lg mx-auto px-4">
           {/* Mission Section */}
           <div className="w-full mt-16">
+            
+            {/* Action Links */}
+            <div className="mb-8 flex flex-col md:flex-row gap-3 md:gap-8 justify-start items-start">
+              <Link 
+                href="/about"
+                className="text-black/80 underline hover:text-black/60 transition-colors"
+              >
+                About
+              </Link>
+              <Link 
+                href="/pricing"
+                className="text-black/80 underline hover:text-black/60 transition-colors"
+              >
+                Pricing
+              </Link>
+              <Link 
+                href="/faq"
+                className="text-black/80 underline hover:text-black/60 transition-colors"
+              >
+                FAQ
+              </Link>
+              <button
+                onClick={() => window.open('https://cal.com/ben-stauffer-ysbawo/30min', '_blank')}
+                className="text-black/80 underline hover:text-black/60 transition-colors flex items-center gap-1"
+              >
+                Book a call
+                <HiOutlineExternalLink className="w-4 h-4" />
+              </button>
+            </div>
+
             <div className="space-y-6 text-left">
 
               <div>
@@ -65,35 +95,6 @@ export default function Home() {
                   ben@lindywealth.com
                 </a>
               </div>
-            </div>
-
-            {/* Action Links */}
-            <div className="mt-12 flex flex-col md:flex-row gap-3 md:gap-8 justify-start items-start">
-              <button
-                onClick={() => window.open('https://cal.com/ben-stauffer-ysbawo/30min', '_blank')}
-                className="text-black/80 underline hover:text-black/60 transition-colors flex items-center gap-1"
-              >
-                Book a call
-                <HiOutlineExternalLink className="w-4 h-4" />
-              </button>
-              <Link 
-                href="/about"
-                className="text-black/80 underline hover:text-black/60 transition-colors"
-              >
-                About
-              </Link>
-              <Link 
-                href="/faq"
-                className="text-black/80 underline hover:text-black/60 transition-colors"
-              >
-                FAQ
-              </Link>
-              <Link 
-                href="/pricing"
-                className="text-black/80 underline hover:text-black/60 transition-colors"
-              >
-                Pricing
-              </Link>
             </div>
           </div>
         </div>
