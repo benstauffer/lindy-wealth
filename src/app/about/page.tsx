@@ -19,15 +19,12 @@ export default function About() {
           <div className="space-y-6">
             <h1 className="text-2xl font-medium text-black">About</h1>
             
-            <p className="text-base leading-relaxed text-black/80">
-              Lindy Wealth is a flat-fee financial planning practice focused on tax strategy, fee minimization, and diversified investing.
-            </p>
             
             {/* Photo and Introduction */}
             <div className="flex items-start gap-6">
               <div className="w-20 h-20 overflow-hidden flex-shrink-0">
                 <img 
-                  src="/images/BenHeadshot.png" 
+                  src="/images/Ben.png" 
                   alt="Ben Stauffer - Financial Planner" 
                   className="w-full h-full object-cover"
                 />
