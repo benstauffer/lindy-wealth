@@ -27,27 +27,19 @@ export default function Home() {
 
               <div>
                 <p className="text-base leading-relaxed text-black/80">
-                Good planning is built on fundamentals, not complexity. The principles are straightforward:
-                <br />
-                - Define your goals
-                <br />
-                - Save consistently
-                <br />
-                - Invest in low-cost, diversified funds
-                <br />
-                - Adapt as tax laws change
-                <br />
-                - Protect against major risks
-                <br />
-                - Plan for retirement and legacy
-                <br />
+                Good financial planning comes down to the fundamentals: define your goals, save consistently, invest in low-cost, diversified funds, adapt as tax laws change, protect against major risks, and plan intentionally for retirement and legacy.
                                  </p>
 
               </div>
-
               <div>
                 <p className="text-base leading-relaxed text-black/80">
-                At Lindy Wealth, I provide flat-fee financial planning that focuses on tax-smart strategies, diversified investing, and thoughtful, goal-driven planning. I partner with clients to bring clarity, simplify decisions, and build a roadmap that helps them reach their financial objectives while avoiding unnecessary complexity and high fees.
+                At Lindy Wealth, I provide flat-fee financial planning that starts with your goals, not market predictions. Strategies stay simple unless complexity clearly improves after-tax, after-fee results. We build a tailored asset mix, review plans periodically, and always question whether complexity adds value.
+                </p>
+              </div>
+                
+              <div>
+                <p className="text-base leading-relaxed text-black/80">
+                My goal is to help you reach your objectives, make tax-smart decisions, and bring clarity to your financial plan.
                 </p>
               </div>
 
