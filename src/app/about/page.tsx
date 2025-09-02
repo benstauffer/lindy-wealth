@@ -19,6 +19,10 @@ export default function About() {
           <div className="space-y-6">
             <h1 className="text-2xl font-medium text-black">About</h1>
             
+            <p className="text-base leading-relaxed text-black/80">
+              Lindy Wealth is a flat-fee financial planning practice focused on tax strategy, fee minimization, and diversified investing.
+            </p>
+            
             {/* Photo and Introduction */}
             <div className="flex items-start gap-6">
               <div className="w-20 h-20 overflow-hidden flex-shrink-0">
@@ -43,8 +47,6 @@ export default function About() {
               <p className="text-base leading-relaxed text-black/80">
               You can reach me at <a href="mailto:ben@lindywealth.com" className="text-black underline hover:text-black/60 transition-colors">ben@lindywealth.com</a>.
               </p>
-              
-
             </div>
           </div>
         </div>

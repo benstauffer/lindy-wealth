@@ -14,31 +14,41 @@ export default function Home() {
           {/* Mission Section */}
           <div className="w-full mt-16">
             <div className="space-y-6 text-left">
-              
+
               <div>
                 <p className="text-base leading-relaxed text-black/80">
-                Lindy Wealth is a flat-fee financial planning practice focused on tax strategy, fee minimization, and diversified investing.                  </p>
+                Keep it simple. Your life is complex enough.                </p>
               </div>
 
               <div>
                 <p className="text-base leading-relaxed text-black/80">
-                  Financial planning doesn't need to be complicated. Too often, the financial services industry creates complexity as a way to justify its existence. Complex products, expensive AUM fees, and active management don't lead to better outcomes.
+                The financial services industry often adds layers of complexity through high fees, products, and market predictions to justify its existence. But complexity doesn't mean better results.                </p>
+              </div>
+
+              <div>
+                <p className="text-base leading-relaxed text-black/80">
+                Good planning is built on fundamentals, not complexity. The principles are straightforward:
+                <br />
+                - Define your goals
+                <br />
+                - Save consistently
+                <br />
+                - Invest in low-cost, diversified funds
+                <br />
+                - Adapt as tax laws change
+                <br />
+                - Protect against major risks
+                <br />
+                - Plan for retirement and legacy
+                <br />
+                                 </p>
+
+              </div>
+
+              <div>
+                <p className="text-base leading-relaxed text-black/80">
+                At Lindy Wealth, I provide flat-fee financial planning that focuses on tax-smart strategies, diversified investing, and thoughtful, goal-driven planning. I partner with clients to bring clarity, simplify decisions, and build a roadmap that helps them reach their financial objectives while avoiding unnecessary complexity and high fees.
                 </p>
-              </div>
-
-              <div>
-                <p className="text-base leading-relaxed text-black/80">
-                  Simple works. Boring works.                </p>
-              </div>
-
-              <div>
-                <p className="text-base leading-relaxed text-black/80">
-                Good financial planning comes down to the fundamentals: get clear on your goals, save consistently, invest in diversified low-cost funds, adjust as tax laws change, protect against major risks, and plan intentionally for retirement and legacy.                   </p>
-              </div>
-
-              <div>
-                <p className="text-base leading-relaxed text-black/80">
-                I build plans around your goals, not market predictions. I use simple strategies unless complexity improves after-tax, after-fee results. I provide clear roadmaps, tax-focused planning, and discipline during volatility. Together, we'll review plans periodically and always question complexity.                  </p>
               </div>
 
               <div>
@@ -53,12 +63,15 @@ export default function Home() {
                 </p>
               </div>
               <div>
-                <p className="text-base leading-tight text-black/80 ">
+                <p className="text-base  text-black/80 ">
                   - Ben Stauffer, CFP®
                 </p>
-                <p className="text-base leading-relaxed text-black/50 ">
-                  Owner of Lindy Wealth
+                <p className="text-base  text-black/50 ">
+                  Owner, Lindy Wealth
                 </p>
+                <a href="mailto:ben@lindywealth.com" className="text-base underline  text-black/50 hover:text-black/40 transition-colors">
+                  ben@lindywealth.com
+                </a>
               </div>
             </div>
 

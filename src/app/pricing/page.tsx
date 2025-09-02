@@ -25,12 +25,12 @@ export default function Pricing() {
                 <p className="text-base leading-relaxed text-black/80">
                   One-time plan: Starting at $1,000.
                   <br />
-                  <span className="text-black/50">50% paid upfront, 50% paid at completion.</span>
+                  <span className="text-black/40">50% paid upfront, 50% paid at completion.</span>
                   <br />
                   <br />
                   Ongoing planning: $5,000-$10,000/year.
                   <br />
-                  <span className="text-black/50">Paid quarterly in advance.</span>
+                  <span className="text-black/40">Paid quarterly in advance.</span>
                 </p>
               </div>
 
