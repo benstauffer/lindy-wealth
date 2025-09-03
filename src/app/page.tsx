@@ -27,10 +27,15 @@ export default function Home() {
 
               <div>
                 <p className="text-base leading-relaxed text-black/80">
-                  Lindy Wealth provides comprehensive advice at the intersection of making your life work better and making your money work better. For your life, that means clear guidance, less complexity, and confidence in your financial future. For your money, it means flat-fee planning, tax efficiency, comprehensive, full-service advice.
-                </p>
+                Lindy Wealth provides comprehensive financial guidance to make your life and your money work better together.
+                              </p>
               </div>
 
+              <div>
+                <p className="text-base leading-relaxed text-black/80">
+                For your life, that means clarity, less complexity, and confidence that your financial decisions support your goals. For your money, that means flat-fee planning, tax-smart strategies, and personalized advice that grows and protects your wealth. Every plan balances both, ensuring your finances are clear and optimized so you can focus on what matters most.                                </p>
+              </div>
+      
               <div>
                 <p className="text-base leading-relaxed text-black/80">
                   Flat fees + proven tax strategies + custom planning = the Lindy way.
