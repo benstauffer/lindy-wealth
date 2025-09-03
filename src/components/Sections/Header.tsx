@@ -12,7 +12,7 @@ export function HeaderSection() {
         </div>
         
         {/* Action Links */}
-        <div className="flex gap-4">
+        <div className="flex gap-2 md:gap-6">
           <Link 
             href="/about"
             className="text-sm text-black/80 underline hover:text-black/60 transition-colors"
