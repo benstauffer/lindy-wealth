@@ -52,7 +52,7 @@ export default function FAQ() {
                 </p>
                 <p className="text-black/80 text-base ml-4 mt-2">
                   Pricing:<br />
-                  One-time Plan: starting at $1,000.<br />
+                  One-time Plan: starting at $3,000.<br />
                   Ongoing Planning: $5,000-$10,000/year.
                 </p>
               </div>
