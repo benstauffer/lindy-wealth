@@ -23,7 +23,7 @@ export default function Pricing() {
               
               <div>
                 <p className="text-base leading-relaxed text-black/80">
-                  One-time plan: Starting at $8,000.
+                  One-time plan: $8,000.
                   <br />
                   <span className="text-black/40">50% paid upfront, 50% paid at completion.</span>
                   <br />
