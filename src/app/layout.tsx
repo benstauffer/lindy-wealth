@@ -31,7 +31,7 @@ export default function RootLayout({
         className="min-h-screen text-white flex flex-col bg-[#0165E6]"
         style={{ 
           overscrollBehavior: 'none', 
-          position: 'relativ'
+          position: 'relative'
         }}
       >
         <main className="w-full">
