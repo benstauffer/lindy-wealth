@@ -10,16 +10,16 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <HeaderSection />
       
-      <div className="flex-1 flex items-center justify-center px-4">
-        <div className="flex flex-col items-center justify-center max-w-lg mx-auto w-full">
+      <div className="flex-1 flex items-center justify-center">
+        <div className="flex flex-col items-center justify-center max-w-lg mx-auto px-6">
           {/* Text section above */}
           <div className="text-white text-center">
-            <h1 className="text-2xl sm:text-3xl md:text-5xl mb-2 sm:mb-3 leading-tight">
+            <h1 className="text-3xl md:text-5xl mb-4">
               Secure Your 
               <br/>
               Financial Future.
             </h1>
-            <p className="text-sm sm:text-base leading-tight">
+            <p className="text-base">
               Comprehensive financial guidance 
               <br/>
               to make your life and 
@@ -29,10 +29,8 @@ export default function Home() {
           </div>
           
           {/* Diagram section */}
-          <div className="flex justify-center w-full">
-            <div className="scale-75 sm:scale-90 md:scale-100">
-              <AnimatedVennDiagram />
-            </div>
+          <div className="flex justify-center">
+            <AnimatedVennDiagram />
           </div>
         </div>
       </div>
