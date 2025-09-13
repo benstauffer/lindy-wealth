@@ -2,21 +2,15 @@
 
 import { HeaderSection } from "@/components/Sections/Header";
 import { FooterSection } from "@/components/Sections/Footer";
-import { BackButton } from "@/components/ui/BackButton";
 import Link from "next/link";
 
 export default function Disclosure() {
   return (
     <div className="min-h-screen flex flex-col">
       <HeaderSection />
-      <div className="flex-1">
+      <div className="flex-1 pt-32 pb-16">
         <div className="w-full px-6">
           <div className="max-w-lg mx-auto">
-            {/* Back Button */}
-            <div className="mt-8 mb-8">
-              <BackButton href="/" />
-            </div>
-
             {/* Disclosure Content */}
             <div className="space-y-6">
             <h1 className="text-2xl font-medium text-white">Disclosures</h1>
@@ -45,8 +39,9 @@ export default function Disclosure() {
           </div>
         </div>
       </div>
-      <div className="h-16"></div>
-      <FooterSection />
+      <div className="hidden md:block">
+        <FooterSection />
+      </div>
     </div>
   )
 }

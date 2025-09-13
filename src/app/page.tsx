@@ -10,7 +10,7 @@ export default function Home() {
     <div className="min-h-screen flex flex-col">
       <HeaderSection />
       
-      <div className="flex-1 flex items-center justify-center">
+      <div className="flex-1 flex items-center justify-center pt-20 md:pt-0">
         <div className="flex flex-col items-center justify-center max-w-lg mx-auto px-6">
           {/* Text section above */}
           <div className="text-white text-center">
@@ -35,7 +35,9 @@ export default function Home() {
         </div>
       </div>
       
-      <FooterSection />
+      <div className="hidden md:block">
+        <FooterSection />
+      </div>
     </div>
   )
 }

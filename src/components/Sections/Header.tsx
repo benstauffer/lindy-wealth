@@ -19,17 +19,25 @@ export function HeaderSection() {
             Lindy Wealth
           </Link>
           
-          <div className="flex gap-2 md:gap-4">
-            <Link href="/about" className="px-3 py-2 md:px-6 md:py-2 text-white font-medium rounded-full border border-white hover:bg-white hover:text-black transition-all duration-200 text-xs md:text-base">
+          {/* Desktop menu */}
+          <div className="hidden md:flex gap-4">
+            <Link href="/about" className="px-6 py-2 text-white font-medium rounded-full border border-white hover:bg-white hover:text-black transition-all duration-200">
               Learn More
             </Link>
             <button
               onClick={() => window.open('https://form.typeform.com/to/xtuCtft7', '_blank')}
-              className="px-3 py-2 md:px-6 md:py-2 bg-white font-medium rounded-full hover:bg-gray-100 transition-all duration-200 text-xs md:text-base"
+              className="px-6 py-2 bg-white font-medium rounded-full hover:bg-gray-100 transition-all duration-200"
               style={{ color: 'black' }}
             >
               Book a Call
             </button>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <Link href="/menu" className="px-4 py-2 text-white font-medium rounded-full border border-white hover:bg-white hover:text-black transition-all duration-200">
+              Menu
+            </Link>
           </div>
         </div>
       </div>

@@ -8,17 +8,17 @@ export default function Menu() {
       <HeaderSection />
       <div className="flex-1 flex flex-col items-center justify-center px-6">
         <nav className="flex flex-col gap-8 text-center">
-          <button className="text-2xl text-white hover:text-gray-300 transition-all duration-200">
+          <a href="/about" className="text-2xl text-white hover:text-gray-300 transition-all duration-200">
             About
-          </button>
-          <button className="text-2xl text-white hover:text-gray-300 transition-all duration-200">
-            Pricing
-          </button>
-          <button className="text-2xl text-white hover:text-gray-300 transition-all duration-200">
-            FAQ
-          </button>
+          </a>
+          <a href="/disclosure" className="text-2xl text-white hover:text-gray-300 transition-all duration-200">
+            Disclosure
+          </a>
+          <a href="/documents/Privacy.pdf" target="_blank" rel="noopener noreferrer" className="text-2xl text-white hover:text-gray-300 transition-all duration-200">
+            Privacy
+          </a>
           <button 
-            onClick={() => window.open('https://cal.com/ben-stauffer-ysbawo/30min', '_blank')}
+            onClick={() => window.open('https://form.typeform.com/to/xtuCtft7', '_blank')}
             className="text-2xl text-white hover:text-gray-300 transition-all duration-200"
           >
             Book a Call
@@ -28,8 +28,8 @@ export default function Menu() {
       
       <div className="absolute bottom-6 left-6">
         <div className="text-sm text-white/60 space-y-1">
-          <div>Disclosure</div>
-          <div>Privacy Policy</div>
+          <a href="/disclosure" className="block hover:text-white/80">Disclosure</a>
+          <a href="/documents/Privacy.pdf" target="_blank" rel="noopener noreferrer" className="block hover:text-white/80">Privacy Policy</a>
         </div>
       </div>
     </div>
