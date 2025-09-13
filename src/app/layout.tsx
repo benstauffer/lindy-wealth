@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body 
-        className="min-h-screen text-white flex flex-col bg-[#0165E6]"
+        className="min-h-screen text-white flex flex-col bg-black"
         style={{ 
           overscrollBehavior: 'none', 
           position: 'relative'

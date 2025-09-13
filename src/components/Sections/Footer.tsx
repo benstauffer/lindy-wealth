@@ -8,7 +8,7 @@ export function FooterSection() {
   return (
     <footer className="fixed bottom-0 left-0 w-full z-50">
       {/* Gradient background that fades up */}
-      <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-[#0165E6] via-[#0165E6]/80 to-transparent h-32"></div>
+      <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-black/80 to-transparent h-32"></div>
       
       {/* Footer content */}
       <div className="relative py-4 px-6">
