@@ -14,8 +14,9 @@ export const metadata: Metadata = {
   description: "CFP® Ben Stauffer provides flat-fee financial planning focused on tax strategy, fee minimization, and diversified investing.",
   metadataBase: new URL('https://lindywealth.com'),
   icons: {
-    icon: '/images/Lindy logo.png',
-    apple: '/images/Lindy logo.png',
+    icon: '/favicon.svg',
+    apple: '/favicon.svg',
+    shortcut: '/favicon.svg',
   },
 };
 
@@ -27,10 +28,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body 
-        className="min-h-screen text-black flex flex-col"
+        className="min-h-screen text-white flex flex-col bg-[#0165E6]"
         style={{ 
           overscrollBehavior: 'none', 
-          position: 'relative',
+          position: 'relativ'
         }}
       >
         <main className="w-full">

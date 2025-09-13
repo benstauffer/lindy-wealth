@@ -17,27 +17,29 @@ export function StrategyPage({ strategySlug, children }: StrategyPageProps) {
     <div className="min-h-screen flex flex-col">
       <HeaderSection />
       <div className="flex-1">
-        <div className="max-w-lg mx-auto px-4">
-          {/* Back Button */}
-          <div className="mt-8 mb-8">
-            <BackButton href="/planning" />
+        <div className="w-full px-6">
+          <div className="max-w-lg mx-auto">
+            {/* Back Button */}
+            <div className="mt-8 mb-8">
+              <BackButton href="/planning" />
+            </div>
+
+            {/* Header Section */}
+            <div className="space-y-6 mb-8">
+              <h1 className="text-2xl font-medium text-white">
+                Planning
+              </h1>
+            </div>
+
+            {/* Strategies List */}
+            <StrategiesList 
+              strategies={strategies} 
+              expandedStrategy={strategySlug}
+            >
+              {children}
+            </StrategiesList>
+
           </div>
-
-          {/* Header Section */}
-          <div className="space-y-6 mb-8">
-            <h1 className="text-2xl font-medium text-black">
-              Planning
-            </h1>
-          </div>
-
-          {/* Strategies List */}
-          <StrategiesList 
-            strategies={strategies} 
-            expandedStrategy={strategySlug}
-          >
-            {children}
-          </StrategiesList>
-
         </div>
       </div>
       <div className="h-16"></div>

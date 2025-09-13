@@ -2,48 +2,36 @@
 
 import Link from "next/link";
 import { HiOutlineExternalLink } from "react-icons/hi";
+import { useState } from "react";
+import Logo from "@/components/ui/Logo";
 
 export function HeaderSection() {
   return (
-    <div className="w-full py-8 px-4 max-w-lg mx-auto">
-      <div className="flex justify-between items-center">
-        <div className="text-base text-black tracking-tight">
-          Lindy Wealth
-        </div>
-        
-        {/* Action Links */}
-        <div className="flex gap-2 md:gap-6">
-          <Link 
-            href="/about"
-            className="text-sm text-black/80 underline hover:text-black/60 transition-colors"
-          >
-            About
-          </Link>
-          <Link 
-            href="/pricing"
-            className="text-sm text-black/80 underline hover:text-black/60 transition-colors"
-          >
-            Pricing
-          </Link>
-          <Link 
-            href="/faq"
-            className="text-sm text-black/80 underline hover:text-black/60 transition-colors"
-          >
-            FAQ
-          </Link>
-          <button
-            onClick={() => window.open('https://cal.com/ben-stauffer-ysbawo/30min', '_blank')}
-            className="text-sm text-black/80 underline hover:text-black/60 transition-colors flex items-center gap-1"
-          >
-            Book a call
-            <HiOutlineExternalLink className="w-4 h-4" />
-          </button>
-        </div>
-      </div>
+    <div className="fixed top-0 left-0 w-full z-50">
+      {/* Gradient background that fades out */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0165E6] via-[#0165E6]/80 to-transparent h-32"></div>
       
-      <div className="text-base text-black/40 ">
-        Financial planning <br />
-        that makes sense.
+      {/* Header content */}
+      <div className="relative py-4 px-6">
+        <div className="flex justify-between items-center w-full">
+          <Link href="/" className="flex items-center text-sm md:text-2xl text-white tracking-tight hover:text-gray-300 transition-colors">
+            <Logo />
+            Lindy Wealth
+          </Link>
+          
+          <div className="flex gap-4">
+            <Link href="/about" className="px-6 py-2 text-white font-medium rounded-full border border-white hover:bg-white hover:text-[#0165E6] transition-all duration-200">
+              Learn More
+            </Link>
+            <button
+              onClick={() => window.open('https://form.typeform.com/to/xtuCtft7', '_blank')}
+              className="px-6 py-2 bg-white font-medium rounded-full hover:bg-gray-100 transition-all duration-200"
+              style={{ color: '#0165E6' }}
+            >
+              Book a Call
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   )

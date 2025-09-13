@@ -22,12 +22,12 @@ export function StrategiesList({ strategies, expandedStrategy, children }: Strat
         <div key={strategy.id} className="">
           <div className="">
             <div className="flex items-start gap-2">
-              <span className="text-base text-black/60">
+              <span className="text-base text-white/60">
                 {strategy.number}.
               </span>
               <Link 
                 href={`/planning/${strategy.slug}`}
-                className="text-base text-black/80 hover:text-black/60 transition-colors"
+                className="text-base text-white/80 hover:text-white/60 transition-colors"
               >
                 {strategy.title}
               </Link>

@@ -11,6 +11,16 @@ html {
   scroll-behavior: smooth; 
 }
 
+/* Global black background and white text theme */
+* {
+  border-color: #ffffff20;
+}
+
+html, body {
+  background-color: #000000;
+  color: #ffffff;
+}
+
 
 
 
