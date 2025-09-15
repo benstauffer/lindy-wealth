@@ -13,24 +13,21 @@ export function HeaderSection() {
       
       {/* Header content */}
       <div className="relative py-4 px-6">
-        <div className="flex justify-between items-center w-full">
-          <Link href="/" className="flex items-center text-sm md:text-2xl text-white tracking-tight hover:text-gray-300 transition-colors">
-            <Logo />
-            Lindy Wealth
-          </Link>
-          
+        <div className="flex justify-center items-center w-full">
           {/* Desktop menu */}
-          <div className="hidden md:flex gap-4">
-            <Link href="/about" className="px-6 py-2 text-white font-medium rounded-full border border-white hover:bg-white hover:text-black transition-all duration-200">
-              Learn More
+          <div className="hidden md:flex gap-8 items-center">
+            <Link href="/" className="text-white font-medium hover:text-gray-300 transition-colors">
+              Start
             </Link>
-            <button
-              onClick={() => window.open('https://form.typeform.com/to/xtuCtft7', '_blank')}
-              className="px-6 py-2 bg-white font-medium rounded-full hover:bg-gray-100 transition-all duration-200"
-              style={{ color: 'black' }}
-            >
-              Book a Call
-            </button>
+            <Link href="/services" className="text-white font-medium hover:text-gray-300 transition-colors">
+              Services
+            </Link>
+            <Link href="/about" className="text-white font-medium hover:text-gray-300 transition-colors">
+              About
+            </Link>
+            <Link href="/pricing" className="text-white font-medium hover:text-gray-300 transition-colors">
+              Pricing
+            </Link>
           </div>
 
           {/* Mobile menu button */}

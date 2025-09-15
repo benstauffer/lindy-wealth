@@ -130,7 +130,7 @@ export default function AnimatedVennDiagram() {
     const maxX = Math.max(...all.map(c => c.c.x + c.r));
     const minY = Math.min(...all.map(c => c.c.y - c.r));
     const maxY = Math.max(...all.map(c => c.c.y + c.r));
-    const pad = 40;
+    const pad = 0;
     return `${minX - pad} ${minY - pad} ${maxX - minX + 2 * pad} ${maxY - minY + 2 * pad}`;
   }, [circles]);
 
@@ -300,9 +300,9 @@ export default function AnimatedVennDiagram() {
   }, [plan]);
 
   return (
-    <div className="flex items-center justify-center">
-      <div className="relative w-[600px] h-[600px]">
-        <svg className="absolute inset-0 w-full h-full" viewBox={viewBox}>
+    <div className="flex justify-center">
+      <div className="relative w-[600px]">
+        <svg className="w-full" viewBox={viewBox}>
           {/* guide circles (overlapping like a Venn diagram) */}
           <circle cx={circles.Ct.c.x} cy={circles.Ct.c.y} r={circles.Ct.r}
             fill="none" stroke="#FFFFFF" strokeWidth="2" opacity="0.3"
@@ -337,61 +337,6 @@ export default function AnimatedVennDiagram() {
           {/* moving dot */}
           <circle cx={pos.x} cy={pos.y} r={4} fill="#FFFFFF" vectorEffect="non-scaling-stroke" />
           
-          {/* Text labels */}
-          <text 
-            x={circles.Ct.c.x} 
-            y={circles.Ct.c.y - circles.Ct.r * 0.25} 
-            textAnchor="middle" 
-            dominantBaseline="middle"
-            fontSize="16"
-            fontWeight="500"
-            className={`transition-all duration-1000 ease-out ${
-              activeCircle === 'top' ? 'fill-white opacity-100' : 'fill-white opacity-40'
-            }`}
-          >
-            Better for your life
-          </text>
-          
-          <text 
-            x={circles.Cs.c.x} 
-            y={circles.Cs.c.y - 8} 
-            textAnchor="middle" 
-            dominantBaseline="middle"
-            fontSize="16"
-            fontWeight="500"
-            className={`transition-all duration-1000 ease-out ${
-              activeCircle === 'middle' ? 'fill-white opacity-100' : 'fill-white opacity-40'
-            }`}
-          >
-            Great
-          </text>
-          <text 
-            x={circles.Cs.c.x} 
-            y={circles.Cs.c.y + 8} 
-            textAnchor="middle" 
-            dominantBaseline="middle"
-            fontSize="16"
-            fontWeight="500"
-            className={`transition-all duration-1000 ease-out ${
-              activeCircle === 'middle' ? 'fill-white opacity-100' : 'fill-white opacity-40'
-            }`}
-          >
-            Advice
-          </text>
-          
-          <text 
-            x={circles.Cb.c.x} 
-            y={circles.Cb.c.y + circles.Cb.r * 0.25} 
-            textAnchor="middle" 
-            dominantBaseline="middle"
-            fontSize="16"
-            fontWeight="500"
-            className={`transition-all duration-1000 ease-out ${
-              activeCircle === 'bottom' ? 'fill-white opacity-100' : 'fill-white opacity-40'
-            }`}
-          >
-            Better for your money
-          </text>
         </svg>
       </div>
     </div>
