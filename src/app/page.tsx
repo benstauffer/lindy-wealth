@@ -203,11 +203,7 @@ export default function Home() {
             <p style={{ lineHeight: 1.1 }} className="text-3xl sm:text-4xl leading-tight text-black/80 tracking-tight font-suisse">
               Your Personal CFO
             </p>
-            <p style={{ lineHeight: 1.1 }} className="text-base leading-tight text-black/80 tracking-tight font-suisse mt-4">
-              Focus on the key areas
-              <br />
-              Financial Planning
-            </p>
+
           </div>
 
           {/* Services Carousel */}
