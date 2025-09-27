@@ -4,6 +4,63 @@
 @tailwind components;
 @tailwind utilities;
 
+/* SuisseWorks Font Family */
+@font-face {
+  font-family: 'SuisseWorks';
+  src: url('/font/SuisseWorks-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SuisseWorks';
+  src: url('/font/SuisseWorks-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SuisseWorks';
+  src: url('/font/SuisseWorks-Book.otf') format('opentype');
+  font-weight: 350;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SuisseWorks';
+  src: url('/font/SuisseWorks-BookItalic.otf') format('opentype');
+  font-weight: 350;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SuisseWorks';
+  src: url('/font/SuisseWorks-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SuisseWorks';
+  src: url('/font/SuisseWorks-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'SuisseWorks';
+  src: url('/font/SuisseWorks-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SuisseWorks';
+  src: url('/font/SuisseWorks-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+
 /* Set the root font size */
 html {
   font-size: 17px;
@@ -11,14 +68,20 @@ html {
   scroll-behavior: smooth; 
 }
 
-/* Global black background and white text theme */
+/* Global theme styles */
 * {
-  border-color: #ffffff20;
+  border-color: #00000020;
 }
 
+/* Light theme (default) */
 html, body {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark theme */
+html.dark * {
+  border-color: #ffffff20;
 }
 
 

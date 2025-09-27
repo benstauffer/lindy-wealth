@@ -33,23 +33,6 @@ function unwrap(circle: Circle, tRaw: number, lastMap: WeakMap<Circle, number>) 
   return t;
 }
 
-/** Circle–circle intersections (returns 0, 1, or 2 points) */
-function circleIntersections(a: Circle, b: Circle): Vec[] {
-  const v = sub(b.c, a.c);
-  const d = len(v);
-  if (d === 0) return []; // concentric
-  // no real intersections:
-  if (d > a.r + b.r || d < Math.abs(a.r - b.r)) return [];
-  const aLen = (a.r*a.r - b.r*b.r + d*d) / (2*d);
-  const h2   = a.r*a.r - aLen*aLen;
-  const h    = Math.sqrt(Math.max(0, h2));
-  const p2   = add(a.c, mul(v, aLen / d));
-  // perpendicular to v
-  const rx = -v.y * (h / d);
-  const ry =  v.x * (h / d);
-  return [{ x: p2.x + rx, y: p2.y + ry }, { x: p2.x - rx, y: p2.y - ry }];
-}
-
 type Segment = {
   circle: Circle;
   dir: 'CW' | 'CCW';
@@ -59,21 +42,33 @@ type Segment = {
   length: number;      // arc length (computed)
 };
 
-export default function AnimatedVennDiagram() {
+type FinancialIcon = {
+  id: string;
+  emoji: string;
+  label: string;
+  initialPosition: Vec;
+  finalPosition: Vec;
+  category: 'life' | 'money' | 'advice' | 'outer';
+};
+
+export default function AdvancedVennDiagram() {
   const rafRef = useRef<number | null>(null);
   const distRef = useRef(0);
   const trailRef = useRef<Array<{ pos: Vec; timestamp: number; circle: Circle; angle: number; unwrappedAngle: number }>>([]);
   const lastThetaPerCircle = useRef(new WeakMap<Circle, number>());
   const lastSegmentIndex = useRef(-1);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [iconsAnimated, setIconsAnimated] = useState(false);
 
   // --- Venn diagram with middle circle touching the borders (horizontal layout)
   const circles = useMemo(() => {
-    const radius = 140;
+    const radius = 160;
     const separation = radius * 1.1; // ~45% overlap between circles
     
     // Left and right circles with horizontal separation
-    const Ct: Circle = { c: { x: -separation/2, y: 0 }, r: radius, stroke: '#6B7280' }; // (using Ct as Left for minimal edits)
-    const Cb: Circle = { c: { x:  separation/2, y: 0 }, r: radius, stroke: '#A3A3A3' }; // (using Cb as Right for minimal edits)
+    const Ct: Circle = { c: { x: -separation/2, y: 0 }, r: radius, stroke: '#6B7280' }; // Left
+    const Cb: Circle = { c: { x:  separation/2, y: 0 }, r: radius, stroke: '#A3A3A3' }; // Right
     
     // Calculate middle circle to be internally tangent to both left and right circles
     const distanceToLeftBorder = Math.abs(-separation/2 + radius);
@@ -83,6 +78,115 @@ export default function AnimatedVennDiagram() {
     const Cs: Circle = { c: { x: 0, y: 0 }, r: smallRadius, stroke: '#9CA3AF' };
     
     return { Cs, Ct, Cb };
+  }, []);
+
+  // Financial planning cards with initial and final positions
+  const financialIcons: FinancialIcon[] = useMemo(() => {
+    return [
+      // Left circle (Better for your life)
+      {
+        id: 'retirement',
+        emoji: '',
+        label: 'Early Retirement',
+        initialPosition: { x: -400, y: -200 },
+        finalPosition: { x: -280, y: -80 },
+        category: 'life'
+      },
+      {
+        id: 'time-freedom',
+        emoji: '',
+        label: 'Time Freedom',
+        initialPosition: { x: -450, y: 100 },
+        finalPosition: { x: -280, y: 80 },
+        category: 'life'
+      },
+      {
+        id: 'peace-mind',
+        emoji: '',
+        label: 'Peace of Mind',
+        initialPosition: { x: -350, y: 250 },
+        finalPosition: { x: -200, y: 150 },
+        category: 'life'
+      },
+      {
+        id: 'homeownership',
+        emoji: '',
+        label: 'Dream Home',
+        initialPosition: { x: -200, y: -300 },
+        finalPosition: { x: -150, y: -200 },
+        category: 'life'
+      },
+      
+      // Right circle (Better for your money)
+      {
+        id: 'tax-strategy',
+        emoji: '',
+        label: 'Tax Strategy',
+        initialPosition: { x: 400, y: -150 },
+        finalPosition: { x: 280, y: -80 },
+        category: 'money'
+      },
+      {
+        id: 'investment-growth',
+        emoji: '',
+        label: 'Investment Growth',
+        initialPosition: { x: 450, y: 80 },
+        finalPosition: { x: 280, y: 80 },
+        category: 'money'
+      },
+      {
+        id: 'passive-income',
+        emoji: '',
+        label: 'Passive Income',
+        initialPosition: { x: 350, y: 220 },
+        finalPosition: { x: 200, y: 150 },
+        category: 'money'
+      },
+      {
+        id: 'emergency-fund',
+        emoji: '',
+        label: 'Emergency Fund',
+        initialPosition: { x: 300, y: -280 },
+        finalPosition: { x: 150, y: -200 },
+        category: 'money'
+      },
+      
+      // Center overlap (Great advice)
+      {
+        id: 'financial-plan',
+        emoji: '',
+        label: 'Financial Plan',
+        initialPosition: { x: 0, y: -350 },
+        finalPosition: { x: 0, y: -120 },
+        category: 'advice'
+      },
+      {
+        id: 'wealth-security',
+        emoji: '',
+        label: 'Wealth Security',
+        initialPosition: { x: 0, y: 350 },
+        finalPosition: { x: 0, y: 120 },
+        category: 'advice'
+      },
+      
+      // Outer positions
+      {
+        id: 'business-structure',
+        emoji: '',
+        label: 'Business Structure',
+        initialPosition: { x: -500, y: 0 },
+        finalPosition: { x: -350, y: 0 },
+        category: 'outer'
+      },
+      {
+        id: 'cash-flow',
+        emoji: '',
+        label: 'Cash Flow',
+        initialPosition: { x: 500, y: 0 },
+        finalPosition: { x: 350, y: 0 },
+        category: 'outer'
+      }
+    ];
   }, []);
 
   // Since small circle is contained within the overlap, use tangent points for connections (horizontal)
@@ -127,23 +231,34 @@ export default function AnimatedVennDiagram() {
     return { segs: withLengths, totalLength };
   }, [circles, pts]);
 
-  // compute viewBox to fit nicely
-  const viewBox = useMemo(() => {
-    const all = [circles.Cs, circles.Ct, circles.Cb];
-    const minX = Math.min(...all.map(c => c.c.x - c.r));
-    const maxX = Math.max(...all.map(c => c.c.x + c.r));
-    const minY = Math.min(...all.map(c => c.c.y - c.r));
-    const maxY = Math.max(...all.map(c => c.c.y + c.r));
-    const pad = 20;
-    return `${minX - pad} ${minY - pad} ${maxX - minX + 2 * pad} ${maxY - minY + 2 * pad}`;
-  }, [circles]);
-
   // anim state
   const [pos, setPos] = useState<Vec>(() => pointOn(circles.Cb, (235 * Math.PI) / 180));
   const [trails, setTrails] = useState<Array<{ pathData: string; age: number }>>([]);
-  const [activeCircle, setActiveCircle] = useState<'top' | 'middle' | 'bottom' | null>(null);
-  const activeCircleRef = useRef<'top' | 'middle' | 'bottom' | null>(null);
-  const transitionTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Intersection Observer for scroll-triggered animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !iconsAnimated) {
+          setIsVisible(true);
+          // Delay icon animation slightly after visibility
+          setTimeout(() => {
+            setIconsAnimated(true);
+          }, 300);
+        }
+      },
+      {
+        threshold: 0.6, // Trigger when 60% visible
+        rootMargin: '-50px'
+      }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, [iconsAnimated]);
 
   // Function to insert exact tangency points for both circles at transitions
   const pushTangencyAnchors = (
@@ -193,25 +308,9 @@ export default function AnimatedVennDiagram() {
 
   useEffect(() => {
     let last = 0;
-    let pausedTime = 0;
     const speed = 50;
-    
     const tick = (ts: number) => {
-      // Check if page is visible
-      if (document.visibilityState === 'hidden') {
-        // Don't update last time when hidden, effectively pausing
-        rafRef.current = requestAnimationFrame(tick);
-        return;
-      }
-
       if (!last) last = ts;
-      
-      // If we were paused, adjust the last timestamp
-      if (pausedTime > 0) {
-        last = ts - pausedTime;
-        pausedTime = 0;
-      }
-      
       const dt = (ts - last) / 1000;
       last = ts;
 
@@ -232,36 +331,6 @@ export default function AnimatedVennDiagram() {
 
       const newPos = pointOn(seg.circle, theta);
       setPos(newPos);
-
-      // Determine which circle the dot is currently on and set active state
-      const distToTop = len(sub(newPos, circles.Ct.c));
-      const distToBottom = len(sub(newPos, circles.Cb.c));
-      const distToMiddle = len(sub(newPos, circles.Cs.c));
-      
-      // Check if in circles with small tolerance
-      const inTopCircle = distToTop <= circles.Ct.r + 5;
-      const inBottomCircle = distToBottom <= circles.Cb.r + 5;
-      const inMiddleCircle = distToMiddle <= circles.Cs.r + 5;
-      
-      let newActiveCircle: 'top' | 'middle' | 'bottom' | null = null;
-      
-      // Priority: 1) Middle circle, 2) Overlap regions, 3) Individual circles
-      if (inMiddleCircle) {
-        newActiveCircle = 'middle';
-      } else if (inTopCircle && inBottomCircle) {
-        // In the lens-shaped overlap between top and bottom
-        newActiveCircle = 'middle';
-      } else if (inTopCircle) {
-        newActiveCircle = 'top';
-      } else if (inBottomCircle) {
-        newActiveCircle = 'bottom';
-      }
-      
-      // Update active circle immediately without debouncing
-      if (newActiveCircle !== activeCircleRef.current) {
-        setActiveCircle(newActiveCircle);
-        activeCircleRef.current = newActiveCircle;
-      }
 
       // Detect segment transitions and insert tangency anchors
       const currentSegmentIndex = plan.segs.findIndex(s => s === seg);
@@ -320,101 +389,129 @@ export default function AnimatedVennDiagram() {
       rafRef.current = requestAnimationFrame(tick);
     };
 
-    // Handle visibility changes
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === 'visible') {
-        // Reset timing when page becomes visible again
-        last = 0;
-      }
-    };
-
-    document.addEventListener('visibilitychange', handleVisibilityChange);
     rafRef.current = requestAnimationFrame(tick);
-    
-    return () => { 
-      if (rafRef.current) cancelAnimationFrame(rafRef.current);
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-    };
+    return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current); };
   }, [plan]);
 
   return (
-    <div className="flex justify-center relative">
-      <div className="relative w-full h-[350px]">
-        {/* Venn diagram */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative">
-            <svg width="580" height="380">
-              <g transform="translate(290, 190)">
-                {/* guide circles (overlapping like a Venn diagram) */}
-                <circle cx={circles.Ct.c.x} cy={circles.Ct.c.y} r={circles.Ct.r}
-                  fill="none" stroke="#e5e5e5" strokeWidth="2" />
-                <circle cx={circles.Cs.c.x} cy={circles.Cs.c.y} r={circles.Cs.r}
-                  fill="none" stroke="#e5e5e5" strokeWidth="2" />
-                <circle cx={circles.Cb.c.x} cy={circles.Cb.c.y} r={circles.Cb.r}
-                  fill="none" stroke="#e5e5e5" strokeWidth="2" />
-              
-                {/* trail segments with round caps for seamless connection */}
-                {trails.map((trail, i) => {
-                  const { pathData, age } = trail;
-                  const fadeRatio = Math.max(0, 1 - (age / 8000));
-                  
-                  return (
-                    <path
-                      key={i}
-                      d={pathData}
-                      fill="none"
-                      stroke="#000000"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      opacity={fadeRatio}
-                    />
-                  );
-                })}
-              </g>
-            </svg>
+    <div ref={containerRef} className="flex justify-center relative">
+      <div className="relative">
+        <svg width="800" height="600" className="overflow-visible">
+          <g transform="translate(400, 300)">
+            {/* guide circles (overlapping like a Venn diagram) */}
+            <circle cx={circles.Ct.c.x} cy={circles.Ct.c.y} r={circles.Ct.r}
+              fill="none" stroke="#737373" strokeWidth="2" />
+            <circle cx={circles.Cs.c.x} cy={circles.Cs.c.y} r={circles.Cs.r}
+              fill="none" stroke="#737373" strokeWidth="2" />
+            <circle cx={circles.Cb.c.x} cy={circles.Cb.c.y} r={circles.Cb.r}
+              fill="none" stroke="#737373" strokeWidth="2" />
             
-            {/* Text labels positioned absolutely outside SVG */}
-            <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-              <div 
-                className="absolute flex flex-col items-center justify-center text-sm leading-tight text-black/70 select-none tracking-tight font-suisse"
-                style={{
-                  left: `${290 + circles.Ct.c.x - circles.Ct.r * 0.5 - 100}px`,
-                  top: `${190 + circles.Ct.c.y - 35}px`,
-                  width: '200px',
-                  height: '70px'
-                }}
-              >
+            {/* Circle labels */}
+            <foreignObject x={circles.Ct.c.x - circles.Ct.r * 0.5 - 100} y={circles.Ct.c.y - 35} width="200" height="70">
+              <div className="flex flex-col items-center justify-center h-full text-sm text-black dark:text-white pointer-events-none select-none tracking-tight font-suisse">
                 <span>Better for</span>
                 <span>your life</span>
               </div>
-              <div 
-                className="absolute flex flex-col items-center justify-center text-sm leading-tight text-black/70 select-none tracking-tight font-suisse"
-                style={{
-                  left: `${290 + circles.Cs.c.x - 75}px`,
-                  top: `${190 + circles.Cs.c.y - 35}px`,
-                  width: '150px',
-                  height: '70px'
-                }}
-              >
+            </foreignObject>
+            <foreignObject x={circles.Cs.c.x - 75} y={circles.Cs.c.y - 35} width="150" height="70">
+              <div className="flex flex-col items-center justify-center h-full text-sm text-black dark:text-white pointer-events-none select-none tracking-tight font-suisse">
                 <span>Great</span>
                 <span>advice</span>
               </div>
-              <div 
-                className="absolute flex flex-col items-center justify-center text-sm leading-tight text-black/70 select-none tracking-tight font-suisse"
-                style={{
-                  left: `${290 + circles.Cb.c.x + circles.Cb.r * 0.5 - 100}px`,
-                  top: `${190 + circles.Cb.c.y - 35}px`,
-                  width: '200px',
-                  height: '70px'
-                }}
-              >
+            </foreignObject>
+            <foreignObject x={circles.Cb.c.x + circles.Cb.r * 0.5 - 100} y={circles.Cb.c.y - 35} width="200" height="70">
+              <div className="flex flex-col items-center justify-center h-full text-sm text-black dark:text-white pointer-events-none select-none tracking-tight font-suisse">
                 <span>Better for</span>
                 <span>your money</span>
               </div>
+            </foreignObject>
+          
+            {/* trail segments with round caps for seamless connection */}
+            {trails.map((trail, i) => {
+              const { pathData, age } = trail;
+              const fadeRatio = Math.max(0, 1 - (age / 8000));
+              
+              return (
+                <path
+                  key={i}
+                  d={pathData}
+                  fill="none"
+                  stroke="#000000"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  opacity={fadeRatio}
+                />
+              );
+            })}
+          </g>
+        </svg>
+
+        {/* Financial Icons */}
+        {financialIcons.map((icon, index) => {
+          const currentPos = iconsAnimated ? icon.finalPosition : icon.initialPosition;
+          const delay = index * 150; // Staggered animation delay
+          
+          // Professional colors and text-based icons
+          const getIconStyle = (id: string) => {
+            switch (id) {
+              case 'retirement':
+                return { bg: 'bg-slate-700', text: 'RET' };
+              case 'time-freedom':
+                return { bg: 'bg-blue-700', text: 'TIME' };
+              case 'peace-mind':
+                return { bg: 'bg-emerald-700', text: 'PEACE' };
+              case 'homeownership':
+                return { bg: 'bg-purple-700', text: 'HOME' };
+              case 'tax-strategy':
+                return { bg: 'bg-red-700', text: 'TAX' };
+              case 'investment-growth':
+                return { bg: 'bg-green-700', text: 'GROW' };
+              case 'passive-income':
+                return { bg: 'bg-amber-700', text: 'INCOME' };
+              case 'emergency-fund':
+                return { bg: 'bg-indigo-700', text: 'FUND' };
+              case 'financial-plan':
+                return { bg: 'bg-rose-700', text: 'PLAN' };
+              case 'wealth-security':
+                return { bg: 'bg-teal-700', text: 'SECURE' };
+              case 'business-structure':
+                return { bg: 'bg-violet-700', text: 'BIZ' };
+              case 'cash-flow':
+                return { bg: 'bg-cyan-700', text: 'CASH' };
+              default:
+                return { bg: 'bg-gray-700', text: 'PLAN' };
+            }
+          };
+
+          const iconStyle = getIconStyle(icon.id);
+          
+          return (
+            <div
+              key={icon.id}
+              className={`absolute pointer-events-none transition-all duration-1000 ease-out ${
+                iconsAnimated ? 'opacity-100' : 'opacity-0'
+              }`}
+              style={{
+                left: `${400 + currentPos.x}px`,
+                top: `${300 + currentPos.y}px`,
+                transform: 'translate(-50%, -50%)',
+                transitionDelay: `${delay}ms`
+              }}
+            >
+              <div className="flex flex-col items-center space-y-1">
+                <div className={`w-12 h-12 ${iconStyle.bg} rounded-xl flex items-center justify-center`}>
+                  <span className="text-white text-xs font-bold">
+                    {iconStyle.text}
+                  </span>
+                </div>
+                <div className="text-xs text-center text-black/70 font-medium max-w-16 leading-tight">
+                  {icon.label}
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          );
+        })}
       </div>
     </div>
   );

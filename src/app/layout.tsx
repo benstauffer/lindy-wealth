@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import { ThemeProvider } from "@/contexts/ThemeContext";
+import { HeaderSection } from "@/components/Sections/Header";
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -28,15 +30,18 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body 
-        className="min-h-screen text-white flex flex-col bg-black"
+        className="min-h-screen text-black dark:text-white flex flex-col bg-white"
         style={{ 
           overscrollBehavior: 'none', 
           position: 'relative'
         }}
       >
-        <main className="w-full">
-          {children}
-        </main>
+        <ThemeProvider>
+          <HeaderSection />
+          <main className="w-full">
+            {children}
+          </main>
+        </ThemeProvider>
         <Analytics />
       </body>
     </html>

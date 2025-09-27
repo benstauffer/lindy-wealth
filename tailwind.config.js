@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
   	extend: {
+  		fontFamily: {
+  			'suisse': ['SuisseWorks', 'serif'],
+  		},
   		keyframes: {
   			'accordion-down': {
   				from: {

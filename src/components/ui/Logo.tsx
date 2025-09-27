@@ -1,19 +1,22 @@
 'use client';
 
 import { useMemo } from 'react';
+import { useTheme } from '@/contexts/ThemeContext';
 
 type Vec = { x: number; y: number };
 type Circle = { c: Vec; r: number };
 
 export default function Logo() {
-  // Simple two-circle Venn diagram without the middle circle
+  const { theme } = useTheme();
+  
+  // Simple two-circle Venn diagram without the middle circle (horizontal layout)
   const circles = useMemo(() => {
     const radius = 20;
-    const separation = radius * 1.1; // ~45% overlap between circles
+    const separation = radius * 1.0; // 50% overlap between circles
     
-    // Top and bottom circles with vertical separation  
-    const Ct: Circle = { c: { x: 0, y: -separation/2 }, r: radius };
-    const Cb: Circle = { c: { x: 0, y: separation/2 }, r: radius };
+    // Left and right circles with horizontal separation (same radius for both)
+    const Ct: Circle = { c: { x: -separation/2, y: 0 }, r: radius };
+    const Cb: Circle = { c: { x: separation/2, y: 0 }, r: radius };
     
     return { Ct, Cb };
   }, []);
@@ -31,14 +34,14 @@ export default function Logo() {
 
   return (
     <div className="inline-flex items-center">
-      <svg className="w-6 h-8 mr-2" viewBox={viewBox}>
+      <svg className="w-7 h-6 mr-0.5" viewBox={viewBox}>
         {/* Two overlapping circles */}
         <circle 
           cx={circles.Ct.c.x} 
           cy={circles.Ct.c.y} 
           r={circles.Ct.r}
           fill="none" 
-          stroke="#f5f5f5" 
+          stroke="#999999"
           strokeWidth="1.5"
           vectorEffect="non-scaling-stroke" 
         />
@@ -47,11 +50,12 @@ export default function Logo() {
           cy={circles.Cb.c.y} 
           r={circles.Cb.r}
           fill="none" 
-          stroke="#f5f5f5" 
+          stroke="#999999"
           strokeWidth="1.5"
           vectorEffect="non-scaling-stroke" 
         />
       </svg>
+      <span className="text-base text-[#999999] tracking-tight">Lindy Wealth</span>
     </div>
   );
 }

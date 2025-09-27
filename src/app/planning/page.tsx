@@ -12,8 +12,7 @@ export default function Strategies() {
     <div className="min-h-screen flex flex-col">
       <HeaderSection />
       <div className="flex-1">
-        <div className="w-full px-6">
-          <div className="max-w-lg mx-auto">
+        <div className="max-w-xl mx-auto px-4 sm:px-6 md:px-8">
             {/* Back Button */}
             <div className="mt-8 mb-8">
               <BackButton href="/" />
@@ -26,8 +25,6 @@ export default function Strategies() {
 
             {/* Strategies List */}
             <StrategiesList strategies={strategies} />
-
-          </div>
         </div>
       </div>
       <div className="h-16"></div>

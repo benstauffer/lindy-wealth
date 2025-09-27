@@ -6,31 +6,27 @@ export function FooterSection() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="fixed bottom-0 left-0 w-full z-50">
-      {/* Gradient background that fades up */}
-      <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black via-black/80 to-transparent h-32"></div>
-      
-      {/* Footer content */}
-      <div className="relative py-4 px-6">
+    <footer className="w-full bg-gray-50 border-t border-gray-200 shadow-inner">
+      <div className="max-w-xl mx-auto px-4 sm:px-6 md:px-8 py-4">
         <div className="w-full mx-auto">
           <div className="mx-auto">
-            <div className="flex flex-row justify-start items-center gap-8">
+            <div className="flex flex-row justify-between items-center gap-8">
               
               {/* Copyright - Left side */}
               <div className="flex flex-col">
-                <p className="text-sm md:text-2xl text-white">&copy; 2025 Lindy Wealth</p>
+                <p className="text-sm text-[#999999]">&copy; 2025 Lindy Wealth</p>
               </div>
 
-              {/* Legal links */}
+              {/* Right side - Legal links */}
               <div className="flex flex-row gap-4 md:gap-8">
-                <Link href="/disclosure" className="text-white hover:underline transition-colors text-sm md:text-2xl">
+                <Link href="/disclosure" className="text-[#999999] transition-colors text-sm">
                   Disclosure
                 </Link>
                 <a 
                   href="/documents/Privacy.pdf"
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-white hover:underline transition-colors text-sm md:text-2xl"
+                  className="text-[#999999] transition-colors text-sm"
                 >
                   Privacy
                 </a>
