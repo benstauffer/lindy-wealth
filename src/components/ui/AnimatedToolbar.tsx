@@ -102,7 +102,7 @@ function ExpandableToolbar({ currentPage, selectedService, showExpandedContent =
       layout
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
-      {/* Selected Service Details - appears when service is selected on page 1 */}
+      {/* Selected Service Details - appears when service is selected on page 1 (Services) */}
       <AnimatePresence>
         {showExpandedContent && selectedService && selectedServiceData && currentPage === 1 && (
           <motion.div
@@ -136,9 +136,9 @@ function ExpandableToolbar({ currentPage, selectedService, showExpandedContent =
       </AnimatePresence>
 
 
-      {/* Pricing Section - appears above on page 2 */}
+      {/* Pricing Section - appears above on page 3 (Pricing) */}
       <AnimatePresence>
-        {showExpandedContent && currentPage === 2 && (
+        {showExpandedContent && currentPage === 3 && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
@@ -164,9 +164,9 @@ function ExpandableToolbar({ currentPage, selectedService, showExpandedContent =
         )}
       </AnimatePresence>
 
-      {/* FAQ Section - appears above on page 3 */}
+      {/* FAQ Section - appears above on page 4 (FAQ) */}
       <AnimatePresence>
-        {showExpandedContent && currentPage === 3 && (
+        {showExpandedContent && currentPage === 4 && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
@@ -206,7 +206,7 @@ function ExpandableToolbar({ currentPage, selectedService, showExpandedContent =
                     const container = document.querySelector('.h-screen.overflow-y-scroll');
                     if (container) {
                       container.scrollTo({
-                        top: 2 * window.innerHeight,
+                        top: 3 * window.innerHeight,
                         behavior: 'smooth'
                       });
                     }

@@ -9,6 +9,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import FreeScrollCarousel from "@/components/ui/FreeScrollCarousel";
+import AnimatedVennDiagram from "@/components/ui/AnimatedVennDiagram";
 
 const StructuredData = () => (
   <>
@@ -184,7 +185,7 @@ export default function Home() {
           </div>
 
           <div className="flex justify-center mt-0">
-            <p className="text-base leading-normal text-black/70 max-w-sm text-center font-suisse tracking-tight">
+            <p className="text-base sm:text-xl leading-normal text-black/70 max-w-sm text-center font-suisse tracking-tight">
               <br/>
               We design tax-smart plans that help solopreneurs save thousands in taxes, free up hours of time, and build lasting wealth.
             </p>
@@ -198,9 +199,12 @@ export default function Home() {
           id="services-section"
         >
           {/* Centered headline at top */}
-          <div className="absolute top-8 sm:top-16 left-0 right-0 pt-8 sm:pt-20 text-center px-4">
-            <p style={{ lineHeight: 1.1 }} className="text-3xl sm:text-4xl md:text-5xl leading-tight text-black/80 font-suisse tracking-tight">
-              Full-Service
+          <div className="absolute top-16 sm:top-24 left-0 right-0 pt-4 sm:pt-8 text-center px-4">
+            <p style={{ lineHeight: 1.1 }} className="text-3xl sm:text-4xl leading-tight text-black/80 tracking-tight font-suisse">
+              Your Personal CFO
+            </p>
+            <p style={{ lineHeight: 1.1 }} className="text-base leading-tight text-black/80 tracking-tight font-suisse mt-4">
+              Focus on the key areas
               <br />
               Financial Planning
             </p>
@@ -216,10 +220,15 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Section 3: Pricing */}
+        {/* Section 3: Venn Diagram */}
+        <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 md:px-8 text-center">
+          <AnimatedVennDiagram />
+        </div>
+
+        {/* Section 4: Pricing */}
         <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 md:px-8 text-center">
           <div className="mb-4">
-            <p style={{ lineHeight: 1.1 }} className="text-3xl sm:text-4xl md:text-5xl leading-tight text-black/80 font-suisse tracking-tight">
+            <p style={{ lineHeight: 1.1 }} className="text-3xl sm:text-4xl leading-tight text-black/80 font-suisse tracking-tight">
               Transparent Flat Fee
             </p>
           </div>
@@ -234,7 +243,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Section 4: FAQ */}
+        {/* Section 5: FAQ */}
         <div className="relative w-full h-screen" style={{backgroundColor: '#000000'}}>
           <div className="absolute top-8 sm:top-16 left-0 right-0 pt-8 sm:pt-20">
             <h3 className="text-lg font-suisse text-white text-center">FAQ</h3>

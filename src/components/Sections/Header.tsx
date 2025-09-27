@@ -52,11 +52,13 @@ const MarketStatus = () => {
 export function HeaderSection() {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
-      <div className="flex justify-between items-center px-6 py-4 pointer-events-auto">
+      <div className="flex items-center justify-center px-6 py-4 pointer-events-auto relative">
         <Link href="/">
           <Logo />
         </Link>
-        <MarketStatus />
+        <div className="absolute right-6 hidden sm:block">
+          <MarketStatus />
+        </div>
       </div>
     </div>
   )

@@ -42,8 +42,9 @@ export default function FreeScrollCarousel({ services, selectedService, onServic
       const targetIndex = Math.floor(scrollProgress * services.length);
       const clampedIndex = Math.max(0, Math.min(services.length - 1, targetIndex));
       
-      // Update carousel position
-      const cardWidth = 320; // w-80 = 320px
+      // Update carousel position - adjust for mobile vs desktop card widths
+      const isMobile = window.innerWidth < 640; // sm breakpoint
+      const cardWidth = isMobile ? 384 : 320; // w-96 = 384px on mobile, w-80 = 320px on desktop
       const gap = 16; // gap-4 = 16px
       const scrollPosition = clampedIndex * (cardWidth + gap);
       container.scrollLeft = scrollPosition;
@@ -71,18 +72,16 @@ export default function FreeScrollCarousel({ services, selectedService, onServic
       <div className="w-full overflow-visible relative">
         <div 
           ref={scrollRef}
-          className="flex gap-3 sm:gap-4 items-center"
-            style={{ 
-              scrollbarWidth: 'none', 
-              msOverflowStyle: 'none',
-              scrollBehavior: 'auto',
-              width: '100vw',
-              maxWidth: '100%',
-              paddingLeft: `max(1rem, calc(50vw - 150px))`, // Adjusted for mobile
-              paddingRight: `max(1rem, calc(50vw - 150px))`,
-              overflowX: 'scroll',
-              overflowY: 'visible'
-            }}
+          className="flex gap-4 items-center pl-[calc(50vw-192px)] pr-[calc(50vw-192px)] sm:pl-[calc(50vw-288px)] sm:pr-[calc(50vw-288px)]"
+          style={{ 
+            scrollbarWidth: 'none', 
+            msOverflowStyle: 'none',
+            scrollBehavior: 'auto',
+            width: '100vw',
+            maxWidth: '100%',
+            overflowX: 'scroll',
+            overflowY: 'visible'
+          }}
         >
           <style jsx>{`
             div::-webkit-scrollbar {
@@ -92,7 +91,7 @@ export default function FreeScrollCarousel({ services, selectedService, onServic
           {services.map((service, index) => (
             <div 
               key={service.id} 
-              className="flex-shrink-0 overflow-visible w-72 sm:w-80"
+              className="flex-shrink-0 overflow-visible w-96 sm:w-80"
             >
               <button
                 onClick={() => onServiceSelect(selectedService === service.id ? null : service.id)}
@@ -100,15 +99,15 @@ export default function FreeScrollCarousel({ services, selectedService, onServic
               >
                 <div className="relative overflow-visible py-4">
                   <motion.div 
-                    className={`${service.bgColor} p-4 sm:p-6 h-[350px] sm:h-[400px] rounded-3xl flex flex-col justify-between`}
+                    className={`${service.bgColor} p-6 sm:p-6 h-[550px] sm:h-[400px] rounded-lg flex flex-col justify-between`}
                     whileHover={{ 
                       scale: 1.03,
-                      boxShadow: "0 0 20px rgba(0, 0, 0, 0.15)",
-                      transition: { 
-                        type: "spring", 
-                        stiffness: 300, 
-                        damping: 20 
-                      }
+                      boxShadow: "0 0 20px rgba(0, 0, 0, 0.08)"
+                    }}
+                    transition={{ 
+                      type: "spring",
+                      stiffness: 280,
+                      damping: 25
                     }}
                   >
                     <div>

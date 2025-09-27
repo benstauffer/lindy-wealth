@@ -353,6 +353,73 @@ export default function AnimatedVennDiagram() {
                 <circle cx={circles.Cb.c.x} cy={circles.Cb.c.y} r={circles.Cb.r}
                   fill="none" stroke="#e5e5e5" strokeWidth="2" />
               
+                {/* Dotted connector lines to text labels */}
+                <g>
+                  {/* Left "Better for your life" text to detailed text - L-shaped connector */}
+                  <g>
+                    {/* Vertical line up from above "Better for your life" text */}
+                    <line 
+                      x1={circles.Ct.c.x - circles.Ct.r * 0.5}
+                      y1={circles.Ct.c.y - 20}
+                      x2={circles.Ct.c.x - circles.Ct.r * 0.5}
+                      y2={circles.Ct.c.y - 80}
+                      stroke="#d1d5db" 
+                      strokeWidth="1" 
+                      strokeDasharray="3,3"
+                      opacity="0.7"
+                    />
+                    {/* Horizontal line left to detailed text */}
+                    <line 
+                      x1={circles.Ct.c.x - circles.Ct.r * 0.5} 
+                      y1={circles.Ct.c.y - 80}
+                      x2={circles.Ct.c.x - circles.Ct.r - 60}
+                      y2={circles.Ct.c.y - 80}
+                      stroke="#d1d5db" 
+                      strokeWidth="1" 
+                      strokeDasharray="3,3"
+                      opacity="0.7"
+                    />
+                  </g>
+                  
+                  {/* Line from under "Great advice" text down to bottom text */}
+                  <line 
+                    x1={circles.Cs.c.x} 
+                    y1={circles.Cs.c.y + 20}
+                    x2={circles.Cs.c.x}
+                    y2={circles.Cs.c.y + 175}
+                    stroke="#d1d5db" 
+                    strokeWidth="1" 
+                    strokeDasharray="3,3"
+                    opacity="0.7"
+                  />
+                  
+                  {/* Right "Better for your money" text to detailed text - L-shaped connector */}
+                  <g>
+                    {/* Vertical line up from above "Better for your money" text */}
+                    <line 
+                      x1={circles.Cb.c.x + circles.Cb.r * 0.5}
+                      y1={circles.Cb.c.y - 20}
+                      x2={circles.Cb.c.x + circles.Cb.r * 0.5}
+                      y2={circles.Cb.c.y - 80}
+                      stroke="#d1d5db" 
+                      strokeWidth="1" 
+                      strokeDasharray="3,3"
+                      opacity="0.7"
+                    />
+                    {/* Horizontal line right to detailed text */}
+                    <line 
+                      x1={circles.Cb.c.x + circles.Cb.r * 0.5} 
+                      y1={circles.Cb.c.y - 80}
+                      x2={circles.Cb.c.x + circles.Cb.r + 60}
+                      y2={circles.Cb.c.y - 80}
+                      stroke="#d1d5db" 
+                      strokeWidth="1" 
+                      strokeDasharray="3,3"
+                      opacity="0.7"
+                    />
+                  </g>
+                </g>
+
                 {/* trail segments with round caps for seamless connection */}
                 {trails.map((trail, i) => {
                   const { pathData, age } = trail;
@@ -411,6 +478,54 @@ export default function AnimatedVennDiagram() {
               >
                 <span>Better for</span>
                 <span>your money</span>
+              </div>
+              
+              {/* Life Improvements text connected to left L-shaped line */}
+              <div 
+                className="absolute text-sm leading-tight text-black/70 select-none tracking-tight font-suisse"
+                style={{
+                  left: `${290 + circles.Ct.c.x - circles.Ct.r - 240}px`,
+                  top: `${190 + circles.Ct.c.y - 95}px`,
+                  width: '180px'
+                }}
+              >
+                <div className="font-medium text-black/80">Life Improvements</div>
+                <div className="mt-1 space-y-0.5">
+                  <div>- More time back</div>
+                  <div>- Less financial stress</div>
+                  <div>- Clear decision making</div>
+                </div>
+              </div>
+
+              {/* Net Worth Optimization text connected to L-shaped line */}
+              <div 
+                className="absolute text-sm leading-tight text-black/70 select-none tracking-tight font-suisse"
+                style={{
+                  left: `${290 + circles.Cb.c.x + circles.Cb.r + 65}px`,
+                  top: `${190 + circles.Cb.c.y - 95}px`,
+                  width: '180px'
+                }}
+              >
+                <div className="font-medium text-black/80">Net Worth Optimization</div>
+                <div className="mt-1 space-y-0.5">
+                  <div>- Entity selection</div>
+                  <div>- Tax-smart investing</div>
+                  <div>- Proper risk management</div>
+                </div>
+              </div>
+
+              {/* Bottom text connected to middle circle */}
+              <div 
+                className="absolute flex flex-col items-center justify-center text-base leading-normal text-black/70 select-none tracking-tight font-suisse"
+                style={{
+                  left: `${290 + circles.Cs.c.x - 150}px`,
+                  top: `${190 + circles.Cs.c.y + 180}px`,
+                  width: '300px'
+                }}
+              >
+                <span>Comprehensive financial guidance</span>
+                <span>to make your life and</span>
+                <span>money work better together.</span>
               </div>
             </div>
           </div>
