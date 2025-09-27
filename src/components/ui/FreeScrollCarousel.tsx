@@ -67,19 +67,19 @@ export default function FreeScrollCarousel({ services, selectedService, onServic
   }, [services.length]);
 
   return (
-    <div className="flex items-center justify-center overflow-visible h-full" style={{ marginTop: '-120px' }}>
+    <div className="flex items-center justify-center overflow-visible h-full" style={{ marginTop: '-60px' }}>
       <div className="w-full overflow-visible relative">
         <div 
           ref={scrollRef}
-          className="flex gap-4 items-center"
+          className="flex gap-3 sm:gap-4 items-center"
             style={{ 
               scrollbarWidth: 'none', 
               msOverflowStyle: 'none',
               scrollBehavior: 'auto',
               width: '100vw',
               maxWidth: '100%',
-              paddingLeft: `max(1rem, calc(50vw - 300px))`, // Minimum 1rem padding on mobile
-              paddingRight: `max(1rem, calc(50vw - 300px))`,
+              paddingLeft: `max(1rem, calc(50vw - 150px))`, // Adjusted for mobile
+              paddingRight: `max(1rem, calc(50vw - 150px))`,
               overflowX: 'scroll',
               overflowY: 'visible'
             }}
@@ -92,7 +92,7 @@ export default function FreeScrollCarousel({ services, selectedService, onServic
           {services.map((service, index) => (
             <div 
               key={service.id} 
-              className="flex-shrink-0 overflow-visible w-80"
+              className="flex-shrink-0 overflow-visible w-72 sm:w-80"
             >
               <button
                 onClick={() => onServiceSelect(selectedService === service.id ? null : service.id)}
@@ -100,7 +100,7 @@ export default function FreeScrollCarousel({ services, selectedService, onServic
               >
                 <div className="relative overflow-visible py-4">
                   <motion.div 
-                    className={`${service.bgColor} p-6 h-[400px] rounded-3xl flex flex-col justify-between`}
+                    className={`${service.bgColor} p-4 sm:p-6 h-[350px] sm:h-[400px] rounded-3xl flex flex-col justify-between`}
                     whileHover={{ 
                       scale: 1.03,
                       boxShadow: "0 0 20px rgba(0, 0, 0, 0.15)",
@@ -112,7 +112,7 @@ export default function FreeScrollCarousel({ services, selectedService, onServic
                     }}
                   >
                     <div>
-                      <h3 className="text-xl font-medium mb-6 text-black leading-tight">{service.name}</h3>
+                      <h3 className="text-lg sm:text-xl font-medium mb-4 sm:mb-6 text-black leading-tight">{service.name}</h3>
                     </div>
                     <div>
                       <p className="text-sm text-black leading-relaxed">{service.description}</p>

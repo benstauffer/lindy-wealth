@@ -174,7 +174,7 @@ export default function Home() {
 
 
           <div className="mb-2">
-            <p style={{ lineHeight: 1.1 }} className="text-5xl leading-tight text-black/80 font-suisse tracking-tight">
+            <p style={{ lineHeight: 1.1 }} className="text-3xl sm:text-4xl md:text-5xl leading-tight text-black/80 font-suisse tracking-tight">
               Wealth Management.
               <br />
               <span className="">
@@ -198,8 +198,8 @@ export default function Home() {
           id="services-section"
         >
           {/* Centered headline at top */}
-          <div className="absolute top-16 left-0 right-0 pt-20 text-center">
-            <p style={{ lineHeight: 1.1 }} className="text-5xl top-16 leading-tight text-black/80 font-suisse tracking-tight">
+          <div className="absolute top-8 sm:top-16 left-0 right-0 pt-8 sm:pt-20 text-center px-4">
+            <p style={{ lineHeight: 1.1 }} className="text-3xl sm:text-4xl md:text-5xl leading-tight text-black/80 font-suisse tracking-tight">
               Full-Service
               <br />
               Financial Planning
@@ -219,7 +219,7 @@ export default function Home() {
         {/* Section 3: Pricing */}
         <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 md:px-8 text-center">
           <div className="mb-4">
-            <p style={{ lineHeight: 1.1 }} className="text-5xl leading-tight text-black/80 font-suisse tracking-tight">
+            <p style={{ lineHeight: 1.1 }} className="text-3xl sm:text-4xl md:text-5xl leading-tight text-black/80 font-suisse tracking-tight">
               Transparent Flat Fee
             </p>
           </div>
@@ -236,11 +236,11 @@ export default function Home() {
 
         {/* Section 4: FAQ */}
         <div className="relative w-full h-screen" style={{backgroundColor: '#000000'}}>
-          <div className="absolute top-16 left-0 right-0 -mt-16 pt-20">
+          <div className="absolute top-8 sm:top-16 left-0 right-0 pt-8 sm:pt-20">
             <h3 className="text-lg font-suisse text-white text-center">FAQ</h3>
           </div>
           
-          <div className="absolute inset-0 flex items-center justify-center">
+          <div className="absolute inset-0 flex items-center justify-center pt-16 sm:pt-0">
             <div className="w-full max-w-sm mx-auto px-4 sm:px-6 md:px-8">
               <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1" className="border-0 bg-[#0D0D0D] hover:bg-[#000000] data-[state=open]:hover:bg-[#0D0D0D] transition-colors px-6 rounded-lg mb-1">
