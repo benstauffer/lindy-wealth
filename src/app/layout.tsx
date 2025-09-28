@@ -34,7 +34,8 @@ export default function RootLayout({
         className="min-h-screen text-black dark:text-white flex flex-col bg-white"
         style={{ 
           overscrollBehavior: 'none', 
-          position: 'relative'
+          position: 'relative',
+          overflowX: 'hidden'
         }}
       >
         <ThemeProvider>

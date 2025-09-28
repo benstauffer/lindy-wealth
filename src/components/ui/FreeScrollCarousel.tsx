@@ -75,10 +75,10 @@ export default function FreeScrollCarousel({
   if (!services?.length) return null;
 
   return (
-    <div ref={containerRef} className="relative w-full h-full overflow-hidden flex items-center">
+    <div ref={containerRef} className="relative w-full h-full overflow-hidden flex items-start md:items-center pt-16 md:pt-0 pb-32 md:pb-0">
       <motion.div
         ref={trackRef}
-        className="flex items-center gap-8 will-change-transform"
+        className="flex items-start md:items-center gap-8 will-change-transform"
         animate={{ x }}
         initial={false}
         transition={{ type: 'spring', stiffness: 250, damping: 30 }}
@@ -87,14 +87,14 @@ export default function FreeScrollCarousel({
           <div
             key={service.id}
             ref={(el) => { if (el) cardRefs.current[i] = el; }}
-            className="w-80 flex-shrink-0"
+            className="w-72 sm:w-80 flex-shrink-0"
           >
             <button
               onClick={() => onServiceSelect(selectedService === service.id ? null : service.id)}
               className="w-full group text-left"
             >
               <motion.div
-                className={`${service.bgColor} p-6 h-[350px] sm:h-[400px] rounded-lg flex flex-col justify-between origin-center`}
+                className={`${service.bgColor} p-4 sm:p-6 h-[300px] sm:h-[350px] md:h-[400px] rounded-lg flex flex-col justify-between origin-center`}
                 animate={{
                   opacity: i === currentIndex ? 1 : 0.45,
                   scale: i === currentIndex ? 1.05 : 0.96,

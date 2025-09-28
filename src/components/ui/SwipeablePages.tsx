@@ -97,7 +97,8 @@ export default function SwipeablePages({
     const verticalDistance = touchStart.y - touchEnd.y;
     const horizontalDistance = touchStart.x - touchEnd.x;
     
-    // Only process if vertical movement is greater than horizontal (prevents horizontal scrolling)
+    // Only process vertical swipes for page navigation
+    // Don't interfere with horizontal swipes (let services section handle them)
     if (Math.abs(verticalDistance) <= Math.abs(horizontalDistance)) return;
     
     const isUpSwipe = verticalDistance > minSwipeDistance;
@@ -127,7 +128,7 @@ export default function SwipeablePages({
       {/* Main content container with snap scroll */}
       <div 
         ref={containerRef}
-        className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth"
+        className="h-screen overflow-y-scroll overflow-x-hidden snap-y snap-mandatory scroll-smooth"
         style={{ 
           scrollbarWidth: 'none', 
           msOverflowStyle: 'none'
