@@ -64,6 +64,8 @@ export default function InteractiveVennSection({
 }: InteractiveVennSectionProps) {
   const [currentServiceIndex, setCurrentServiceIndex] = useState(-1); // -1 means show Venn diagram
   const [localSelectedService, setLocalSelectedService] = useState<string | null>(null);
+  const [touchStart, setTouchStart] = useState<{x: number, y: number} | null>(null);
+  const [touchEnd, setTouchEnd] = useState<{x: number, y: number} | null>(null);
 
   const handleRightClick = () => {
     if (setServicesNavigationStep && setSelectedService) {
@@ -98,8 +100,55 @@ export default function InteractiveVennSection({
   const isShowingServices = currentServiceIndex >= 0;
   const showServiceCarousel = servicesNavigationStep >= 1;
 
+  // Touch/swipe handlers for mobile horizontal navigation
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart({
+      x: e.targetTouches[0].clientX,
+      y: e.targetTouches[0].clientY
+    });
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd({
+      x: e.targetTouches[0].clientX,
+      y: e.targetTouches[0].clientY
+    });
+  };
+
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (!touchStart || !touchEnd) return;
+    
+    const horizontalDistance = touchStart.x - touchEnd.x;
+    const verticalDistance = touchStart.y - touchEnd.y;
+    
+    // Only process horizontal swipes (ignore vertical ones to let page navigation work)
+    if (Math.abs(horizontalDistance) <= Math.abs(verticalDistance)) return;
+    
+    // Prevent default to stop any unwanted scrolling
+    e.preventDefault();
+    
+    const isLeftSwipe = horizontalDistance > minSwipeDistance;
+    const isRightSwipe = horizontalDistance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      handleRightClick(); // Swipe left = go to next service
+    }
+    if (isRightSwipe) {
+      handleLeftClick(); // Swipe right = go to previous service
+    }
+  };
+
   return (
-    <div id="services-section" className="absolute inset-0">
+    <div 
+      id="services-section" 
+      className="absolute inset-0"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
       {/* Venn diagram and text - show when step is 0 */}
       <div 
         className={`absolute inset-0 flex flex-col justify-center items-center transition-all duration-500 ease-out ${

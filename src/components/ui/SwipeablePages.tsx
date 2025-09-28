@@ -28,8 +28,8 @@ export default function SwipeablePages({
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentPage, setCurrentPage] = useState(0);
   const totalPages = children.length;
-  const [touchStart, setTouchStart] = useState<number | null>(null);
-  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const [touchStart, setTouchStart] = useState<{x: number, y: number} | null>(null);
+  const [touchEnd, setTouchEnd] = useState<{x: number, y: number} | null>(null);
 
   // Update current page based on scroll position
   useEffect(() => {
@@ -78,19 +78,30 @@ export default function SwipeablePages({
 
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientY);
+    setTouchStart({
+      x: e.targetTouches[0].clientX,
+      y: e.targetTouches[0].clientY
+    });
   };
 
   const onTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientY);
+    setTouchEnd({
+      x: e.targetTouches[0].clientX,
+      y: e.targetTouches[0].clientY
+    });
   };
 
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
     
-    const distance = touchStart - touchEnd;
-    const isUpSwipe = distance > minSwipeDistance;
-    const isDownSwipe = distance < -minSwipeDistance;
+    const verticalDistance = touchStart.y - touchEnd.y;
+    const horizontalDistance = touchStart.x - touchEnd.x;
+    
+    // Only process if vertical movement is greater than horizontal (prevents horizontal scrolling)
+    if (Math.abs(verticalDistance) <= Math.abs(horizontalDistance)) return;
+    
+    const isUpSwipe = verticalDistance > minSwipeDistance;
+    const isDownSwipe = verticalDistance < -minSwipeDistance;
 
     if (isUpSwipe && currentPage < totalPages - 1) {
       goToPage(currentPage + 1);

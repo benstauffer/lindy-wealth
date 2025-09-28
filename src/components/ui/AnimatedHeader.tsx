@@ -35,24 +35,20 @@ function ExpandableHeader({
   
   return (
     <motion.div
-      className="w-full rounded-2xl transition-colors overflow-hidden"
-      style={{ 
-        backgroundColor: '#323232'
-      }}
-      whileHover={{ backgroundColor: '#252525' }}
+      className="w-full  transition-colors overflow-hidden"
       layout
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
       {/* Logo and Navigation Content */}
       <motion.div
-        className="w-full flex items-center px-6 py-4 relative"
+        className="w-full flex items-center px-6  relative"
       >
         <div className="flex items-center justify-between w-full">
           <div className="w-12 flex justify-start">
             {/* Services navigation X button */}
             {currentPage === 1 && servicesNavigationStep > 0 && services.length > 0 && (
               <button 
-                className="text-white/70 hover:text-white transition-colors"
+                className="text-[#999999] hover:text-white transition-colors"
                 onClick={() => {
                   if (setServicesNavigationStep && setSelectedService) {
                     setServicesNavigationStep(0);
@@ -69,7 +65,7 @@ function ExpandableHeader({
             {services.length === 0 && (
               <a 
                 href="/"
-                className="text-white/70 hover:text-white transition-colors"
+                className="text-[#999999] hover:text-white transition-colors"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -79,7 +75,7 @@ function ExpandableHeader({
           </div>
           <div className="flex items-center">
             {services.length === 0 ? (
-              <span className="text-white font-medium text-base tracking-tight">
+              <span className="text-[#999999] font-medium text-base tracking-tight">
                 About
               </span>
             ) : (
@@ -99,7 +95,7 @@ function ExpandableHeader({
                 {currentPage === 1 && (
                   <motion.span
                     key={`services-${selectedService || 'default'}`}
-                    className="text-white font-medium text-base tracking-tight"
+                    className="text-[#999999] font-medium text-base tracking-tight"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
@@ -114,7 +110,7 @@ function ExpandableHeader({
                 {currentPage === 2 && (
                   <motion.span
                     key="pricing"
-                    className="text-white font-medium text-base tracking-tight"
+                    className="text-[#999999] font-medium text-base tracking-tight"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
@@ -126,7 +122,7 @@ function ExpandableHeader({
                 {currentPage === 3 && (
                   <motion.span
                     key="faq"
-                    className="text-white font-medium text-base tracking-tight"
+                    className="text-[#999999] font-medium text-base tracking-tight"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
@@ -138,7 +134,7 @@ function ExpandableHeader({
                 {currentPage === 4 && (
                   <motion.span
                     key="navigation"
-                    className="text-white font-medium text-base tracking-tight"
+                    className="text-[#999999] font-medium text-base tracking-tight"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
@@ -156,7 +152,7 @@ function ExpandableHeader({
             {currentPage === 1 && services.length > 0 && (
               <>
                 <button 
-                  className="text-white/70 hover:text-white transition-colors"
+                  className="text-[#999999] hover:text-white transition-colors"
                   onClick={() => {
                     if (setServicesNavigationStep && setSelectedService) {
                       if (servicesNavigationStep > 0) {
@@ -180,7 +176,7 @@ function ExpandableHeader({
                   </svg>
                 </button>
                 <button 
-                  className="text-white/70 hover:text-white transition-colors"
+                  className="text-[#999999] hover:text-white transition-colors"
                   onClick={() => {
                     if (setServicesNavigationStep && setSelectedService) {
                       const maxStep = services.length; // 0: venn, 1+: individual services

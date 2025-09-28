@@ -38,7 +38,7 @@ export default function RootLayout({
         }}
       >
         <ThemeProvider>
-          <div className="fixed top-2 left-0 right-0 z-50 pointer-events-none">
+          <div className="fixed top-4 left-0 right-0 z-50 pointer-events-none">
             <div className="flex items-center justify-center px-6 py-4 pointer-events-auto relative">
               <div className="absolute right-6 hidden sm:block">
                 <MarketStatus />
