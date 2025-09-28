@@ -99,10 +99,18 @@ export default function SwipeablePages({
     
     // Only process vertical swipes for page navigation
     // Don't interfere with horizontal swipes (let services section handle them)
-    if (Math.abs(verticalDistance) <= Math.abs(horizontalDistance)) return;
+    // Increase threshold to 1.5x to give horizontal swipes more priority
+    if (Math.abs(verticalDistance) <= Math.abs(horizontalDistance) * 1.5) return;
     
     const isUpSwipe = verticalDistance > minSwipeDistance;
     const isDownSwipe = verticalDistance < -minSwipeDistance;
+
+    // Special handling for services section (page 1) - be more conservative
+    if (currentPage === 1) {
+      // Require stronger vertical swipes when on services page
+      const strongerThreshold = minSwipeDistance * 1.5;
+      if (Math.abs(verticalDistance) < strongerThreshold) return;
+    }
 
     if (isUpSwipe && currentPage < totalPages - 1) {
       goToPage(currentPage + 1);
@@ -156,8 +164,8 @@ export default function SwipeablePages({
         ))}
       </div>
 
-      {/* Page indicators (dots) */}
-      <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 flex flex-col space-y-2">
+      {/* Page indicators (dots) - hidden on mobile */}
+      <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 flex-col space-y-2 hidden md:flex">
         {Array.from({ length: totalPages }, (_, index) => (
           <button
             key={index}

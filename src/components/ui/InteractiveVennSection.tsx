@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AnimatedVennDiagram from './AnimatedVennDiagram';
 import FreeScrollCarousel from './FreeScrollCarousel';
 
@@ -67,6 +67,20 @@ export default function InteractiveVennSection({
   const [touchStart, setTouchStart] = useState<{x: number, y: number} | null>(null);
   const [touchEnd, setTouchEnd] = useState<{x: number, y: number} | null>(null);
 
+  // Listen for carousel swipe events
+  useEffect(() => {
+    const handleSwipeLeft = () => handleRightClick();
+    const handleSwipeRight = () => handleLeftClick();
+
+    window.addEventListener('service-swipe-left', handleSwipeLeft);
+    window.addEventListener('service-swipe-right', handleSwipeRight);
+
+    return () => {
+      window.removeEventListener('service-swipe-left', handleSwipeLeft);
+      window.removeEventListener('service-swipe-right', handleSwipeRight);
+    };
+  }, [servicesNavigationStep, setServicesNavigationStep, setSelectedService, services]);
+
   const handleRightClick = () => {
     if (setServicesNavigationStep && setSelectedService) {
       const maxStep = services.length; // 0: venn, 1+: individual services
@@ -101,10 +115,12 @@ export default function InteractiveVennSection({
   const showServiceCarousel = servicesNavigationStep >= 1;
 
   // Touch/swipe handlers for mobile horizontal navigation
-  const minSwipeDistance = 50;
+  const minSwipeDistance = 75; // Increased for better mobile UX
+  const [isDragging, setIsDragging] = useState(false);
 
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
+    setIsDragging(false);
     setTouchStart({
       x: e.targetTouches[0].clientX,
       y: e.targetTouches[0].clientY
@@ -112,10 +128,24 @@ export default function InteractiveVennSection({
   };
 
   const onTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd({
+    if (!touchStart) return;
+    
+    const currentTouch = {
       x: e.targetTouches[0].clientX,
       y: e.targetTouches[0].clientY
-    });
+    };
+    
+    setTouchEnd(currentTouch);
+    
+    const horizontalDistance = Math.abs(touchStart.x - currentTouch.x);
+    const verticalDistance = Math.abs(touchStart.y - currentTouch.y);
+    
+    // If horizontal movement is dominant, prevent vertical scrolling
+    if (horizontalDistance > verticalDistance && horizontalDistance > 15) {
+      setIsDragging(true);
+      e.preventDefault();
+      e.stopPropagation();
+    }
   };
 
   const onTouchEnd = (e: React.TouchEvent) => {
@@ -124,21 +154,28 @@ export default function InteractiveVennSection({
     const horizontalDistance = touchStart.x - touchEnd.x;
     const verticalDistance = touchStart.y - touchEnd.y;
     
-    // Only process horizontal swipes (ignore vertical ones to let page navigation work)
-    if (Math.abs(horizontalDistance) <= Math.abs(verticalDistance)) return;
+    // Only process horizontal swipes when horizontal movement is clearly dominant
+    if (Math.abs(horizontalDistance) <= Math.abs(verticalDistance) || Math.abs(horizontalDistance) < minSwipeDistance) {
+      setIsDragging(false);
+      return;
+    }
     
-    // Prevent default to stop any unwanted scrolling
-    e.preventDefault();
+    // Prevent any unwanted behavior
+    if (isDragging) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
     
-    const isLeftSwipe = horizontalDistance > minSwipeDistance;
-    const isRightSwipe = horizontalDistance < -minSwipeDistance;
+    const isLeftSwipe = horizontalDistance > 0;
+    const isRightSwipe = horizontalDistance < 0;
 
     if (isLeftSwipe) {
       handleRightClick(); // Swipe left = go to next service
-    }
-    if (isRightSwipe) {
+    } else if (isRightSwipe) {
       handleLeftClick(); // Swipe right = go to previous service
     }
+    
+    setIsDragging(false);
   };
 
   return (

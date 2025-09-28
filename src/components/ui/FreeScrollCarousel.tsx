@@ -29,6 +29,9 @@ export default function FreeScrollCarousel({
   const trackRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<HTMLDivElement[]>([]);
   const [x, setX] = useState(0);
+  const [touchStart, setTouchStart] = useState<{x: number, y: number} | null>(null);
+  const [touchEnd, setTouchEnd] = useState<{x: number, y: number} | null>(null);
+  const [isDragging, setIsDragging] = useState(false);
 
   // compute center using real offsets (accounts for true gap, borders, etc.)
   const recalc = () => {
@@ -72,10 +75,72 @@ export default function FreeScrollCarousel({
     };
   }, [currentIndex, services.length]);
 
+  // Touch handlers for better mobile interaction
+  const minSwipeDistance = 60;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setIsDragging(false);
+    setTouchStart({
+      x: e.targetTouches[0].clientX,
+      y: e.targetTouches[0].clientY
+    });
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    if (!touchStart) return;
+    
+    const currentTouch = {
+      x: e.targetTouches[0].clientX,
+      y: e.targetTouches[0].clientY
+    };
+    
+    setTouchEnd(currentTouch);
+    
+    const horizontalDistance = Math.abs(touchStart.x - currentTouch.x);
+    const verticalDistance = Math.abs(touchStart.y - currentTouch.y);
+    
+    // If horizontal movement is dominant, start dragging
+    if (horizontalDistance > verticalDistance && horizontalDistance > 10) {
+      setIsDragging(true);
+      e.preventDefault();
+    }
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const horizontalDistance = touchStart.x - touchEnd.x;
+    const verticalDistance = touchStart.y - touchEnd.y;
+    
+    // Only process if horizontal swipe is dominant and meets minimum distance
+    if (Math.abs(horizontalDistance) > Math.abs(verticalDistance) && Math.abs(horizontalDistance) > minSwipeDistance) {
+      const isLeftSwipe = horizontalDistance > 0;
+      
+      if (isLeftSwipe) {
+        // Swipe left = go to next service
+        window.dispatchEvent(new CustomEvent('service-swipe-left'));
+      } else {
+        // Swipe right = go to previous service
+        window.dispatchEvent(new CustomEvent('service-swipe-right'));
+      }
+    }
+    
+    setIsDragging(false);
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
   if (!services?.length) return null;
 
   return (
-    <div ref={containerRef} className="relative w-full h-full overflow-hidden flex items-start md:items-center pt-16 md:pt-0 pb-32 md:pb-0">
+    <div 
+      ref={containerRef} 
+      className="relative w-full h-full overflow-hidden flex items-start md:items-center pt-16 md:pt-0 pb-32 md:pb-0"
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
       <motion.div
         ref={trackRef}
         className="flex items-start md:items-center gap-8 will-change-transform"

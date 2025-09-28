@@ -24,7 +24,12 @@ export default function AnimatedVennDiagram() {
         {/* Venn diagram */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="relative">
-            <svg width="250" height="150">
+            <svg 
+              width="200" 
+              height="120" 
+              viewBox="0 0 250 150"
+              className="sm:w-[250px] sm:h-[150px]"
+            >
               <g transform="translate(125, 75)">
                 {/* Background fills */}
                 <circle cx={circles.Ct.c.x} cy={circles.Ct.c.y} r={circles.Ct.r}
@@ -79,14 +84,14 @@ export default function AnimatedVennDiagram() {
               </g>
             </svg>
             
-            {/* Text labels positioned absolutely using the same technique */}
+            {/* Text labels positioned using percentage-based positioning for responsive scaling */}
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-              {/* Better for your life - at end of left line */}
+              {/* Better for your life - left side */}
               <div 
-                className="absolute flex flex-col items-center justify-center text-base leading-tight text-white select-none tracking-tight font-suisse"
+                className="absolute flex flex-col items-center justify-center text-sm sm:text-base leading-tight text-white select-none tracking-tight font-suisse"
                 style={{
-                  left: `${125 + circles.Ct.c.x - circles.Ct.r - 100}px`,
-                  top: `${75 + circles.Ct.c.y}px`,
+                  left: '-15%',
+                  top: '50%',
                   width: '100px',
                   transform: 'translate(-50%, -50%)'
                 }}
@@ -95,13 +100,13 @@ export default function AnimatedVennDiagram() {
                 <span>your life</span>
               </div>
 
-              {/* Better for your money - at end of right line */}
+              {/* Better for your money - right side */}
               <div 
-                className="absolute flex flex-col items-center justify-center text-base leading-tight text-white select-none tracking-tight font-suisse"
+                className="absolute flex flex-col items-center justify-center text-sm sm:text-base leading-tight text-white select-none tracking-tight font-suisse"
                 style={{
-                  left: `${125 + circles.Cb.c.x + circles.Cb.r + 100}px`,
-                  top: `${75 + circles.Cb.c.y}px`,
-                  width: '120px',
+                  left: '115%',
+                  top: '50%',
+                  width: '100px',
                   transform: 'translate(-50%, -50%)'
                 }}
               >
@@ -109,13 +114,13 @@ export default function AnimatedVennDiagram() {
                 <span>your money</span>
               </div>
 
-              {/* Great advice - at end of bottom line */}
+              {/* Great advice - bottom center */}
               <div 
-                className="absolute flex flex-col items-center justify-center text-base leading-tight text-white select-none tracking-tight font-suisse"
+                className="absolute flex flex-col items-center justify-center text-sm sm:text-base leading-tight text-white select-none tracking-tight font-suisse"
                 style={{
-                  left: `${125 + 0}px`,
-                  top: `${75 + 110}px`,
-                  width: '80px',
+                  left: '50%',
+                  top: '120%',
+                  width: '60px',
                   transform: 'translate(-50%, -50%)'
                 }}
               >
