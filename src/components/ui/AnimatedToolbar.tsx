@@ -14,78 +14,78 @@ const services = [
   {
     id: "tax",
     title: "Tax Strategy",
-    description: "Strategic tax planning to minimize your tax burden through entity structuring, deduction optimization, and quarterly estimated payments.",
+    description: "Tax planning to reduce what you owe through smart business structures.",
     details: [
-      "Entity structure optimization (LLC, S-Corp, Solo 401k)",
-      "Quarterly estimated tax payment planning",
-      "Business expense deduction strategies",
-      "Tax-loss harvesting for investments"
+      "Choose the right business structure (LLC, S-Corp)",
+      "Plan quarterly tax payments",
+      "Tax-loss harvesting for investments",
+      "Retirement account optimization"
     ]
   },
   {
     id: "investment",
     title: "Investment & Cash Management", 
-    description: "Portfolio management and cash flow optimization tailored to your irregular income streams and financial goals.",
+    description: "Build and manage your investment portfolio while handling irregular income.",
     details: [
-      "Asset allocation based on irregular income",
-      "Low-cost index fund portfolio construction",
-      "Tax-efficient investment strategies",
-      "Cash flow forecasting and optimization"
+      "Asset allocation for variable income",
+      "Low-cost index fund portfolios",
+      "Tax-smart investing",
+      "Cash flow planning"
     ]
   },
   {
     id: "life",
     title: "Life & Goal Planning",
-    description: "Comprehensive life planning to align your financial decisions with your personal values and long-term goals.",
+    description: "Plan your finances around what matters most to you and your big life goals.",
     details: [
-      "Personal values assessment and goal setting",
-      "Life milestone financial planning",
-      "Career transition financial strategies",
-      "Family financial planning coordination"
+      "Define your values and financial goals",
+      "Plan for major life events",
+      "Navigate career changes",
+      "Coordinate family finances"
     ]
   },
   {
     id: "estate",
     title: "Estate Planning",
-    description: "Estate planning strategies to protect your wealth and ensure your legacy is preserved for future generations.",
+    description: "Protect your wealth and make sure it goes where you want when you are gone.",
     details: [
-      "Will and trust preparation",
-      "Beneficiary designation optimization",
-      "Estate tax minimization strategies",
-      "Legacy planning and wealth transfer"
+      "Estate planning strategy",
+      "Update beneficiaries",
+      "Reduce estate taxes",
+      "Plan wealth transfer"
     ]
   },
   {
     id: "insurance",
     title: "Insurance Reviews",
-    description: "Comprehensive insurance analysis to ensure optimal coverage and protection for your financial security.",
+    description: "Make sure you have the right coverage without overpaying.",
     details: [
-      "Life and disability insurance analysis",
-      "Health insurance optimization",
-      "Property and liability coverage review",
-      "Insurance cost-benefit analysis"
+      "Review life and disability insurance",
+      "Evaluate health insurance options",
+      "Check property and liability coverage",
+      "Compare costs vs benefits"
     ]
   },
   {
     id: "cashflow",
     title: "Cash Flow Planning",
-    description: "Cash flow optimization and budgeting strategies for creators with variable income streams.",
+    description: "Manage your money when income varies month to month.",
     details: [
-      "Variable income budgeting strategies",
-      "Emergency fund planning",
-      "Business vs personal expense tracking",
-      "Revenue smoothing techniques"
+      "Budget with variable income",
+      "Build emergency funds",
+      "Track business vs personal expenses",
+      "Smooth out income swings"
     ]
   },
   {
     id: "retirement",
     title: "Retirement Strategy",
-    description: "Retirement savings strategies including Solo 401(k)s, SEP-IRAs, and Roth conversions designed for entrepreneurs.",
+    description: "Save for retirement with tax-advantaged accounts designed for business owners.",
     details: [
-      "Solo 401(k) and SEP-IRA setup",
-      "Roth conversion strategies",
-      "Retirement income projections",
-      "Healthcare cost planning"
+      "Set up Solo 401(k) or SEP-IRA",
+      "Plan Roth conversions",
+      "Project retirement income",
+      "Plan for healthcare costs"
     ]
   }
 ];
@@ -102,7 +102,7 @@ function ExpandableToolbar({ currentPage, selectedService, showExpandedContent =
       layout
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
-      {/* Selected Service Details - appears when service is selected on page 1 (Services) */}
+      {/* Selected Service Details - appears when service is selected on page 1 (Interactive Venn) */}
       <AnimatePresence>
         {showExpandedContent && selectedService && selectedServiceData && currentPage === 1 && (
           <motion.div
@@ -136,9 +136,9 @@ function ExpandableToolbar({ currentPage, selectedService, showExpandedContent =
       </AnimatePresence>
 
 
-      {/* Pricing Section - appears above on page 3 (Pricing) */}
+      {/* Pricing Section - appears above on page 2 (Pricing) */}
       <AnimatePresence>
-        {showExpandedContent && currentPage === 3 && (
+        {showExpandedContent && currentPage === 2 && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
@@ -164,63 +164,6 @@ function ExpandableToolbar({ currentPage, selectedService, showExpandedContent =
         )}
       </AnimatePresence>
 
-      {/* FAQ Section - appears above on page 4 (FAQ) */}
-      <AnimatePresence>
-        {showExpandedContent && currentPage === 4 && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden"
-          >
-            <div className="p-4 pb-2">
-              <div className="space-y-3">
-                
-                <button 
-                  onClick={() => window.open('/about', '_self')}
-                  className="w-full bg-white/10 rounded-lg p-3 flex justify-between items-center hover:bg-white/20 transition-colors"
-                >
-                  <span className="text-white text-sm">Learn more about Lindy</span>
-                  <span className="text-white text-xs">→</span>
-                </button>
-                
-                <button 
-                  onClick={() => {
-                    const container = document.querySelector('.h-screen.overflow-y-scroll');
-                    if (container) {
-                      container.scrollTo({
-                        top: 1 * window.innerHeight,
-                        behavior: 'smooth'
-                      });
-                    }
-                  }}
-                  className="w-full bg-white/10 rounded-lg p-3 flex justify-between items-center hover:bg-white/20 transition-colors"
-                >
-                  <span className="text-white text-sm">Services</span>
-                  <span className="text-white text-xs">→</span>
-                </button>
-                
-                <button 
-                  onClick={() => {
-                    const container = document.querySelector('.h-screen.overflow-y-scroll');
-                    if (container) {
-                      container.scrollTo({
-                        top: 3 * window.innerHeight,
-                        behavior: 'smooth'
-                      });
-                    }
-                  }}
-                  className="w-full bg-white/10 rounded-lg p-3 flex justify-between items-center hover:bg-white/20 transition-colors"
-                >
-                  <span className="text-white text-sm">Pricing</span>
-                  <span className="text-white text-xs">→</span>
-                </button>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
 
       {/* Book Call Button Content */}
       <motion.button

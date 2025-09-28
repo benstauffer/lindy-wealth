@@ -2,7 +2,8 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { ThemeProvider } from "@/contexts/ThemeContext";
-import { HeaderSection } from "@/components/Sections/Header";
+import MarketStatus from "@/components/ui/MarketStatus";
+import Logo from "@/components/ui/Logo";
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -37,7 +38,13 @@ export default function RootLayout({
         }}
       >
         <ThemeProvider>
-          <HeaderSection />
+          <div className="fixed top-2 left-0 right-0 z-50 pointer-events-none">
+            <div className="flex items-center justify-center px-6 py-4 pointer-events-auto relative">
+              <div className="absolute right-6 hidden sm:block">
+                <MarketStatus />
+              </div>
+            </div>
+          </div>
           <main className="w-full">
             {children}
           </main>

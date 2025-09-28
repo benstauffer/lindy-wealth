@@ -2,19 +2,34 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import AnimatedToolbar from './AnimatedToolbar';
+import AnimatedHeader from './AnimatedHeader';
 
 interface SwipeablePagesProps {
   children: React.ReactNode[];
   selectedService: string | null;
   showExpandedToolbar?: boolean;
+  servicesNavigationStep?: number;
+  setServicesNavigationStep?: (step: number) => void;
+  setSelectedService?: (service: string | null) => void;
+  services?: Array<{id: string; name: string; description: string; bgColor: string}>;
 }
 
 
 
-export default function SwipeablePages({ children, selectedService, showExpandedToolbar = true }: SwipeablePagesProps) {
+export default function SwipeablePages({ 
+  children, 
+  selectedService, 
+  showExpandedToolbar = true, 
+  servicesNavigationStep = 0,
+  setServicesNavigationStep,
+  setSelectedService,
+  services = []
+}: SwipeablePagesProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [currentPage, setCurrentPage] = useState(0);
   const totalPages = children.length;
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   // Update current page based on scroll position
   useEffect(() => {
@@ -58,6 +73,33 @@ export default function SwipeablePages({ children, selectedService, showExpanded
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [currentPage, totalPages]);
 
+  // Touch/swipe handlers
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientY);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientY);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isUpSwipe = distance > minSwipeDistance;
+    const isDownSwipe = distance < -minSwipeDistance;
+
+    if (isUpSwipe && currentPage < totalPages - 1) {
+      goToPage(currentPage + 1);
+    }
+    if (isDownSwipe && currentPage > 0) {
+      goToPage(currentPage - 1);
+    }
+  };
+
 
   const goToPage = (pageIndex: number) => {
     const container = containerRef.current;
@@ -79,6 +121,9 @@ export default function SwipeablePages({ children, selectedService, showExpanded
           scrollbarWidth: 'none', 
           msOverflowStyle: 'none'
         }}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
       >
         <style jsx>{`
           div::-webkit-scrollbar {
@@ -114,6 +159,17 @@ export default function SwipeablePages({ children, selectedService, showExpanded
           />
         ))}
       </div>
+
+      {/* Animated Header */}
+      <AnimatedHeader 
+        currentPage={currentPage} 
+        selectedService={selectedService} 
+        showExpandedContent={showExpandedToolbar}
+        servicesNavigationStep={servicesNavigationStep}
+        setServicesNavigationStep={setServicesNavigationStep}
+        setSelectedService={setSelectedService}
+        services={services}
+      />
 
       {/* Animated Toolbar */}
       <AnimatedToolbar currentPage={currentPage} selectedService={selectedService} showExpandedContent={showExpandedToolbar} />

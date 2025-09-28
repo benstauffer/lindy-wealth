@@ -5,7 +5,7 @@ import AnimatedVennDiagram from "@/components/ui/AnimatedVennDiagram";
 
 export default function About() {
   return (
-    <SwipeablePages selectedService={null} showExpandedToolbar={false}>
+    <SwipeablePages selectedService={null} showExpandedToolbar={false} services={[]}>
       {/* Section 1: Hero */}
       <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 md:px-8 text-center">
         <div className="mb-2">
@@ -17,52 +17,31 @@ export default function About() {
         </div>
       </div>
 
-      {/* Section 2: Venn Diagram */}
+      {/* Section 2: About Ben */}
       <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 md:px-8 text-center">
-        <AnimatedVennDiagram />
-        <div className="flex justify-center mt-8">
-          <p className="text-base leading-normal text-black/70 max-w-md text-center font-suisse tracking-tight">
-            Lindy Wealth provides comprehensive financial guidance to make your life and your money work better together.
-          </p>
+        <div className="flex flex-col items-center space-y-6">
+          <div className="w-24 h-24 rounded-lg overflow-hidden">
+            <img 
+              src="/images/Ben.png" 
+              alt="Ben Stauffer" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="max-w-sm">
+            <p className="text-xl leading-tight text-black/80 font-suisse tracking-tight">
+              Hi, I'm Ben. I'm a Certified Financial Planner® and founder of Lindy Wealth - a tax-focused financial planning firm designed for entrepreneurs and creators.
+              <br/><br/>
+              I've worked at several firms serving hundreds of clients across all wealth levels - retirees, high-earners, and ultra-high-net-worth individuals. Now, I focus exclusively on providing clear, tax-smart financial guidance to solopreneurs.
+              <br/><br/>
+              Originally from Sacramento, CA, I now live in Los Angeles, CA.
+              <br/><br/>
+              You can reach me at ben@lindywealth.com.
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Section 3: Essay */}
-      <div className="w-full max-w-2xl mx-auto px-4 sm:px-6 md:px-8">
-        <div className="w-full text-left space-y-6 sm:space-y-8 text-black/80">
-          <p className="text-sm sm:text-base text-black/90 leading-relaxed">
-            Keep it simple. Your life is complex enough.
-          </p>
-          
-          <p className="text-sm sm:text-base text-black/90 leading-relaxed">
-            The financial services industry often adds layers of complexity through high fees, products, and market predictions to justify its existence. But complexity doesn't mean better results.
-          </p>
-
-          <p className="text-sm sm:text-base text-black/90 leading-relaxed">
-            Good financial planning comes down to the fundamentals: define your goals, save consistently, invest in low-cost, diversified funds, adapt as tax laws change, protect against major risks, and plan intentionally for retirement and legacy.
-          </p>
-
-          <p className="text-sm sm:text-base text-black/90 leading-relaxed">
-            At Lindy Wealth, I provide flat-fee financial planning that starts with your goals, not market predictions. Strategies stay simple unless complexity clearly improves after-tax, after-fee results. We build a tailored asset mix, review plans periodically, and always question whether complexity adds value.
-          </p>
-
-          <p className="text-sm sm:text-base text-black/90 leading-relaxed">
-            My goal is to help you reach your objectives, make tax-smart decisions, and bring clarity to your financial plan.
-          </p>
-
-          <p className="text-sm sm:text-base text-black/90 leading-relaxed">
-            Flat fees + proven tax strategies + custom planning = the Lindy way.
-          </p>
-
-          <p className="text-sm sm:text-base text-black/90 leading-relaxed">
-            One takeaway: Keep It Simple.
-          </p>
-          
-          <p className="text-sm sm:text-base text-black/90 leading-relaxed">
-            - Ben Stauffer
-          </p>
-        </div>
-      </div>
+      
     </SwipeablePages>
   )
 }
