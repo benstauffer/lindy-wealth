@@ -180,7 +180,7 @@ export default function Home() {
         <div className="w-full max-w-3xl mx-auto px-6 sm:px-6 md:px-8 text-center">
 
 
-          <div className="mb-2">
+          <div className="">
             <p style={{ lineHeight: 1.1 }} className="text-3xl sm:text-4xl md:text-5xl leading-tight text-black/80 font-suisse tracking-tight">
               Wealth Management.
               <br />
